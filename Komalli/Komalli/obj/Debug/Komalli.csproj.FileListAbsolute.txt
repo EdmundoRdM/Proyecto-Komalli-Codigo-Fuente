@@ -1,0 +1,16 @@
+C:\UV_Proyectos\7mo_Semestre\RepositorioDDS\Proyecto-Komalli-Codigo-Fuente\Komalli\Komalli\obj\Debug\Komalli.csproj.AssemblyReference.cache
+C:\UV_Proyectos\7mo_Semestre\RepositorioDDS\Proyecto-Komalli-Codigo-Fuente\Komalli\Komalli\obj\Debug\MainWindow.g.cs
+C:\UV_Proyectos\7mo_Semestre\RepositorioDDS\Proyecto-Komalli-Codigo-Fuente\Komalli\Komalli\obj\Debug\App.g.cs
+C:\UV_Proyectos\7mo_Semestre\RepositorioDDS\Proyecto-Komalli-Codigo-Fuente\Komalli\Komalli\obj\Debug\Komalli_MarkupCompile.cache
+C:\UV_Proyectos\7mo_Semestre\RepositorioDDS\Proyecto-Komalli-Codigo-Fuente\Komalli\Komalli\obj\Debug\Komalli_MarkupCompile.lref
+C:\UV_Proyectos\7mo_Semestre\RepositorioDDS\Proyecto-Komalli-Codigo-Fuente\Komalli\Komalli\bin\Debug\Komalli.exe.config
+C:\UV_Proyectos\7mo_Semestre\RepositorioDDS\Proyecto-Komalli-Codigo-Fuente\Komalli\Komalli\bin\Debug\Komalli.exe
+C:\UV_Proyectos\7mo_Semestre\RepositorioDDS\Proyecto-Komalli-Codigo-Fuente\Komalli\Komalli\bin\Debug\Komalli.pdb
+C:\UV_Proyectos\7mo_Semestre\RepositorioDDS\Proyecto-Komalli-Codigo-Fuente\Komalli\Komalli\obj\Debug\App.baml
+C:\UV_Proyectos\7mo_Semestre\RepositorioDDS\Proyecto-Komalli-Codigo-Fuente\Komalli\Komalli\obj\Debug\MainWindow.baml
+C:\UV_Proyectos\7mo_Semestre\RepositorioDDS\Proyecto-Komalli-Codigo-Fuente\Komalli\Komalli\obj\Debug\Komalli.g.resources
+C:\UV_Proyectos\7mo_Semestre\RepositorioDDS\Proyecto-Komalli-Codigo-Fuente\Komalli\Komalli\obj\Debug\Komalli.Properties.Resources.resources
+C:\UV_Proyectos\7mo_Semestre\RepositorioDDS\Proyecto-Komalli-Codigo-Fuente\Komalli\Komalli\obj\Debug\Komalli.csproj.GenerateResource.cache
+C:\UV_Proyectos\7mo_Semestre\RepositorioDDS\Proyecto-Komalli-Codigo-Fuente\Komalli\Komalli\obj\Debug\Komalli.csproj.CoreCompileInputs.cache
+C:\UV_Proyectos\7mo_Semestre\RepositorioDDS\Proyecto-Komalli-Codigo-Fuente\Komalli\Komalli\obj\Debug\Komalli.exe
+C:\UV_Proyectos\7mo_Semestre\RepositorioDDS\Proyecto-Komalli-Codigo-Fuente\Komalli\Komalli\obj\Debug\Komalli.pdb
