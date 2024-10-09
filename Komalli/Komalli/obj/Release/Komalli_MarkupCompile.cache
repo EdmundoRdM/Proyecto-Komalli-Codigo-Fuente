@@ -4,11 +4,11 @@
 winexe
 C#
 .cs
-C:\Users\nando\Desktop\Trabajos UV\Desarrollo de software\Proyecto\Codigo\Proyecto-Komalli-Codigo-Fuente\Komalli\Komalli\obj\Debug\
+C:\Users\nando\Desktop\Trabajos UV\Desarrollo de software\Proyecto\Codigo\Proyecto-Komalli-Codigo-Fuente\Komalli\Komalli\obj\Release\
 Komalli
 none
 false
-DEBUG;TRACE
+TRACE
 C:\Users\nando\Desktop\Trabajos UV\Desarrollo de software\Proyecto\Codigo\Proyecto-Komalli-Codigo-Fuente\Komalli\Komalli\App.xaml
 2-948471799
 
@@ -16,5 +16,5 @@ C:\Users\nando\Desktop\Trabajos UV\Desarrollo de software\Proyecto\Codigo\Proyec
 13-38814620
 GUIs\ManagerLanding.xaml;MainWindow.xaml;
 
-False
+True
 

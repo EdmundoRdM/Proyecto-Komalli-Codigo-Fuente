@@ -1,17 +1,17 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\UV_Proyectos\\7mo_Semestre\\RepositorioDDS\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\",
+  "WorkspaceRootPath": "C:\\Users\\nando\\Desktop\\Trabajos UV\\Desarrollo de software\\Proyecto\\Codigo\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|c:\\uv_proyectos\\7mo_semestre\\repositoriodds\\proyecto-komalli-codigo-fuente\\komalli\\komalli\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|solutionrelative:komalli\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|c:\\users\\nando\\desktop\\trabajos uv\\desarrollo de software\\proyecto\\codigo\\proyecto-komalli-codigo-fuente\\komalli\\komalli\\guis\\managerlanding.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|solutionrelative:komalli\\guis\\managerlanding.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|C:\\UV_Proyectos\\7mo_Semestre\\RepositorioDDS\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\komalli\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|solutionrelative:komalli\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|C:\\Users\\nando\\Desktop\\Trabajos UV\\Desarrollo de software\\Proyecto\\Codigo\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\komalli\\guis\\managerlanding.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|solutionrelative:komalli\\guis\\managerlanding.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|C:\\UV_Proyectos\\7mo_Semestre\\RepositorioDDS\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\komalli\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|C:\\Users\\nando\\Desktop\\Trabajos UV\\Desarrollo de software\\Proyecto\\Codigo\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\komalli\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|solutionrelative:komalli\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
@@ -22,8 +22,12 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
@@ -35,34 +39,34 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "C:\\UV_Proyectos\\7mo_Semestre\\RepositorioDDS\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\MainWindow.xaml.cs",
-              "RelativeDocumentMoniker": "Komalli\\MainWindow.xaml.cs",
-              "ToolTip": "C:\\UV_Proyectos\\7mo_Semestre\\RepositorioDDS\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\MainWindow.xaml.cs",
-              "RelativeToolTip": "Komalli\\MainWindow.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAAJAAAAAAAAAA==",
+              "Title": "ManagerLanding.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\nando\\Desktop\\Trabajos UV\\Desarrollo de software\\Proyecto\\Codigo\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\GUIs\\ManagerLanding.xaml.cs",
+              "RelativeDocumentMoniker": "Komalli\\GUIs\\ManagerLanding.xaml.cs",
+              "ToolTip": "C:\\Users\\nando\\Desktop\\Trabajos UV\\Desarrollo de software\\Proyecto\\Codigo\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\GUIs\\ManagerLanding.xaml.cs",
+              "RelativeToolTip": "Komalli\\GUIs\\ManagerLanding.xaml.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAAwCIAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-30T20:51:28.427Z"
+              "WhenOpened": "2024-10-08T00:39:06.314Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "MainWindow.xaml",
-              "DocumentMoniker": "C:\\UV_Proyectos\\7mo_Semestre\\RepositorioDDS\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\MainWindow.xaml",
-              "RelativeDocumentMoniker": "Komalli\\MainWindow.xaml",
-              "ToolTip": "C:\\UV_Proyectos\\7mo_Semestre\\RepositorioDDS\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\MainWindow.xaml",
-              "RelativeToolTip": "Komalli\\MainWindow.xaml",
+              "Title": "ManagerLanding.xaml",
+              "DocumentMoniker": "C:\\Users\\nando\\Desktop\\Trabajos UV\\Desarrollo de software\\Proyecto\\Codigo\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\GUIs\\ManagerLanding.xaml",
+              "RelativeDocumentMoniker": "Komalli\\GUIs\\ManagerLanding.xaml",
+              "ToolTip": "C:\\Users\\nando\\Desktop\\Trabajos UV\\Desarrollo de software\\Proyecto\\Codigo\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\GUIs\\ManagerLanding.xaml",
+              "RelativeToolTip": "Komalli\\GUIs\\ManagerLanding.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-09-30T20:46:10.935Z",
+              "WhenOpened": "2024-10-08T00:34:42.844Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "App.xaml",
-              "DocumentMoniker": "C:\\UV_Proyectos\\7mo_Semestre\\RepositorioDDS\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\App.xaml",
+              "DocumentMoniker": "C:\\Users\\nando\\Desktop\\Trabajos UV\\Desarrollo de software\\Proyecto\\Codigo\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\App.xaml",
               "RelativeDocumentMoniker": "Komalli\\App.xaml",
-              "ToolTip": "C:\\UV_Proyectos\\7mo_Semestre\\RepositorioDDS\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\App.xaml",
+              "ToolTip": "C:\\Users\\nando\\Desktop\\Trabajos UV\\Desarrollo de software\\Proyecto\\Codigo\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\App.xaml",
               "RelativeToolTip": "Komalli\\App.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2024-09-30T20:36:25.096Z",

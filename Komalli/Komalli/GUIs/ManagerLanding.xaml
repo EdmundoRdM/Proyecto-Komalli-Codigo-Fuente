@@ -1,0 +1,136 @@
+﻿<Window x:Class="Komalli.GUIs.ManagerLanding"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Komalli.GUIs"
+        mc:Ignorable="d"
+        Title="ManagerLanding" Height="720" Width="1080">
+    <Grid>
+        <!-- Definir columnas y filas de la cuadrícula para que se ajusten -->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <!-- Fijar el ancho del panel de la izquierda -->
+            <ColumnDefinition Width="*"/>
+            <!-- La otra columna se ajusta al tamaño disponible -->
+        </Grid.ColumnDefinitions>
+
+        <!-- Panel izquierdo (menú) -->
+        <Grid Background="Gray" Grid.Column="0" VerticalAlignment="Top" Height="704">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" MinHeight="206"/>
+                <!-- Logo -->
+                <RowDefinition Height="Auto" MinHeight="63"/>
+                <!-- Botones -->
+                <RowDefinition Height="18"/>
+                <RowDefinition Height="61"/>
+                <RowDefinition Height="23.707"/>
+                <RowDefinition Height="58.293"/>
+                <RowDefinition Height="22"/>
+                <RowDefinition Height="80*"/>
+                <RowDefinition Height="36*"/>
+                <RowDefinition Height="119*"/>
+                <RowDefinition Height="17*"/>
+                <!-- Espacio flexible -->
+            </Grid.RowDefinitions>
+
+            <Image Source="{StaticResource LogoUV}" Width="130" Height="130"
+                   HorizontalAlignment="Center" VerticalAlignment="Center" 
+                   Cursor="Hand" MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave"/>
+
+            <Button Content="Menús" Width="130"
+                    HorizontalAlignment="Center" Grid.Row="1" Margin="0,10,0,0">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <!-- Color de fondo -->
+                        <Setter Property="Background" Value="#2C9B00"/>
+                        <!-- Color de letra -->
+                        <Setter Property="Foreground" Value="White"/>
+                        <!-- Fuente de letra -->
+                        <Setter Property="FontFamily" Value="Inter"/>
+                        <!-- Fuente semi-bold -->
+                        <Setter Property="FontWeight" Value="SemiBold"/>
+                        <!-- Tamaño de letra -->
+                        <Setter Property="FontSize" Value="20"/>
+                        <!-- Padding del botón -->
+                        <Setter Property="Padding" Value="10,5"/>
+                        <!-- Sin bordes -->
+                        <Setter Property="BorderBrush" Value="Transparent"/>
+                        <!-- Agregar sombra -->
+                        <Setter Property="Effect">
+                            <Setter.Value>
+                                <DropShadowEffect Color="Black" Opacity="0.5" BlurRadius="5" ShadowDepth="7" Direction="270"/>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Button.Style>
+            </Button>
+
+            <Button Content="Productos" Width="130"
+                    HorizontalAlignment="Center" Grid.Row="3" Margin="0,1,0,0">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#2C9B00"/>
+                        <Setter Property="Foreground" Value="White"/>
+                        <Setter Property="FontFamily" Value="Inter"/>
+                        <Setter Property="FontWeight" Value="SemiBold"/>
+                        <Setter Property="FontSize" Value="20"/>
+                        <Setter Property="Padding" Value="10,5"/>
+                        <Setter Property="BorderBrush" Value="Transparent"/>
+                        <Setter Property="Effect">
+                            <Setter.Value>
+                                <DropShadowEffect Color="Black" Opacity="0.5" BlurRadius="5" ShadowDepth="7" Direction="270"/>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Button.Style>
+            </Button>
+
+            <Button Content="Pedidos" Width="130"
+                    HorizontalAlignment="Center" Grid.Row="5" Margin="0,2,0,0">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#2C9B00"/>
+                        <Setter Property="Foreground" Value="White"/>
+                        <Setter Property="FontFamily" Value="Inter"/>
+                        <Setter Property="FontWeight" Value="SemiBold"/>
+                        <Setter Property="FontSize" Value="20"/>
+                        <Setter Property="Padding" Value="10,5"/>
+                        <Setter Property="BorderBrush" Value="Transparent"/>
+                        <Setter Property="Effect">
+                            <Setter.Value>
+                                <DropShadowEffect Color="Black" Opacity="0.5" BlurRadius="5" ShadowDepth="7" Direction="270"/>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Button.Style>
+            </Button>
+
+            <Button Width="124" HorizontalAlignment="Center"
+                    Grid.Row="7" Margin="0,1,0,13">
+                <TextBlock Text="Movimientos extraordinarios" TextWrapping="Wrap" TextAlignment="Center"/>
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#2C9B00"/>
+                        <Setter Property="Foreground" Value="White"/>
+                        <Setter Property="FontFamily" Value="Inter"/>
+                        <Setter Property="FontWeight" Value="SemiBold"/>
+                        <Setter Property="FontSize" Value="14.5"/>
+                        <Setter Property="Padding" Value="10,5"/>
+                        <Setter Property="BorderBrush" Value="Transparent"/>
+                        <Setter Property="Effect">
+                            <Setter.Value>
+                                <DropShadowEffect Color="Black" Opacity="0.5" BlurRadius="5" ShadowDepth="7" Direction="270"/>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Button.Style>
+            </Button>
+
+            <Image Source="{StaticResource Back}" Width="60" Height="60"
+                   HorizontalAlignment="Left" VerticalAlignment="Top"
+                   Cursor="Hand" MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave" 
+                   Grid.Row="9" Margin="68,21,0,0"/>
+        </Grid>
+    </Grid>
+</Window>
