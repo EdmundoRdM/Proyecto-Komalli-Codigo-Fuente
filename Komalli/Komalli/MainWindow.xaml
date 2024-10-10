@@ -5,13 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Komalli"
         mc:Ignorable="d"
-        Title="Komalli"
+        Title="KomalliSystem"
         WindowState="Maximized"
         Background="Transparent"
         Height="922.16" 
         Width="1742.8">
-    
-    <Grid>
+
+    <Grid Background="Transparent">
         <Viewbox Stretch="Fill">
             <Frame x:Name="frameContainer" NavigationUIVisibility="Hidden" Height="906" Width="1743"/>
         </Viewbox>
