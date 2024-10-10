@@ -2,12 +2,14 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:Komalli"
-             StartupUri="/GUIs/ManagerLanding.xaml">
+             StartupUri="/GUIs/ManagerNavigationBar.xaml">
     <Application.Resources>
         <ResourceDictionary>
             <BitmapImage x:Key="LogoUV"  UriSource="Media/UV.png"/>
             <BitmapImage x:Key="LogoComedor"  UriSource="Media/ComedoresUV.png"/>
             <BitmapImage x:Key="Back"  UriSource="Media/BackButton.png"/>
+            <BitmapImage x:Key="NewIcon"  UriSource="Media/NewIcon.png"/>
+            <BitmapImage x:Key="SearchIcon"  UriSource="Media/SearchIcon.png"/>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

@@ -10,28 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Komalli.GUIs
 {
     /// <summary>
-    /// Lógica de interacción para ManagerLanding.xaml
+    /// Lógica de interacción para StaffModule.xaml
     /// </summary>
-    public partial class ManagerLanding : Window
+    public partial class StaffModule : Page
     {
-        public ManagerLanding()
+        public StaffModule()
         {
             InitializeComponent();
-        }
-        private void Image_MouseEnter(object sender, MouseEventArgs e)
-        {
-            Cursor = Cursors.Hand;
-        }
-
-        // Vuelve el cursor a "Flechita" cuando el mouse deja la imagen
-        private void Image_MouseLeave(object sender, MouseEventArgs e)
-        {
-            Cursor = Cursors.Arrow;
         }
     }
 }

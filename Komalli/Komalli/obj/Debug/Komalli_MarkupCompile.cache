@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\nando\Desktop\Trabajos UV\Desarrollo de software\Proyecto\Codigo\Proyecto-Komalli-Codigo-Fuente\Komalli\Komalli\App.xaml
-2-948471799
+3-1244193775
 
-6441763745
+7-1905453083
 13-38814620
-GUIs\ManagerLanding.xaml;MainWindow.xaml;
+GUIs\ManagerNavigationBar.xaml;GUIs\StaffModule.xaml;MainWindow.xaml;
 
 False
 
