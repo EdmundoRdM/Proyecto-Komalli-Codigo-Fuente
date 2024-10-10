@@ -1,8 +1,7 @@
 ﻿using Komalli.DataBaseManagement.DataModel;
+using Komalli.DataBaseManagement.POCOs;
 using System;
 using System.Collections.Generic;
-using System.Data.Entity.Core;
-using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,128 +12,100 @@ namespace Komalli.DataBaseManagement.DataAccessObject
     {
         public int RegisterStaff(Staff staff)
         {
-            int result = 0;
-            using (var context = new KomalliDBEntities())
-            {
-                using (var transaction = context.Database.BeginTransaction())
-                {
-                    try
-                    {
-                        context.Staffs.Add(staff);
-                        result = context.SaveChanges();
-                        transaction.Commit();
-                    }
-                    catch (EntityException ex)
-                    {
-                        transaction.Rollback();
-                        throw new EntityException("Error al acceder a la base de datos.", ex);
-                    }
-                    catch (DbUpdateException ex)
-                    {
-                        transaction.Rollback();
-                        throw new DbUpdateException("Error al actualizar la base de datos.", ex);
-                    }
-                }
-            }
-            return result;
-        }
-        public int ModifyStaff(Staff staff)
-        {
-            int result = 0;
-            using (var context = new KomalliDBEntities())
-            {
-                using (var transaction = context.Database.BeginTransaction())
-                {
-                    try
-                    {
-                        var originalStaff = context.Staffs.FirstOrDefault(s => s.EmployeeNumber == staff.EmployeeNumber);
-                        if (originalStaff != null)
-                        {
-                            originalStaff.FirstName = staff.FirstName;
-                            originalStaff.LastName = staff.LastName;
-                            originalStaff.MiddleName = staff.MiddleName;
-                            originalStaff.Password = staff.Password;
-                            originalStaff.Role = staff.Role;
-
-                            result = context.SaveChanges();
-                            transaction.Commit();
-                        }
-                    }
-                    catch (EntityException ex)
-                    {
-                        transaction.Rollback();
-                        throw new EntityException("Error al acceder a la base de datos.", ex);
-                    }
-                    catch (DbUpdateException ex)
-                    {
-                        transaction.Rollback();
-                        throw new DbUpdateException("Error al actualizar la base de datos.", ex);
-                    }
-                }
-            }
-            return result;
-        }
-
-        public int DeleteStaff(int employeeNumber)
-        {
-            int result = 0;
-            using (var context = new KomalliDBEntities())
-            {
-                using (var transaction = context.Database.BeginTransaction())
-                {
-                    try
-                    {
-                        var staff = context.Staffs.FirstOrDefault(s => s.EmployeeNumber == employeeNumber);
-                        if (staff != null)
-                        {
-                            context.Staffs.Remove(staff);
-                            result = context.SaveChanges();
-                            transaction.Commit();
-                        }
-                    }
-                    catch (EntityException ex)
-                    {
-                        transaction.Rollback();
-                        throw new EntityException("Error al acceder a la base de datos.", ex);
-                    }
-                    catch (DbUpdateException ex)
-                    {
-                        transaction.Rollback();
-                        throw new DbUpdateException("Error al actualizar la base de datos.", ex);
-                    }
-                }
-            }
-            return result;
-        }
-
-        public int LogIn(string username, string password)
-        {
-            int result = 0;
             try
             {
                 using (var context = new KomalliDBEntities())
                 {
-                    var staff = context.Staffs.FirstOrDefault(s => s.FirstName == username && s.Password == password);
+                    context.Staffs.Add(staff);
+                    context.SaveChanges();
+                    return staff.StaffID;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al registrar el empleado.", ex);
+            }
+        }
+
+        public int UpdateStaff(Staff staff)
+        {
+            try
+            {
+                using (var context = new KomalliDBEntities())
+                {
+                    var existingStaff = context.Staffs.FirstOrDefault(s => s.EmployeeNumber == staff.EmployeeNumber);
+                    if (existingStaff != null)
+                    {
+                        existingStaff.FirstName = staff.FirstName;
+                        existingStaff.LastName = staff.LastName;
+                        existingStaff.MiddleName = staff.MiddleName;
+                        existingStaff.Password = staff.Password;
+                        existingStaff.Role = staff.Role;
+                        existingStaff.Status = staff.Status;
+                        context.SaveChanges();
+                        return 1;
+                    }
+                    return 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al modificar el empleado.", ex);
+            }
+        }
+
+        public int DeleteStaff(string employeeNumber)
+        {
+            try
+            {
+                using (var context = new KomalliDBEntities())
+                {
+                    var staff = context.Staffs.FirstOrDefault(s => s.EmployeeNumber == employeeNumber);
                     if (staff != null)
                     {
-                        result = 0; 
+                        context.Staffs.Remove(staff);
+                        context.SaveChanges();
+                        return 1;
+                    }
+                    return 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al eliminar el empleado.", ex);
+            }
+        }
+
+        public StaffPOCO VerifyLogin(StaffPOCO staffPoco)
+        {
+            try
+            {
+                using (var context = new KomalliDBEntities())
+                {
+                    var staff = context.Staffs
+                        .FirstOrDefault(s => s.EmployeeNumber == staffPoco.EmployeeNumber && s.Password == staffPoco.Password);
+
+                    if (staff != null)
+                    {
+                        return new StaffPOCO
+                        {
+                            Role = staff.Role,
+                            StaffId = staff.StaffID,
+                        };
                     }
                     else
                     {
-                        result = 1;                     }
+                        return new StaffPOCO
+                        {
+                            Role = -1 
+                        };
+                    }
                 }
             }
-            catch (EntityException ex)
+            catch (Exception ex)
             {
-                result = 5;
-                throw new EntityException("Error al acceder a la base de datos.", ex);
+                throw new Exception("Error al verificar el inicio de sesión.", ex);
             }
-            catch (InvalidOperationException ex)
-            {
-                result = 5;
-                throw new InvalidOperationException("Error al procesar la solicitud.", ex);
-            }
-            return result;
         }
     }
 }

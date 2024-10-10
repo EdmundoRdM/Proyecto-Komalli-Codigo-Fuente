@@ -1,4 +1,8 @@
-﻿using System;
+﻿using Komalli.DataBaseManagement.DataAccessObject;
+using Komalli.DataBaseManagement.DataModel;
+using Komalli.DataBaseManagement.POCOs;
+using Komalli.Util;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -37,18 +41,14 @@ namespace Komalli.GUIs
                     break;
 
                 case 1:
-                    // Contraseña oculta, ambos campos están llenos (Usuario y PasswordBox)
-                    // Aquí puedes ejecutar la lógica de inicio de sesión normal
-                    MessageBox.Show("Inicio de sesión con contraseña oculta exitoso.", "Exito", MessageBoxButton.OK, MessageBoxImage.Information);
                     username = txtUserName.Text;
                     password = pwdPassword.Password;
+                    VerifyLogin(username, password);
                     break;
                 case 2:
-                    // Contraseña visible, ambos campos están llenos (Usuario y TextBox de la contraseña visible)
-                    // Lógica de inicio de sesión para contraseña visible
-                    MessageBox.Show("Inicio de sesión con contraseña visible exitoso.", "Exito", MessageBoxButton.OK, MessageBoxImage.Information);
                     username = txtUserName.Text;
                     password = txtPassword.Text;
+                    VerifyLogin(username, password);
                     break;
 
                 default:
@@ -84,6 +84,78 @@ namespace Komalli.GUIs
             }
             return result;
         }
+
+
+        private void VerifyLogin(string employeeNumber, string password)
+        {
+            StaffPOCO staffPoco = new StaffPOCO
+            {
+                EmployeeNumber = employeeNumber,
+                Password = password
+            };
+
+            try
+            {
+                StaffDAO staffDAO = new StaffDAO();
+                StaffPOCO pocoLogIn = staffDAO.VerifyLogin(staffPoco);
+
+                int role = pocoLogIn.Role;
+
+                if (role != -1)
+                {
+                    StaffToken.SetEmployeeID(pocoLogIn.StaffId);
+                    GoToRoleLanding(role);
+                }
+                else
+                {
+                    MessageBox.Show("Número de empleado o contraseña incorrectos.", "Error de inicio de sesión", MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al iniciar sesión: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+
+        private void GoToRoleLanding(int role)
+        {
+            switch (role)
+            {
+                //Aqui va la navegacion al landin que corresponda. LEs dejo ejemplos. leugo borran los comentarios paro.
+
+                case 1:
+                    MessageBox.Show("Bienvenido Gerente. Id emleado: " +StaffToken.GetEmployeeID() , "Inicio de Sesión", MessageBoxButton.OK, MessageBoxImage.Information);
+                    //NavigationService.Navigate(new Uri("GerentePage.xaml", UriKind.Relative));
+                    break;
+
+                case 2:
+                    MessageBox.Show("Bienvenido Cajero. Id emleado:" +StaffToken.GetEmployeeID() , "Inicio de Sesión", MessageBoxButton.OK, MessageBoxImage.Information);
+                    //NavigationService.Navigate(new Uri("CajeroPage.xaml", UriKind.Relative));
+                    break;
+
+                case 3: 
+                    MessageBox.Show("Bienvenido Cocinero. Id emleado:" +StaffToken.GetEmployeeID(), "Inicio de Sesión", MessageBoxButton.OK, MessageBoxImage.Information);
+                    //NavigationService.Navigate(new Uri("CocineroPage.xaml", UriKind.Relative));
+                    break;
+
+                case 4: 
+                    MessageBox.Show("Bienvenido Usuario Anónimo. Id emleado:" +StaffToken.GetEmployeeID(), "Inicio de Sesión", MessageBoxButton.OK, MessageBoxImage.Information);
+                    //NavigationService.Navigate(new Uri("AnonimoPage.xaml", UriKind.Relative));
+                    break;
+
+                default:
+                    MessageBox.Show("Usuario o contraseña incorrectos. Por favor vuelva a intentarlo.", "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    break;
+            }
+        }
+
+        private void SetStaffToken(int staffID)
+        {
+            StaffToken.SetEmployeeID(staffID);
+        }
+
+
 
         private void HidePassword(object sender, MouseButtonEventArgs e)
         {

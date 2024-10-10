@@ -22,11 +22,12 @@ namespace Komalli.DataBaseManagement.DataModel
         }
     
         public int ProductId { get; set; }
-        public double Price { get; set; }
+        public decimal Price { get; set; }
         public int AvailableQuantity { get; set; }
         public string Description { get; set; }
         public string Name { get; set; }
-        public byte Type { get; set; }
+        public bool Type { get; set; }
+        public bool Status { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Bill> Bills { get; set; }

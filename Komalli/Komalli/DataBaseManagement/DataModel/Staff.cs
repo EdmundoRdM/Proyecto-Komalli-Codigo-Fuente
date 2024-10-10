@@ -22,12 +22,14 @@ namespace Komalli.DataBaseManagement.DataModel
             this.Spoilages = new HashSet<Spoilage>();
         }
     
-        public int EmployeeNumber { get; set; }
+        public int StaffID { get; set; }
+        public string EmployeeNumber { get; set; }
         public string Password { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string MiddleName { get; set; }
         public int Role { get; set; }
+        public bool Status { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ExtraordinaryMovement> ExtraordinaryMovements { get; set; }

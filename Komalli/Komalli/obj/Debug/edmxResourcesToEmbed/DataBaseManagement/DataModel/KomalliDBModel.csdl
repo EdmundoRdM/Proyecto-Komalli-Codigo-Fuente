@@ -8,7 +8,7 @@
     <Property Name="Sale" Type="Int32" Nullable="false" />
     <Property Name="Product" Type="Int32" Nullable="false" />
     <Property Name="Quantity" Type="Int32" Nullable="false" />
-    <Property Name="Total" Type="Int32" Nullable="false" />
+    <Property Name="Total" Type="Decimal" Precision="19" Scale="2" Nullable="false" />
     <NavigationProperty Name="Product1" Relationship="Self.FK__Bill__Product__5629CD9C" FromRole="Bill" ToRole="Product" />
     <NavigationProperty Name="Sale1" Relationship="Self.FK__Bill__Sale__5535A963" FromRole="Bill" ToRole="Sale" />
   </EntityType>
@@ -17,19 +17,19 @@
       <PropertyRef Name="MovementId" />
     </Key>
     <Property Name="MovementId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Amount" Type="Double" Nullable="false" />
+    <Property Name="Amount" Type="Decimal" Precision="19" Scale="2" Nullable="false" />
     <Property Name="Description" Type="String" MaxLength="300" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="MovementType" Type="Int32" Nullable="false" />
-    <Property Name="EmployeeNumber" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="Staff" Relationship="Self.FK__Extraordi__Emplo__5DCAEF64" FromRole="ExtraordinaryMovements" ToRole="Staff" />
+    <Property Name="StaffID" Type="Int32" Nullable="false" />
     <NavigationProperty Name="MovementType1" Relationship="Self.FK__Extraordi__Movem__5CD6CB2B" FromRole="ExtraordinaryMovements" ToRole="MovementType" />
+    <NavigationProperty Name="Staff" Relationship="Self.FK__Extraordi__Staff__5DCAEF64" FromRole="ExtraordinaryMovements" ToRole="Staff" />
   </EntityType>
   <EntityType Name="MovementType">
     <Key>
       <PropertyRef Name="MovementTypeId" />
     </Key>
-    <Property Name="MovementTypeId" Type="Int32" Nullable="false" />
+    <Property Name="MovementTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="MovementType1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
     <NavigationProperty Name="ExtraordinaryMovements" Relationship="Self.FK__Extraordi__Movem__5CD6CB2B" FromRole="MovementType" ToRole="ExtraordinaryMovements" />
   </EntityType>
@@ -37,12 +37,13 @@
     <Key>
       <PropertyRef Name="ProductId" />
     </Key>
-    <Property Name="ProductId" Type="Int32" Nullable="false" />
-    <Property Name="Price" Type="Double" Nullable="false" />
+    <Property Name="ProductId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Price" Type="Decimal" Precision="19" Scale="2" Nullable="false" />
     <Property Name="AvailableQuantity" Type="Int32" Nullable="false" />
     <Property Name="Description" Type="String" MaxLength="300" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Name" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="Type" Type="Byte" Nullable="false" />
+    <Property Name="Type" Type="Boolean" Nullable="false" />
+    <Property Name="Status" Type="Boolean" Nullable="false" />
     <NavigationProperty Name="Bills" Relationship="Self.FK__Bill__Product__5629CD9C" FromRole="Product" ToRole="Bill" />
     <NavigationProperty Name="Spoilages" Relationship="Self.FK__Spoilage__Produc__59063A47" FromRole="Product" ToRole="Spoilage" />
   </EntityType>
@@ -50,7 +51,7 @@
     <Key>
       <PropertyRef Name="RoleId" />
     </Key>
-    <Property Name="RoleId" Type="Int32" Nullable="false" />
+    <Property Name="RoleId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Role1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
     <NavigationProperty Name="Staffs" Relationship="Self.FK__Staff__Role__4D94879B" FromRole="Role" ToRole="Staff" />
   </EntityType>
@@ -58,14 +59,14 @@
     <Key>
       <PropertyRef Name="SaleId" />
     </Key>
-    <Property Name="SaleId" Type="Int32" Nullable="false" />
+    <Property Name="SaleId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="SaleDate" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="AdditionalRequest" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
-    <Property Name="TotalSale" Type="Int32" Nullable="false" />
+    <Property Name="TotalSale" Type="Decimal" Precision="19" Scale="2" Nullable="false" />
     <Property Name="CustomerName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="EmployeeNumber" Type="Int32" Nullable="false" />
+    <Property Name="StaffID" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Bills" Relationship="Self.FK__Bill__Sale__5535A963" FromRole="Sale" ToRole="Bill" />
-    <NavigationProperty Name="Staff" Relationship="Self.FK__Sale__EmployeeNu__52593CB8" FromRole="Sale" ToRole="Staff" />
+    <NavigationProperty Name="Staff" Relationship="Self.FK__Sale__StaffID__52593CB8" FromRole="Sale" ToRole="Staff" />
   </EntityType>
   <EntityType Name="Spoilage">
     <Key>
@@ -75,25 +76,27 @@
     <Property Name="Description" Type="String" MaxLength="300" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="Product" Type="Int32" Nullable="false" />
-    <Property Name="EmployeeNumber" Type="Int32" Nullable="false" />
+    <Property Name="StaffID" Type="Int32" Nullable="false" />
     <Property Name="Quantity" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Product1" Relationship="Self.FK__Spoilage__Produc__59063A47" FromRole="Spoilage" ToRole="Product" />
-    <NavigationProperty Name="Staff" Relationship="Self.FK__Spoilage__Employ__59FA5E80" FromRole="Spoilage" ToRole="Staff" />
+    <NavigationProperty Name="Staff" Relationship="Self.FK__Spoilage__StaffI__59FA5E80" FromRole="Spoilage" ToRole="Staff" />
   </EntityType>
   <EntityType Name="Staff">
     <Key>
-      <PropertyRef Name="EmployeeNumber" />
+      <PropertyRef Name="StaffID" />
     </Key>
-    <Property Name="EmployeeNumber" Type="Int32" Nullable="false" />
+    <Property Name="StaffID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmployeeNumber" Type="String" MaxLength="11" FixedLength="false" Unicode="false" annotation:StoreGeneratedPattern="Computed" />
     <Property Name="Password" Type="String" MaxLength="256" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="FirstName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="LastName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="MiddleName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Role" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="ExtraordinaryMovements" Relationship="Self.FK__Extraordi__Emplo__5DCAEF64" FromRole="Staff" ToRole="ExtraordinaryMovements" />
+    <Property Name="Status" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="ExtraordinaryMovements" Relationship="Self.FK__Extraordi__Staff__5DCAEF64" FromRole="Staff" ToRole="ExtraordinaryMovements" />
     <NavigationProperty Name="Role1" Relationship="Self.FK__Staff__Role__4D94879B" FromRole="Staff" ToRole="Role" />
-    <NavigationProperty Name="Sales" Relationship="Self.FK__Sale__EmployeeNu__52593CB8" FromRole="Staff" ToRole="Sale" />
-    <NavigationProperty Name="Spoilages" Relationship="Self.FK__Spoilage__Employ__59FA5E80" FromRole="Staff" ToRole="Spoilage" />
+    <NavigationProperty Name="Sales" Relationship="Self.FK__Sale__StaffID__52593CB8" FromRole="Staff" ToRole="Sale" />
+    <NavigationProperty Name="Spoilages" Relationship="Self.FK__Spoilage__StaffI__59FA5E80" FromRole="Staff" ToRole="Spoilage" />
   </EntityType>
   <Association Name="FK__Bill__Product__5629CD9C">
     <End Role="Product" Type="Self.Product" Multiplicity="1" />
@@ -119,18 +122,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Extraordi__Emplo__5DCAEF64">
-    <End Role="Staff" Type="Self.Staff" Multiplicity="1" />
-    <End Role="ExtraordinaryMovements" Type="Self.ExtraordinaryMovement" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Staff">
-        <PropertyRef Name="EmployeeNumber" />
-      </Principal>
-      <Dependent Role="ExtraordinaryMovements">
-        <PropertyRef Name="EmployeeNumber" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK__Extraordi__Movem__5CD6CB2B">
     <End Role="MovementType" Type="Self.MovementType" Multiplicity="1" />
     <End Role="ExtraordinaryMovements" Type="Self.ExtraordinaryMovement" Multiplicity="*" />
@@ -140,6 +131,18 @@
       </Principal>
       <Dependent Role="ExtraordinaryMovements">
         <PropertyRef Name="MovementType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Extraordi__Staff__5DCAEF64">
+    <End Role="Staff" Type="Self.Staff" Multiplicity="1" />
+    <End Role="ExtraordinaryMovements" Type="Self.ExtraordinaryMovement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Staff">
+        <PropertyRef Name="StaffID" />
+      </Principal>
+      <Dependent Role="ExtraordinaryMovements">
+        <PropertyRef Name="StaffID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -167,27 +170,27 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Sale__EmployeeNu__52593CB8">
+  <Association Name="FK__Sale__StaffID__52593CB8">
     <End Role="Staff" Type="Self.Staff" Multiplicity="1" />
     <End Role="Sale" Type="Self.Sale" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Staff">
-        <PropertyRef Name="EmployeeNumber" />
+        <PropertyRef Name="StaffID" />
       </Principal>
       <Dependent Role="Sale">
-        <PropertyRef Name="EmployeeNumber" />
+        <PropertyRef Name="StaffID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Spoilage__Employ__59FA5E80">
+  <Association Name="FK__Spoilage__StaffI__59FA5E80">
     <End Role="Staff" Type="Self.Staff" Multiplicity="1" />
     <End Role="Spoilage" Type="Self.Spoilage" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Staff">
-        <PropertyRef Name="EmployeeNumber" />
+        <PropertyRef Name="StaffID" />
       </Principal>
       <Dependent Role="Spoilage">
-        <PropertyRef Name="EmployeeNumber" />
+        <PropertyRef Name="StaffID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -208,12 +211,12 @@
       <End Role="Sale" EntitySet="Sales" />
       <End Role="Bill" EntitySet="Bills" />
     </AssociationSet>
-    <AssociationSet Name="FK__Extraordi__Emplo__5DCAEF64" Association="Self.FK__Extraordi__Emplo__5DCAEF64">
-      <End Role="Staff" EntitySet="Staffs" />
-      <End Role="ExtraordinaryMovements" EntitySet="ExtraordinaryMovements" />
-    </AssociationSet>
     <AssociationSet Name="FK__Extraordi__Movem__5CD6CB2B" Association="Self.FK__Extraordi__Movem__5CD6CB2B">
       <End Role="MovementType" EntitySet="MovementTypes" />
+      <End Role="ExtraordinaryMovements" EntitySet="ExtraordinaryMovements" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Extraordi__Staff__5DCAEF64" Association="Self.FK__Extraordi__Staff__5DCAEF64">
+      <End Role="Staff" EntitySet="Staffs" />
       <End Role="ExtraordinaryMovements" EntitySet="ExtraordinaryMovements" />
     </AssociationSet>
     <AssociationSet Name="FK__Spoilage__Produc__59063A47" Association="Self.FK__Spoilage__Produc__59063A47">
@@ -224,11 +227,11 @@
       <End Role="Role" EntitySet="Roles" />
       <End Role="Staff" EntitySet="Staffs" />
     </AssociationSet>
-    <AssociationSet Name="FK__Sale__EmployeeNu__52593CB8" Association="Self.FK__Sale__EmployeeNu__52593CB8">
+    <AssociationSet Name="FK__Sale__StaffID__52593CB8" Association="Self.FK__Sale__StaffID__52593CB8">
       <End Role="Staff" EntitySet="Staffs" />
       <End Role="Sale" EntitySet="Sales" />
     </AssociationSet>
-    <AssociationSet Name="FK__Spoilage__Employ__59FA5E80" Association="Self.FK__Spoilage__Employ__59FA5E80">
+    <AssociationSet Name="FK__Spoilage__StaffI__59FA5E80" Association="Self.FK__Spoilage__StaffI__59FA5E80">
       <End Role="Staff" EntitySet="Staffs" />
       <End Role="Spoilage" EntitySet="Spoilages" />
     </AssociationSet>

@@ -23,9 +23,9 @@ namespace Komalli.DataBaseManagement.DataModel
         public int SaleId { get; set; }
         public System.DateTime SaleDate { get; set; }
         public string AdditionalRequest { get; set; }
-        public int TotalSale { get; set; }
+        public decimal TotalSale { get; set; }
         public string CustomerName { get; set; }
-        public int EmployeeNumber { get; set; }
+        public int StaffID { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Bill> Bills { get; set; }

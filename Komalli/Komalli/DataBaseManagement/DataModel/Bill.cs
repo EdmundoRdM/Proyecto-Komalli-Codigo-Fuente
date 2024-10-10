@@ -17,7 +17,7 @@ namespace Komalli.DataBaseManagement.DataModel
         public int Sale { get; set; }
         public int Product { get; set; }
         public int Quantity { get; set; }
-        public int Total { get; set; }
+        public decimal Total { get; set; }
     
         public virtual Product Product1 { get; set; }
         public virtual Sale Sale1 { get; set; }

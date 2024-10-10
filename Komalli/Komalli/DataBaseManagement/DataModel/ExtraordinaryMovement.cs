@@ -15,13 +15,13 @@ namespace Komalli.DataBaseManagement.DataModel
     public partial class ExtraordinaryMovement
     {
         public int MovementId { get; set; }
-        public double Amount { get; set; }
+        public decimal Amount { get; set; }
         public string Description { get; set; }
         public System.DateTime Date { get; set; }
         public int MovementType { get; set; }
-        public int EmployeeNumber { get; set; }
+        public int StaffID { get; set; }
     
-        public virtual Staff Staff { get; set; }
         public virtual MovementType MovementType1 { get; set; }
+        public virtual Staff Staff { get; set; }
     }
 }

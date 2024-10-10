@@ -18,7 +18,7 @@ namespace Komalli.DataBaseManagement.DataModel
         public string Description { get; set; }
         public System.DateTime Date { get; set; }
         public int Product { get; set; }
-        public int EmployeeNumber { get; set; }
+        public int StaffID { get; set; }
         public int Quantity { get; set; }
     
         public virtual Product Product1 { get; set; }
