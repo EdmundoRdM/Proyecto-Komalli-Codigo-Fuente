@@ -5,9 +5,9 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Komalli.GUIs"
       mc:Ignorable="d" 
-      d:DesignHeight="922.16" 
-        d:DesignWidth="1742.8"
+      d:DesignHeight="922.16" d:DesignWidth="1742.8"
       Title="StaffModule">
+
     <Page.Resources>
         <Style x:Key="{ComponentResourceKey ResourceId=DataGridSelectAllButtonStyle, TypeInTargetAssembly={x:Type DataGrid}}" TargetType="{x:Type Button}">
             <Setter Property="Template">
@@ -101,93 +101,94 @@
         </Style>
     </Page.Resources>
 
-    <Grid x:Name="Background" Background="white">
-        <Grid>
+    <Grid x:Name="StaffModuleBackground" >
+
+        <local:ManagerNavigationBar Grid.Column="0" HorizontalAlignment="Left"  Width="300"/>
+        
+        <Grid Background="white">
             <Rectangle 
-                HorizontalAlignment="Left" 
-                Margin="295,50,0,738"  
-                Width="1448" 
-                Fill="#2C9B00"
-                RadiusX="20" 
-                RadiusY="20"/>
+            HorizontalAlignment="Left" 
+            Margin="295,50,0,738"  
+            Width="1448" 
+            Fill="#2C9B00"
+            RadiusX="20" 
+            RadiusY="20"/>
 
             <Label Content="Personal" 
-               HorizontalAlignment="Left" 
-               Margin="559,44,0,0" 
-               VerticalAlignment="Top" 
-               FontFamily="Titan One"
-               FontWeight="Bold"
-               Foreground="#FFFFFDFD"
-               FontSize="120"/>
+           HorizontalAlignment="Left" 
+           Margin="559,44,0,0" 
+           VerticalAlignment="Top" 
+           FontFamily="Titan One"
+           FontWeight="Bold"
+           Foreground="#FFFFFDFD"
+           FontSize="120"/>
         </Grid>
 
         <Grid>
             <Rectangle 
-                HorizontalAlignment="Left" 
-                Margin="367,240,0,602"  
-                Width="867" 
-                Fill="#BEBEBE"
-                RadiusX="20" 
-                RadiusY="20"/>
+            HorizontalAlignment="Left" 
+            Margin="367,240,0,602"  
+            Width="867" 
+            Fill="#BEBEBE"
+            RadiusX="20" 
+            RadiusY="20"/>
 
             <TextBox x:Name="txtStaffSearch"
-                HorizontalAlignment="Left" 
-                Margin="397,240,0,0"
-                TextWrapping="Wrap"
-                VerticalAlignment="Top" 
-                FontSize="30" 
-                Width="810" 
-                Height="80" 
-                Background="#BEBEBE"
-                Foreground="#FF262222"
-                TextChanged="TextBox_StaffSearch"
-                />
+            HorizontalAlignment="Left" 
+            Margin="397,240,0,0"
+            TextWrapping="Wrap"
+            VerticalAlignment="Top"
+            FontSize="30"
+            Width="810"
+            Height="80"
+            Background="#BEBEBE"
+            Foreground="#FF262222"/>
 
             <Image
-                HorizontalAlignment="Left"
-                Height="75" 
-                Margin="1248,243,0,0" 
-                VerticalAlignment="Top"
-                Width="75" 
-                Source="{StaticResource SearchIcon}"/>
+            HorizontalAlignment="Left"
+            Height="75" 
+            Margin="1248,243,0,0" 
+            VerticalAlignment="Top"
+            Width="75" 
+            Source="{StaticResource SearchIcon}"/>
 
             <Image
-                HorizontalAlignment="Left"
-                Height="75" 
-                Margin="1481,243,0,0" 
-                VerticalAlignment="Top"
-                Width="75" 
-                Source="{StaticResource NewIcon}"/>
+            HorizontalAlignment="Left"
+            Height="75" 
+            Margin="1481,243,0,0" 
+            VerticalAlignment="Top"
+            Width="75" 
+            Source="{StaticResource NewIcon}"/>
         </Grid>
 
         <DataGrid Style="{DynamicResource DataGridStyle}" x:Name="StaffGrid"
-            Background="AliceBlue" 
-            Margin="358,352,52,50"
-            Grid.Row="4"
-            Grid.Column="1"
-            Grid.RowSpan="2"
-            Grid.ColumnSpan="4"
-            AutoGenerateColumns="False"
-            FontSize="15"
-            CanUserAddRows="False"
-            CanUserResizeColumns="False"
-            CanUserSortColumns="False"
-            RowBackground="Transparent"
-            HeadersVisibility="Column"
-            GridLinesVisibility="Horizontal"
-            HorizontalGridLinesBrush="#030a00"
-            VerticalGridLinesBrush="#030a00">
+        Background="AliceBlue" 
+        Margin="358,352,52,50"
+        Grid.Row="4"
+        Grid.Column="1"
+        Grid.RowSpan="2"
+        Grid.ColumnSpan="4"
+        AutoGenerateColumns="False"
+        FontSize="15"
+        CanUserAddRows="False"
+        CanUserResizeColumns="False"
+        CanUserSortColumns="False"
+        RowBackground="Transparent"
+        HeadersVisibility="Column"
+        GridLinesVisibility="Horizontal"
+        HorizontalGridLinesBrush="#030a00"
+        VerticalGridLinesBrush="#030a00">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="N° Personal"
-                                    Width="170"/>
+                                Width="170"/>
                 <DataGridTextColumn Header="Nombre completo"
-                                    Width="650"/>
+                                Width="650"/>
                 <DataGridTextColumn Header="Contacto"
-                                    Width="*"/>
+                                Width="*"/>
                 <DataGridTextColumn Header="Rol"
-                                    Width="*"/>
+                                Width="*"/>
                 <DataGridTemplateColumn Header="Opciones"
-                                        Width="*">
+                                    Width="*">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <DockPanel>
@@ -200,7 +201,6 @@
 
         </DataGrid>
 
-        <local:ManagerNavigationBar Grid.Column="0" HorizontalAlignment="Left"  Width="300"/>
+        
     </Grid>
-
 </Page>

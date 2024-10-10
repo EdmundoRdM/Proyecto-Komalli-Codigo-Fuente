@@ -12,7 +12,8 @@
             <BitmapImage x:Key="UVFoundation"  UriSource="Media/UVLogos.png"/>
             <BitmapImage x:Key="ComedoresPNG"  UriSource="Media/ComedoresUVPNG.png"/>
             <BitmapImage x:Key="LogInImage"  UriSource="Media/LogInImage.png"/>
-
+            <BitmapImage x:Key="SearchIcon"  UriSource="Media/SearchIcon.png"/>
+            <BitmapImage x:Key="NewIcon"  UriSource="Media/NewIcon.png"/>
             <Style x:Key="RoundedTextBox" TargetType="TextBox">
                 <Setter Property="Template">
                     <Setter.Value>

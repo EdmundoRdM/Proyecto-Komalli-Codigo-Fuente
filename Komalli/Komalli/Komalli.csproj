@@ -64,12 +64,22 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="GUIs\ManagerNavigationBar.xaml.cs">
+      <DependentUpon>ManagerNavigationBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUIs\StaffModule.xaml.cs">
+      <DependentUpon>StaffModule.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Util\StaffToken.cs" />
     <Page Include="GUIs\LogIn.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="GUIs\ManagerLanding.xaml">
+    <Page Include="GUIs\ManagerNavigationBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GUIs\StaffModule.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -124,9 +134,6 @@
     <Compile Include="DataBaseManagement\POCOs\StaffPOCO.cs" />
     <Compile Include="GUIs\LogIn.xaml.cs">
       <DependentUpon>LogIn.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="GUIs\ManagerLanding.xaml.cs">
-      <DependentUpon>ManagerLanding.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -202,6 +209,8 @@
       <DependentUpon>KomalliDBModel.edmx</DependentUpon>
       <LastGenOutput>KomalliDBModel.cs</LastGenOutput>
     </Content>
+    <Resource Include="Media\NewIcon.png" />
+    <Resource Include="Media\SearchIcon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

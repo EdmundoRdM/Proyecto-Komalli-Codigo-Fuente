@@ -12,19 +12,19 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Page = System.Windows.Controls.Page;
 
 namespace Komalli.GUIs
 {
     /// <summary>
     /// Lógica de interacción para ManagerNavigationBar.xaml
     /// </summary>
-    public partial class ManagerNavigationBar : UserControl
+    public partial class ManagerNavigationBar : Page
     {
         public ManagerNavigationBar()
         {
             InitializeComponent();
         }
+
         private void BtnReportsModule_Click(object sender, RoutedEventArgs e)
         {
 
