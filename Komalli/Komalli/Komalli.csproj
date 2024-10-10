@@ -35,8 +35,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -55,6 +64,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="GUIs\LogIn.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="GUIs\ManagerLanding.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -66,6 +79,49 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataBaseManagement\DataAccessObject\StaffDAO.cs" />
+    <Compile Include="DataBaseManagement\DataModel\Bill.cs">
+      <DependentUpon>KomalliDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBaseManagement\DataModel\ExtraordinaryMovement.cs">
+      <DependentUpon>KomalliDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBaseManagement\DataModel\KomalliDBModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KomalliDBModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBaseManagement\DataModel\KomalliDBModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KomalliDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBaseManagement\DataModel\KomalliDBModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KomalliDBModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DataBaseManagement\DataModel\MovementType.cs">
+      <DependentUpon>KomalliDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBaseManagement\DataModel\Product.cs">
+      <DependentUpon>KomalliDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBaseManagement\DataModel\Role.cs">
+      <DependentUpon>KomalliDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBaseManagement\DataModel\Sale.cs">
+      <DependentUpon>KomalliDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBaseManagement\DataModel\Spoilage.cs">
+      <DependentUpon>KomalliDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBaseManagement\DataModel\Staff.cs">
+      <DependentUpon>KomalliDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GUIs\LogIn.xaml.cs">
+      <DependentUpon>LogIn.xaml</DependentUpon>
     </Compile>
     <Compile Include="GUIs\ManagerLanding.xaml.cs">
       <DependentUpon>ManagerLanding.xaml</DependentUpon>
@@ -93,6 +149,14 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EntityDeploy Include="DataBaseManagement\DataModel\KomalliDBModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>KomalliDBModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DataBaseManagement\DataModel\KomalliDBModel.edmx.diagram">
+      <DependentUpon>KomalliDBModel.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -101,11 +165,41 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Media\LogInImage.png" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Media\BackButton.png" />
     <Resource Include="Media\ComedoresUV.png" />
     <Resource Include="Media\UV.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Media\ComedoresUVPNG.png" />
+    <Resource Include="Media\Profile.png" />
+    <Resource Include="Media\UVLogos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Media\BackgroundLines.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Media\ClosedEye.png" />
+    <Resource Include="Media\OpenEye.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DataBaseManagement\DataModel\KomalliDBModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>KomalliDBModel.edmx</DependentUpon>
+      <LastGenOutput>KomalliDBModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DataBaseManagement\DataModel\KomalliDBModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>KomalliDBModel.edmx</DependentUpon>
+      <LastGenOutput>KomalliDBModel.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

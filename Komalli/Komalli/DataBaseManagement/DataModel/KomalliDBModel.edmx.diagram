@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="412fcbc2ceb34a7e8c8e3c442540b8d5" Name="Diagram1">
+        <EntityTypeShape EntityType="KomalliDBModel.Bill" Width="1.5" PointX="7.5" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="KomalliDBModel.ExtraordinaryMovement" Width="1.5" PointX="5.25" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KomalliDBModel.MovementType" Width="1.5" PointX="3" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="KomalliDBModel.Product" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KomalliDBModel.Role" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="KomalliDBModel.Sale" Width="1.5" PointX="5.25" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="KomalliDBModel.Spoilage" Width="1.5" PointX="8.25" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KomalliDBModel.Staff" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
+        <AssociationConnector Association="KomalliDBModel.FK__Bill__Product__5629CD9C" ManuallyRouted="false" />
+        <AssociationConnector Association="KomalliDBModel.FK__Bill__Sale__5535A963" ManuallyRouted="false" />
+        <AssociationConnector Association="KomalliDBModel.FK__Extraordi__Emplo__5DCAEF64" ManuallyRouted="false" />
+        <AssociationConnector Association="KomalliDBModel.FK__Extraordi__Movem__5CD6CB2B" ManuallyRouted="false" />
+        <AssociationConnector Association="KomalliDBModel.FK__Spoilage__Produc__59063A47" ManuallyRouted="false" />
+        <AssociationConnector Association="KomalliDBModel.FK__Staff__Role__4D94879B" ManuallyRouted="false" />
+        <AssociationConnector Association="KomalliDBModel.FK__Sale__EmployeeNu__52593CB8" ManuallyRouted="false" />
+        <AssociationConnector Association="KomalliDBModel.FK__Spoilage__Employ__59FA5E80" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

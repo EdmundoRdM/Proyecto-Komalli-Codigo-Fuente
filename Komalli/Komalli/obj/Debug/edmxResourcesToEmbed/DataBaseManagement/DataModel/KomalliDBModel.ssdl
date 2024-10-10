@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="KomalliDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Bill">
+    <Key>
+      <PropertyRef Name="Sale" />
+      <PropertyRef Name="Product" />
+    </Key>
+    <Property Name="Sale" Type="int" Nullable="false" />
+    <Property Name="Product" Type="int" Nullable="false" />
+    <Property Name="Quantity" Type="int" Nullable="false" />
+    <Property Name="Total" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ExtraordinaryMovements">
+    <Key>
+      <PropertyRef Name="MovementId" />
+    </Key>
+    <Property Name="MovementId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Amount" Type="float" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="300" Nullable="false" />
+    <Property Name="Date" Type="datetime" Nullable="false" />
+    <Property Name="MovementType" Type="int" Nullable="false" />
+    <Property Name="EmployeeNumber" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MovementType">
+    <Key>
+      <PropertyRef Name="MovementTypeId" />
+    </Key>
+    <Property Name="MovementTypeId" Type="int" Nullable="false" />
+    <Property Name="MovementType" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="ProductId" />
+    </Key>
+    <Property Name="ProductId" Type="int" Nullable="false" />
+    <Property Name="Price" Type="float" Nullable="false" />
+    <Property Name="AvailableQuantity" Type="int" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="300" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="Type" Type="tinyint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="RoleId" Type="int" Nullable="false" />
+    <Property Name="Role" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Sale">
+    <Key>
+      <PropertyRef Name="SaleId" />
+    </Key>
+    <Property Name="SaleId" Type="int" Nullable="false" />
+    <Property Name="SaleDate" Type="datetime" Nullable="false" />
+    <Property Name="AdditionalRequest" Type="varchar" MaxLength="300" />
+    <Property Name="TotalSale" Type="int" Nullable="false" />
+    <Property Name="CustomerName" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="EmployeeNumber" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Spoilage">
+    <Key>
+      <PropertyRef Name="SpoilageId" />
+    </Key>
+    <Property Name="SpoilageId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="300" Nullable="false" />
+    <Property Name="Date" Type="datetime" Nullable="false" />
+    <Property Name="Product" Type="int" Nullable="false" />
+    <Property Name="EmployeeNumber" Type="int" Nullable="false" />
+    <Property Name="Quantity" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Staff">
+    <Key>
+      <PropertyRef Name="EmployeeNumber" />
+    </Key>
+    <Property Name="EmployeeNumber" Type="int" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="256" Nullable="false" />
+    <Property Name="FirstName" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="LastName" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="MiddleName" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Role" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__Bill__Product__5629CD9C">
+    <End Role="Product" Type="Self.Product" Multiplicity="1" />
+    <End Role="Bill" Type="Self.Bill" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ProductId" />
+      </Principal>
+      <Dependent Role="Bill">
+        <PropertyRef Name="Product" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Bill__Sale__5535A963">
+    <End Role="Sale" Type="Self.Sale" Multiplicity="1" />
+    <End Role="Bill" Type="Self.Bill" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sale">
+        <PropertyRef Name="SaleId" />
+      </Principal>
+      <Dependent Role="Bill">
+        <PropertyRef Name="Sale" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Extraordi__Emplo__5DCAEF64">
+    <End Role="Staff" Type="Self.Staff" Multiplicity="1" />
+    <End Role="ExtraordinaryMovements" Type="Self.ExtraordinaryMovements" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Staff">
+        <PropertyRef Name="EmployeeNumber" />
+      </Principal>
+      <Dependent Role="ExtraordinaryMovements">
+        <PropertyRef Name="EmployeeNumber" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Extraordi__Movem__5CD6CB2B">
+    <End Role="MovementType" Type="Self.MovementType" Multiplicity="1" />
+    <End Role="ExtraordinaryMovements" Type="Self.ExtraordinaryMovements" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MovementType">
+        <PropertyRef Name="MovementTypeId" />
+      </Principal>
+      <Dependent Role="ExtraordinaryMovements">
+        <PropertyRef Name="MovementType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Sale__EmployeeNu__52593CB8">
+    <End Role="Staff" Type="Self.Staff" Multiplicity="1" />
+    <End Role="Sale" Type="Self.Sale" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Staff">
+        <PropertyRef Name="EmployeeNumber" />
+      </Principal>
+      <Dependent Role="Sale">
+        <PropertyRef Name="EmployeeNumber" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Spoilage__Employ__59FA5E80">
+    <End Role="Staff" Type="Self.Staff" Multiplicity="1" />
+    <End Role="Spoilage" Type="Self.Spoilage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Staff">
+        <PropertyRef Name="EmployeeNumber" />
+      </Principal>
+      <Dependent Role="Spoilage">
+        <PropertyRef Name="EmployeeNumber" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Spoilage__Produc__59063A47">
+    <End Role="Product" Type="Self.Product" Multiplicity="1" />
+    <End Role="Spoilage" Type="Self.Spoilage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ProductId" />
+      </Principal>
+      <Dependent Role="Spoilage">
+        <PropertyRef Name="Product" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Staff__Role__4D94879B">
+    <End Role="Role" Type="Self.Role" Multiplicity="1" />
+    <End Role="Staff" Type="Self.Staff" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="RoleId" />
+      </Principal>
+      <Dependent Role="Staff">
+        <PropertyRef Name="Role" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="KomalliDBModelStoreContainer">
+    <EntitySet Name="Bill" EntityType="Self.Bill" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ExtraordinaryMovements" EntityType="Self.ExtraordinaryMovements" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MovementType" EntityType="Self.MovementType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sale" EntityType="Self.Sale" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Spoilage" EntityType="Self.Spoilage" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Staff" EntityType="Self.Staff" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Bill__Product__5629CD9C" Association="Self.FK__Bill__Product__5629CD9C">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="Bill" EntitySet="Bill" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Bill__Sale__5535A963" Association="Self.FK__Bill__Sale__5535A963">
+      <End Role="Sale" EntitySet="Sale" />
+      <End Role="Bill" EntitySet="Bill" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Extraordi__Emplo__5DCAEF64" Association="Self.FK__Extraordi__Emplo__5DCAEF64">
+      <End Role="Staff" EntitySet="Staff" />
+      <End Role="ExtraordinaryMovements" EntitySet="ExtraordinaryMovements" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Extraordi__Movem__5CD6CB2B" Association="Self.FK__Extraordi__Movem__5CD6CB2B">
+      <End Role="MovementType" EntitySet="MovementType" />
+      <End Role="ExtraordinaryMovements" EntitySet="ExtraordinaryMovements" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Sale__EmployeeNu__52593CB8" Association="Self.FK__Sale__EmployeeNu__52593CB8">
+      <End Role="Staff" EntitySet="Staff" />
+      <End Role="Sale" EntitySet="Sale" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Spoilage__Employ__59FA5E80" Association="Self.FK__Spoilage__Employ__59FA5E80">
+      <End Role="Staff" EntitySet="Staff" />
+      <End Role="Spoilage" EntitySet="Spoilage" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Spoilage__Produc__59063A47" Association="Self.FK__Spoilage__Produc__59063A47">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="Spoilage" EntitySet="Spoilage" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Staff__Role__4D94879B" Association="Self.FK__Staff__Role__4D94879B">
+      <End Role="Role" EntitySet="Role" />
+      <End Role="Staff" EntitySet="Staff" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

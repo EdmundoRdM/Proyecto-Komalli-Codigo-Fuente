@@ -1,0 +1,131 @@
+﻿<Page x:Class="Komalli.GUIs.LogIn"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Komalli.GUIs"
+      mc:Ignorable="d" 
+      Height="920" 
+      Width="1740"
+      Title="LogIn">
+
+    <Grid Background="White">
+        <Image
+            Source="\Media\BackgroundLines.png" 
+            Margin="-214,-4,424,-3"/>
+
+        <Image HorizontalAlignment="Left" 
+               Height="220" Width="220"
+               Margin="1255,145,0,0" 
+               VerticalAlignment="Top" 
+               Source="\Media\Profile.png"/>
+
+        <Image HorizontalAlignment="Left" 
+               Height="396" 
+               Width="478"
+               Margin="206,240,0,0" 
+               VerticalAlignment="Top"
+               Source="\Media\ComedoresUVPNG.png"/>
+
+        <TextBlock Text="¡Somos Universidad Veracruzana!" 
+                   FontSize="40" 
+                   FontWeight="Bold" 
+                   Foreground="#0047AB" 
+                   Margin="166,439,0,0" 
+                   HorizontalAlignment="Left" 
+                   VerticalAlignment="Top"/>
+
+        <TextBlock Text="Unidos por una Alimentación saludable: Comedores universitarios UV, donde cada comida es un vinculo entre estudiantes y personal, alimentando cuerpos y corazones " 
+           FontSize="27" 
+           Foreground="#0047AB" 
+           Margin="102,498,0,0" 
+           HorizontalAlignment="Left" 
+           TextAlignment="Center"
+           VerticalAlignment="Top" 
+           Width="802" 
+           TextWrapping="Wrap"/>
+
+        <Label Content="Usuario:" 
+               FontWeight="Bold"
+               FontSize="30"
+               Foreground="#0047AB" 
+               HorizontalAlignment="Left" 
+               Margin="1068,453,0,0" 
+               VerticalAlignment="Top"/>
+
+        <Label Content="Contraseña:" 
+            FontWeight="Bold"
+            FontSize="30"
+            Foreground="#0047AB" 
+            HorizontalAlignment="Left" 
+            Margin="1068,511,0,0" 
+            VerticalAlignment="Top"/>
+
+        <TextBox x:Name="txtUserName"
+            HorizontalAlignment="Left" 
+            Margin="1194,466,0,0" 
+            TextWrapping="Wrap" 
+            Text="" 
+            VerticalAlignment="Top" 
+            Width="320"
+            Height="31"
+            Style="{StaticResource RoundedTextBox}"/>
+
+        <PasswordBox x:Name="pwdPassword"
+            HorizontalAlignment="Left" 
+            Margin="1245,527,0,0" 
+            VerticalAlignment="Top" 
+            Width="320"
+            Style="{StaticResource RoundedPasswordBox}" Height="30"/>
+
+        <TextBox x:Name="txtPassword"
+                Visibility="Collapsed"
+                HorizontalAlignment="Left" 
+                Margin="1246,526,0,0" 
+                TextWrapping="Wrap" 
+                Text="" 
+                VerticalAlignment="Top" 
+                Width="320"
+                Height="31"
+                Style="{StaticResource RoundedTextBox}"/>
+
+        <Label Content="Iniciar Sesión" 
+            FontWeight="Bold"
+            FontSize="40"
+            Foreground="#0047AB" 
+            HorizontalAlignment="Left" 
+            Margin="1233,338,0,0" 
+            VerticalAlignment="Top"/>
+
+        <Button x:Name="btnLogIn"
+                Content="Ingresar"
+                FontSize="23"
+                VerticalContentAlignment="Center"
+                HorizontalAlignment="Left" 
+                Margin="1270,590,0,0" 
+                VerticalAlignment="Top"
+                Style="{StaticResource RoundedGreenButton}" 
+                Width="186" 
+                Height="33" Click="LogIng_Click"/>
+        
+        <Image x:Name="btnSeePassword"
+               Visibility="Collapsed"
+               MouseLeftButtonUp="SeePassword"
+               HorizontalAlignment="Left" 
+               Height="50" 
+               Width="50"
+               Margin="1577,518,0,0" 
+               VerticalAlignment="Top"
+               Source="\Media\OpenEye.png"/>
+        
+        <Image x:Name="btnHidePassword"
+            MouseLeftButtonUp="HidePassword"
+            HorizontalAlignment="Left" 
+            Height="50" 
+            Width="50"
+            Margin="1577,518,0,0" 
+            VerticalAlignment="Top"
+            Source="/Media/ClosedEye.png"/>
+
+    </Grid>
+</Page>
