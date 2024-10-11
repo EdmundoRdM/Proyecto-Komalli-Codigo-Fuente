@@ -33,7 +33,8 @@ C:\Users\nando\Desktop\Trabajos UV\Desarrollo de software\Proyecto\Codigo\Proyec
 C:\Users\nando\Desktop\Trabajos UV\Desarrollo de software\Proyecto\Codigo\Proyecto-Komalli-Codigo-Fuente\Komalli\Komalli\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\nando\Desktop\Trabajos UV\Desarrollo de software\Proyecto\Codigo\Proyecto-Komalli-Codigo-Fuente\Komalli\Komalli\obj\Debug\Komalli.csproj.AssemblyReference.cache
 C:\Users\nando\Desktop\Trabajos UV\Desarrollo de software\Proyecto\Codigo\Proyecto-Komalli-Codigo-Fuente\Komalli\Komalli\obj\Debug\GUIs\LogIn.g.cs
-C:\Users\nando\Desktop\Trabajos UV\Desarrollo de software\Proyecto\Codigo\Proyecto-Komalli-Codigo-Fuente\Komalli\Komalli\obj\Debug\GUIs\ManagerNavigationBar.g.cs
+C:\Users\nando\Desktop\Trabajos UV\Desarrollo de software\Proyecto\Codigo\Proyecto-Komalli-Codigo-Fuente\Komalli\Komalli\obj\Debug\GUIs\ManagerLanding.g.cs
+C:\Users\nando\Desktop\Trabajos UV\Desarrollo de software\Proyecto\Codigo\Proyecto-Komalli-Codigo-Fuente\Komalli\Komalli\obj\Debug\GUIs\NavigationBar.g.cs
 C:\Users\nando\Desktop\Trabajos UV\Desarrollo de software\Proyecto\Codigo\Proyecto-Komalli-Codigo-Fuente\Komalli\Komalli\obj\Debug\GUIs\StaffModule.g.cs
 C:\Users\nando\Desktop\Trabajos UV\Desarrollo de software\Proyecto\Codigo\Proyecto-Komalli-Codigo-Fuente\Komalli\Komalli\obj\Debug\MainWindow.g.cs
 C:\Users\nando\Desktop\Trabajos UV\Desarrollo de software\Proyecto\Codigo\Proyecto-Komalli-Codigo-Fuente\Komalli\Komalli\obj\Debug\App.g.cs
@@ -43,7 +44,8 @@ C:\Users\nando\Desktop\Trabajos UV\Desarrollo de software\Proyecto\Codigo\Proyec
 C:\Users\nando\Desktop\Trabajos UV\Desarrollo de software\Proyecto\Codigo\Proyecto-Komalli-Codigo-Fuente\Komalli\Komalli\obj\Debug\Komalli_MarkupCompile.lref
 C:\Users\nando\Desktop\Trabajos UV\Desarrollo de software\Proyecto\Codigo\Proyecto-Komalli-Codigo-Fuente\Komalli\Komalli\obj\Debug\App.baml
 C:\Users\nando\Desktop\Trabajos UV\Desarrollo de software\Proyecto\Codigo\Proyecto-Komalli-Codigo-Fuente\Komalli\Komalli\obj\Debug\GUIs\LogIn.baml
-C:\Users\nando\Desktop\Trabajos UV\Desarrollo de software\Proyecto\Codigo\Proyecto-Komalli-Codigo-Fuente\Komalli\Komalli\obj\Debug\GUIs\ManagerNavigationBar.baml
+C:\Users\nando\Desktop\Trabajos UV\Desarrollo de software\Proyecto\Codigo\Proyecto-Komalli-Codigo-Fuente\Komalli\Komalli\obj\Debug\GUIs\ManagerLanding.baml
+C:\Users\nando\Desktop\Trabajos UV\Desarrollo de software\Proyecto\Codigo\Proyecto-Komalli-Codigo-Fuente\Komalli\Komalli\obj\Debug\GUIs\NavigationBar.baml
 C:\Users\nando\Desktop\Trabajos UV\Desarrollo de software\Proyecto\Codigo\Proyecto-Komalli-Codigo-Fuente\Komalli\Komalli\obj\Debug\GUIs\StaffModule.baml
 C:\Users\nando\Desktop\Trabajos UV\Desarrollo de software\Proyecto\Codigo\Proyecto-Komalli-Codigo-Fuente\Komalli\Komalli\obj\Debug\MainWindow.baml
 C:\Users\nando\Desktop\Trabajos UV\Desarrollo de software\Proyecto\Codigo\Proyecto-Komalli-Codigo-Fuente\Komalli\Komalli\obj\Debug\Komalli.g.resources

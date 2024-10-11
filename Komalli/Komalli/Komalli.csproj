@@ -64,18 +64,26 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="GUIs\ManagerNavigationBar.xaml.cs">
-      <DependentUpon>ManagerNavigationBar.xaml</DependentUpon>
+    <Compile Include="GUIs\ManagerLanding.xaml.cs">
+      <DependentUpon>ManagerLanding.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUIs\NavigationBar.xaml.cs">
+      <DependentUpon>NavigationBar.xaml</DependentUpon>
     </Compile>
     <Compile Include="GUIs\StaffModule.xaml.cs">
       <DependentUpon>StaffModule.xaml</DependentUpon>
     </Compile>
     <Compile Include="Util\StaffToken.cs" />
+    <Compile Include="Util\Utilities.cs" />
     <Page Include="GUIs\LogIn.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="GUIs\ManagerNavigationBar.xaml">
+    <Page Include="GUIs\ManagerLanding.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GUIs\NavigationBar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -209,6 +217,8 @@
       <DependentUpon>KomalliDBModel.edmx</DependentUpon>
       <LastGenOutput>KomalliDBModel.cs</LastGenOutput>
     </Content>
+    <Resource Include="Media\LogoUV.png" />
+    <Resource Include="Media\ComedoresU.png" />
     <Resource Include="Media\NewIcon.png" />
     <Resource Include="Media\SearchIcon.png" />
   </ItemGroup>

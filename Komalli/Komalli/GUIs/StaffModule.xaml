@@ -103,8 +103,6 @@
 
     <Grid x:Name="StaffModuleBackground" >
 
-        <local:ManagerNavigationBar Grid.Column="0" HorizontalAlignment="Left"  Width="300"/>
-        
         <Grid Background="white">
             <Rectangle 
             HorizontalAlignment="Left" 
@@ -162,22 +160,22 @@
         </Grid>
 
         <DataGrid Style="{DynamicResource DataGridStyle}" x:Name="StaffGrid"
-        Background="AliceBlue" 
-        Margin="358,352,52,50"
-        Grid.Row="4"
-        Grid.Column="1"
-        Grid.RowSpan="2"
-        Grid.ColumnSpan="4"
-        AutoGenerateColumns="False"
-        FontSize="15"
-        CanUserAddRows="False"
-        CanUserResizeColumns="False"
-        CanUserSortColumns="False"
-        RowBackground="Transparent"
-        HeadersVisibility="Column"
-        GridLinesVisibility="Horizontal"
-        HorizontalGridLinesBrush="#030a00"
-        VerticalGridLinesBrush="#030a00">
+            Background="AliceBlue" 
+            Margin="358,352,52,50"
+            Grid.Row="4"
+            Grid.Column="1"
+            Grid.RowSpan="2"
+            Grid.ColumnSpan="4"
+            AutoGenerateColumns="False"
+            FontSize="15"
+            CanUserAddRows="False"
+            CanUserResizeColumns="False"
+            CanUserSortColumns="False"
+            RowBackground="Transparent"
+            HeadersVisibility="Column"
+            GridLinesVisibility="Horizontal"
+            HorizontalGridLinesBrush="#030a00"
+            VerticalGridLinesBrush="#030a00">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="N° Personal"
                                 Width="170"/>
@@ -201,6 +199,48 @@
 
         </DataGrid>
 
-        
+
+
+        <local:NavigationBar Grid.Column="0" HorizontalAlignment="Left" Width="300"/>
+
+        <Grid x:Name="RegisterStaffForm">
+            <Rectangle HorizontalAlignment="Left" 
+                       Height="922" 
+                       Margin="301,0,0,0" 
+                       VerticalAlignment="Center" 
+                       Width="1442" 
+                       Fill="Aqua"/>
+            <Grid>
+                <Rectangle 
+                    HorizontalAlignment="Left" 
+                    Margin="295,50,0,738"  
+                    Width="1448" 
+                    Fill="#2C9B00"
+                    RadiusX="20" 
+                    RadiusY="20"/>
+
+                 <Label x:Name="TitleForm" 
+                    Content="Personal" 
+                    HorizontalAlignment="Left" 
+                    Margin="559,44,0,0" 
+                    VerticalAlignment="Top" 
+                    FontFamily="Titan One"
+                    FontWeight="Bold"
+                    Foreground="#FFFFFDFD"
+                    FontSize="120"/>
+
+                <TextBox x:Name="txtStaffName"
+                    HorizontalAlignment="Left" 
+                    Margin="397,240,0,0"
+                    TextWrapping="Wrap"
+                    VerticalAlignment="Top"
+                    FontSize="30"
+                    Width="810"
+                    Height="80"
+                    Background="#BEBEBE"
+                    Foreground="#FF262222"/>
+            </Grid>
+        </Grid>
+
     </Grid>
 </Page>

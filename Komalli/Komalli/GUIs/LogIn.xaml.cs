@@ -17,6 +17,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Komalli.Util;
 
 namespace Komalli.GUIs
 {
@@ -103,7 +104,7 @@ namespace Komalli.GUIs
 
                 if (role != -1)
                 {
-                    StaffToken.SetEmployeeID(pocoLogIn.StaffId);
+                    StaffToken.SetEmployeePOCO(pocoLogIn);
                     GoToRoleLanding(role);
                 }
                 else
@@ -120,27 +121,29 @@ namespace Komalli.GUIs
 
         private void GoToRoleLanding(int role)
         {
+            StaffPOCO staffPOCO = StaffToken.GetEmployeePOCO();
+            int rol = staffPOCO.Role;
             switch (role)
-            {
+            {               
                 //Aqui va la navegacion al landin que corresponda. LEs dejo ejemplos. leugo borran los comentarios paro.
 
                 case 1:
-                    MessageBox.Show("Bienvenido Gerente. Id emleado: " +StaffToken.GetEmployeeID() , "Inicio de Sesión", MessageBoxButton.OK, MessageBoxImage.Information);
-                    //NavigationService.Navigate(new Uri("GerentePage.xaml", UriKind.Relative));
+                    MessageBox.Show("Bienvenido Gerente. Id emleado: "  , "Inicio de Sesión", MessageBoxButton.OK, MessageBoxImage.Information);
+                    Utilities.ChangePage(new ManagerLanding());
                     break;
 
                 case 2:
-                    MessageBox.Show("Bienvenido Cajero. Id emleado:" +StaffToken.GetEmployeeID() , "Inicio de Sesión", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBox.Show("Bienvenido Cajero. Id emleado:" +rol , "Inicio de Sesión", MessageBoxButton.OK, MessageBoxImage.Information);
                     //NavigationService.Navigate(new Uri("CajeroPage.xaml", UriKind.Relative));
                     break;
 
                 case 3: 
-                    MessageBox.Show("Bienvenido Cocinero. Id emleado:" +StaffToken.GetEmployeeID(), "Inicio de Sesión", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBox.Show("Bienvenido Cocinero. Id emleado:" +rol, "Inicio de Sesión", MessageBoxButton.OK, MessageBoxImage.Information);
                     //NavigationService.Navigate(new Uri("CocineroPage.xaml", UriKind.Relative));
                     break;
 
                 case 4: 
-                    MessageBox.Show("Bienvenido Usuario Anónimo. Id emleado:" +StaffToken.GetEmployeeID(), "Inicio de Sesión", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBox.Show("Bienvenido Usuario Anónimo. Id emleado:" +rol, "Inicio de Sesión", MessageBoxButton.OK, MessageBoxImage.Information);
                     //NavigationService.Navigate(new Uri("AnonimoPage.xaml", UriKind.Relative));
                     break;
 
@@ -148,11 +151,6 @@ namespace Komalli.GUIs
                     MessageBox.Show("Usuario o contraseña incorrectos. Por favor vuelva a intentarlo.", "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
                     break;
             }
-        }
-
-        private void SetStaffToken(int staffID)
-        {
-            StaffToken.SetEmployeeID(staffID);
         }
 
 
