@@ -99,6 +99,14 @@
             <Setter Property="VerticalContentAlignment" Value="Center"/>
             <Setter Property="FontSize" Value="25"/>
         </Style>
+        <Style TargetType="DataGridCell">
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <!-- Cambia esto si prefieres otro color de texto -->
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="20"/>
+        </Style>
     </Page.Resources>
 
     <Grid x:Name="StaffModuleBackground" >
@@ -120,43 +128,76 @@
            FontWeight="Bold"
            Foreground="#FFFFFDFD"
            FontSize="120"/>
+
+            <Image
+                 HorizontalAlignment="Left"
+                 Height="184" 
+                 Margin="328,29,0,0" 
+                 VerticalAlignment="Top"
+                 Width="228" 
+                 Source="{StaticResource ComedoresU}"/>
         </Grid>
 
         <Grid>
             <Rectangle 
             HorizontalAlignment="Left" 
-            Margin="367,240,0,602"  
+            Margin="367,255,0,594"  
             Width="867" 
             Fill="#BEBEBE"
             RadiusX="20" 
-            RadiusY="20"/>
+            RadiusY="20"
+            Height="55"/>
 
             <TextBox x:Name="txtStaffSearch"
-            HorizontalAlignment="Left" 
-            Margin="397,240,0,0"
-            TextWrapping="Wrap"
-            VerticalAlignment="Top"
-            FontSize="30"
-            Width="810"
-            Height="80"
-            Background="#BEBEBE"
-            Foreground="#FF262222"/>
+                HorizontalAlignment="Left" 
+                Margin="397,255,0,594"
+                TextWrapping="Wrap"
+                VerticalAlignment="Top"
+                FontSize="30"
+                Width="813"
+                Height="55"
+                Background="#BEBEBE"
+                Foreground="#FF262222">
+            </TextBox>
+
+            <Label Content="Buscar personal por empleado:" 
+                HorizontalAlignment="Left" 
+                Margin="379,215,0,0" 
+                VerticalAlignment="Top"
+                FontSize="25"
+                Foreground="#9b9b9b"
+                FontFamily="Inter"
+                FontWeight="Bold"/>
 
             <Image
-            HorizontalAlignment="Left"
-            Height="75" 
-            Margin="1248,243,0,0" 
-            VerticalAlignment="Top"
-            Width="75" 
-            Source="{StaticResource SearchIcon}"/>
+                HorizontalAlignment="Left"
+                Height="75" 
+                Margin="1248,243,0,0" 
+                VerticalAlignment="Top"
+                Width="75" 
+                Cursor="Hand" 
+                Source="{StaticResource SearchIcon}"
+                MouseLeftButtonUp="BtnSearchStaff_Click"/>
 
             <Image
-            HorizontalAlignment="Left"
-            Height="75" 
-            Margin="1481,243,0,0" 
-            VerticalAlignment="Top"
-            Width="75" 
-            Source="{StaticResource NewIcon}"/>
+                HorizontalAlignment="Left"
+                Height="75" 
+                Margin="1343,243,0,0" 
+                VerticalAlignment="Top"
+                Width="75" 
+                Cursor="Hand" 
+                Source="{StaticResource ReloadIcon}"
+                MouseLeftButtonUp="BtnReloadStaffs_Click"/>
+
+            <Image
+                HorizontalAlignment="Left"
+                Height="75" 
+                Margin="1481,243,0,0" 
+                VerticalAlignment="Top"
+                Width="75" 
+                Source="{StaticResource NewIcon}"
+                Cursor="Hand" 
+                MouseLeftButtonUp="BtnRegisterStaff_Click"/>
         </Grid>
 
         <DataGrid Style="{DynamicResource DataGridStyle}" x:Name="StaffGrid"
@@ -177,39 +218,87 @@
             HorizontalGridLinesBrush="#030a00"
             VerticalGridLinesBrush="#030a00">
             <DataGrid.Columns>
+                <DataGridTextColumn Header="ID"
+                                Width="70"
+                                Binding="{Binding IdStaff}"/>            
                 <DataGridTextColumn Header="N° Personal"
-                                Width="170"/>
-                <DataGridTextColumn Header="Nombre completo"
-                                Width="650"/>
-                <DataGridTextColumn Header="Contacto"
-                                Width="*"/>
+                                Width="200"
+                                Binding="{Binding EmployeeNumber}"/>
+                <DataGridTextColumn Header="Nombre(s)"
+                                Width="400"
+                                Binding="{Binding FirstName}"/>
+                <DataGridTextColumn Header="Apellido paterno"
+                                Width="*"
+                                Binding="{Binding LastName}"/>
                 <DataGridTextColumn Header="Rol"
-                                Width="*"/>
+                                Width="*"
+                                Binding="{Binding RoleName}"/>
                 <DataGridTemplateColumn Header="Opciones"
                                     Width="*">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <DockPanel>
-                                <!--Botones-->
-                            </DockPanel>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" >
+                                <Button x:Name="btnUpdateStaff"
+                                    VerticalAlignment="Center" 
+                                    HorizontalAlignment="Center" 
+                                    Height="40" 
+                                    Width="40" 
+                                    Cursor="Hand"
+                                    Click = "BtnUpdateStaff_Click"
+                                    CommandParameter="{Binding IdStaff}"
+                                    Background="Transparent"
+                                    BorderBrush="Transparent"
+                                    Margin="5,0,5,0">
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image
+                                            HorizontalAlignment="Center" 
+                                            Height="35" 
+                                            VerticalAlignment="Center"
+                                            Width="35"
+                                            RenderTransformOrigin="0.511,0.545" 
+                                            Source="{StaticResource EditIcon}"
+                                            Cursor="Hand"/>
+                                    </StackPanel>
+                                </Button>
+
+                                <Button x:Name="btnDeleteStaff"
+                                     VerticalAlignment="Center"
+                                     HorizontalAlignment="Center" 
+                                     Height="40" 
+                                     Width="40" 
+                                     Cursor="Hand"
+                                     Click = "BtnDeleteStaff_Click"
+                                     CommandParameter="{Binding IdStaff}"
+                                     Background="Transparent"
+                                     BorderBrush="Transparent"
+                                     Margin="5,0,5,0">
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image 
+                                             HorizontalAlignment="Center" 
+                                             Height="35" 
+                                             VerticalAlignment="Top"
+                                             Width="35"
+                                             RenderTransformOrigin="0.511,0.545" 
+                                             Source="{StaticResource TrashIcon}"
+                                             Cursor="Hand"/>
+                                    </StackPanel>
+                                </Button>
+                            </StackPanel>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
-
         </DataGrid>
-
-
 
         <local:NavigationBar Grid.Column="0" HorizontalAlignment="Left" Width="300"/>
 
-        <Grid x:Name="RegisterStaffForm">
+        <Grid x:Name="RegisterStaffForm" Visibility="Collapsed">
             <Rectangle HorizontalAlignment="Left" 
                        Height="922" 
                        Margin="301,0,0,0" 
                        VerticalAlignment="Center" 
                        Width="1442" 
-                       Fill="Aqua"/>
+                       Fill="White"/>
             <Grid>
                 <Rectangle 
                     HorizontalAlignment="Left" 
@@ -219,8 +308,16 @@
                     RadiusX="20" 
                     RadiusY="20"/>
 
-                 <Label x:Name="TitleForm" 
-                    Content="Personal" 
+                <Image
+                     HorizontalAlignment="Left"
+                     Height="184" 
+                     Margin="328,29,0,0" 
+                     VerticalAlignment="Top"
+                     Width="228" 
+                     Source="{StaticResource ComedoresU}"/>
+
+                <Label x:Name="TitleForm" 
+                    Content="Editar personal" 
                     HorizontalAlignment="Left" 
                     Margin="559,44,0,0" 
                     VerticalAlignment="Top" 
@@ -231,14 +328,174 @@
 
                 <TextBox x:Name="txtStaffName"
                     HorizontalAlignment="Left" 
-                    Margin="397,240,0,0"
+                    Margin="409,292,0,0"
                     TextWrapping="Wrap"
                     VerticalAlignment="Top"
                     FontSize="30"
-                    Width="810"
-                    Height="80"
+                    Width="430"
+                    Height="68"
                     Background="#BEBEBE"
-                    Foreground="#FF262222"/>
+                    Foreground="#FF262222"
+                    BorderBrush="#FF262222"
+                    BorderThickness="3"/>
+
+                <TextBox x:Name="txtStaffLastName"
+                    HorizontalAlignment="Left" 
+                    Margin="889,292,0,0"
+                    TextWrapping="Wrap"
+                    VerticalAlignment="Top"
+                    FontSize="30"
+                    Width="359"
+                    Height="68"
+                    Background="#BEBEBE"
+                    Foreground="#FF262222"
+                    BorderBrush="#FF262222"
+                    BorderThickness="3"/>
+
+                <TextBox x:Name="txtStaffSecondLastName"
+                    HorizontalAlignment="Left" 
+                    Margin="1303,292,0,0"
+                    TextWrapping="Wrap"
+                    VerticalAlignment="Top"
+                    FontSize="30"
+                    Width="374"
+                    Height="68"
+                    Background="#BEBEBE"
+                    Foreground="#FF262222"
+                    BorderBrush="#FF262222"
+                    BorderThickness="3"/>
+
+                <TextBox x:Name="txtPassword"
+                    HorizontalAlignment="Left" 
+                    Margin="409,439,0,0"
+                    TextWrapping="Wrap"
+                    VerticalAlignment="Top"
+                    FontSize="30"
+                    Width="1268"
+                    Height="68"
+                    Background="#BEBEBE"
+                    Foreground="#FF262222"
+                    BorderBrush="#FF262222"
+                    BorderThickness="3"/>
+
+                <ComboBox x:Name="cbStaffRol"
+                    DisplayMemberPath="RoleName"
+                    SelectedValuePath="RoleId"
+                    Margin="410,606,879,248" 
+                    Width="454" 
+                    Height="68"
+                    Background="#BEBEBE"
+                    Foreground="Black"
+                    FontSize="30"/>
+
+                <Button x:Name="btnCancel" 
+                    HorizontalAlignment="Left" 
+                    Margin="674,754,0,0" 
+                    VerticalAlignment="Top" 
+                    Height="100" 
+                    Width="329" 
+                    Foreground="#FFF8F8F8" 
+                    Cursor="Hand"
+                    FontFamily="Inter" 
+                    FontSize="50"
+                    BorderThickness="0"
+                    BorderBrush="#FF31318C" 
+                    Click = "BtnCancel_Click"
+                    FontWeight="SemiBold">
+                    <Button.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#005BAA"/>
+                            <GradientStop Color="#004f94" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Button.Background>
+                    <Button.Effect>
+                        <DropShadowEffect Color="Black" ShadowDepth="5" BlurRadius="10" Direction="270"/>
+                    </Button.Effect>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Cancelar" 
+                           Foreground="White" 
+                           FontFamily="Inter"
+                           Margin="0,10,0,0">
+                        </Label>
+                    </StackPanel>
+                </Button>
+
+                <Button x:Name="btnSaveStaff" 
+                    HorizontalAlignment="Left" 
+                    Margin="1114,754,0,0" 
+                    VerticalAlignment="Top" 
+                    Height="100" 
+                    Width="329" 
+                    Foreground="#FFF8F8F8" 
+                    Cursor="Hand"
+                    FontFamily="Inter" 
+                    FontSize="50"
+                    BorderThickness="0"
+                    BorderBrush="#FF31318C" 
+                    Click = "BtnSaveStaff_Click"
+                    FontWeight="SemiBold">
+                    <Button.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#005BAA"/>
+                            <GradientStop Color="#004f94" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Button.Background>
+                    <Button.Effect>
+                        <DropShadowEffect Color="Black" ShadowDepth="5" BlurRadius="10" Direction="270"/>
+                    </Button.Effect>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Guardar" 
+                           Foreground="White" 
+                           FontFamily="Inter"
+                           Margin="0,10,0,0">
+                        </Label>
+                    </StackPanel>
+                </Button>
+
+                <Label Content="Nombre:" 
+                       HorizontalAlignment="Left" 
+                       Margin="409,228,0,0" 
+                       VerticalAlignment="Top"
+                       FontSize="45"
+                       Foreground="#292929"
+                       FontFamily="Inter"
+                       FontWeight="UltraBold"/>
+
+                <Label Content="Apellido paterno:" 
+                   HorizontalAlignment="Left" 
+                   Margin="889,228,0,0" 
+                   VerticalAlignment="Top"
+                   FontSize="40"
+                   Foreground="#292929"
+                   FontFamily="Inter"
+                   FontWeight="UltraBold"/>
+
+                <Label Content="Apellido materno:" 
+                    HorizontalAlignment="Left" 
+                    Margin="1303,228,0,0" 
+                    VerticalAlignment="Top"
+                    FontSize="40"
+                    Foreground="#292929"
+                    FontFamily="Inter"
+                    FontWeight="UltraBold"/>
+
+                <Label Content="Contraseña:" 
+                    HorizontalAlignment="Left" 
+                    Margin="410,381,0,0" 
+                    VerticalAlignment="Top"
+                    FontSize="40"
+                    Foreground="#292929"
+                    FontFamily="Inter"
+                    FontWeight="UltraBold"/>
+
+                <Label Content="Rol:" 
+                     HorizontalAlignment="Left" 
+                     Margin="424,543,0,0" 
+                     VerticalAlignment="Top"
+                     FontSize="40"
+                     Foreground="#292929"
+                     FontFamily="Inter"
+                     FontWeight="UltraBold"/>
             </Grid>
         </Grid>
 
