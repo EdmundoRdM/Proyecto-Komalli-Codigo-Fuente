@@ -25,13 +25,13 @@ namespace Komalli.DataBaseManagement.DataModel
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Bill> Bills { get; set; }
-        public virtual DbSet<ExtraordinaryMovement> ExtraordinaryMovements { get; set; }
-        public virtual DbSet<MovementType> MovementTypes { get; set; }
-        public virtual DbSet<Product> Products { get; set; }
-        public virtual DbSet<Role> Roles { get; set; }
-        public virtual DbSet<Sale> Sales { get; set; }
-        public virtual DbSet<Spoilage> Spoilages { get; set; }
-        public virtual DbSet<Staff> Staffs { get; set; }
+        public virtual DbSet<Bill> Bill { get; set; }
+        public virtual DbSet<ExtraordinaryMovements> ExtraordinaryMovements { get; set; }
+        public virtual DbSet<MovementType> MovementType { get; set; }
+        public virtual DbSet<Product> Product { get; set; }
+        public virtual DbSet<Role> Role { get; set; }
+        public virtual DbSet<Sale> Sale { get; set; }
+        public virtual DbSet<Spoilage> Spoilage { get; set; }
+        public virtual DbSet<Staff> Staff { get; set; }
     }
 }

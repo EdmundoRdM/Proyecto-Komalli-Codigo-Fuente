@@ -32,8 +32,7 @@ namespace Komalli.GUIs
         }
 
         private void LoadButtons()
-        {
-            
+        {        
             ButtonsNavegationBar.Add("ReportsModule", btnReports);
             ButtonsNavegationBar.Add("ProductsModule", btnProducts);
             ButtonsNavegationBar.Add("StaffModule", btnStaff);
@@ -126,7 +125,7 @@ namespace Komalli.GUIs
 
         private void LogOut_Click(object sender, MouseButtonEventArgs e)
         {
-
+            Utilities.ChangePage(new LogIn());
         }
 
 

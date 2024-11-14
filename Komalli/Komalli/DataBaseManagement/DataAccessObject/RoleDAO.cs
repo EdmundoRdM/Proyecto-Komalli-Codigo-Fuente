@@ -17,7 +17,7 @@ namespace Komalli.DataBaseManagement.DataAccessObject
             {
                 using (var context = new KomalliDBEntities())
                 {
-                    var roleList = context.Roles.ToList();
+                    var roleList = context.Role.ToList();
                     var rolePOCOList = roleList.Select(role => new RolePOCO
                     {
                         RoleId = role.RoleId,

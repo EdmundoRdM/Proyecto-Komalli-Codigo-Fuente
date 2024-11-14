@@ -12,7 +12,7 @@ namespace Komalli.DataBaseManagement.DataModel
     using System;
     using System.Collections.Generic;
     
-    public partial class ExtraordinaryMovement
+    public partial class ExtraordinaryMovements
     {
         public int MovementId { get; set; }
         public decimal Amount { get; set; }

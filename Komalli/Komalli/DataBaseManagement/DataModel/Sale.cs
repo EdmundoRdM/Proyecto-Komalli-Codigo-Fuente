@@ -17,7 +17,7 @@ namespace Komalli.DataBaseManagement.DataModel
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Sale()
         {
-            this.Bills = new HashSet<Bill>();
+            this.Bill = new HashSet<Bill>();
         }
     
         public int SaleId { get; set; }
@@ -28,7 +28,7 @@ namespace Komalli.DataBaseManagement.DataModel
         public int StaffID { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Bill> Bills { get; set; }
+        public virtual ICollection<Bill> Bill { get; set; }
         public virtual Staff Staff { get; set; }
     }
 }

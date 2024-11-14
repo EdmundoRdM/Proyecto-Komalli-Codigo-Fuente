@@ -17,7 +17,7 @@ namespace Komalli.DataBaseManagement.DataAccessObject
             {
                 using (var context = new KomalliDBEntities())
                 {
-                    var lastStaff = context.Staffs
+                    var lastStaff = context.Staff
                                             .OrderByDescending(s => s.StaffID)
                                             .FirstOrDefault();
 
@@ -34,7 +34,7 @@ namespace Komalli.DataBaseManagement.DataAccessObject
                         newStaff.Status = true;
                     };
 
-                    context.Staffs.Add(newStaff);
+                    context.Staff.Add(newStaff);
                     context.SaveChanges();
                     return 1;
                 }
@@ -52,7 +52,7 @@ namespace Komalli.DataBaseManagement.DataAccessObject
             {
                 using (var context = new KomalliDBEntities())
                 {
-                    var existingStaff = context.Staffs.FirstOrDefault(s => s.StaffID == idEmployeeSelected);
+                    var existingStaff = context.Staff.FirstOrDefault(s => s.StaffID == idEmployeeSelected);
                     if (existingStaff != null)
                     {
                         existingStaff.FirstName = staff.FirstName;
@@ -78,7 +78,7 @@ namespace Komalli.DataBaseManagement.DataAccessObject
             {
                 using (var context = new KomalliDBEntities())
                 {
-                    var existingStaff = context.Staffs.FirstOrDefault(s => s.StaffID == idEmployeeSelected);
+                    var existingStaff = context.Staff.FirstOrDefault(s => s.StaffID == idEmployeeSelected);
                     if (existingStaff != null)
                     {
                         existingStaff.Status = false;
@@ -100,8 +100,8 @@ namespace Komalli.DataBaseManagement.DataAccessObject
             {
                 using (var context = new KomalliDBEntities())
                 {
-                    var lastTenStaff = (from staff in context.Staffs
-                                        join role in context.Roles on staff.Role equals role.RoleId
+                    var lastTenStaff = (from staff in context.Staff
+                                        join role in context.Role on staff.Role equals role.RoleId
                                         where staff.Status == true
                                         orderby staff.EmployeeNumber descending
                                         select new StaffWhitRole
@@ -129,7 +129,7 @@ namespace Komalli.DataBaseManagement.DataAccessObject
             {
                 using (var context = new KomalliDBEntities())
                 {
-                    var staffRecord = (from staff in context.Staffs
+                    var staffRecord = (from staff in context.Staff
                                        where staff.StaffID == idStaff && staff.Status == true
                                        select new StaffPOCO
                                        {
@@ -157,8 +157,8 @@ namespace Komalli.DataBaseManagement.DataAccessObject
             {
                 using (var context = new KomalliDBEntities())
                 {
-                    var staffList = (from staff in context.Staffs
-                                     join role in context.Roles on staff.Role equals role.RoleId
+                    var staffList = (from staff in context.Staff
+                                     join role in context.Role on staff.Role equals role.RoleId
                                      where staff.Status == true &&
                                            staff.FirstName.ToLower().Contains(partialName.ToLower())
                                      orderby staff.EmployeeNumber descending
@@ -186,7 +186,7 @@ namespace Komalli.DataBaseManagement.DataAccessObject
             {
                 using (var context = new KomalliDBEntities())
                 {
-                    var staff = context.Staffs
+                    var staff = context.Staff
                         .FirstOrDefault(s => s.EmployeeNumber == staffPoco.EmployeeNumber && s.Password == staffPoco.Password);
 
                     if (staff != null)

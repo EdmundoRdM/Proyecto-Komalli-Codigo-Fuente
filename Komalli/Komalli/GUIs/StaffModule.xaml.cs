@@ -38,61 +38,67 @@ namespace Komalli.GUIs
 
         private void BtnSaveStaff_Click(object sender, RoutedEventArgs e)
         {
-            StaffPOCO newStaff = new StaffPOCO();
-            newStaff.FirstName = txtStaffName.Text;
-            newStaff.LastName = txtStaffLastName.Text;  
-            newStaff.MiddleName = txtStaffSecondLastName.Text;
-            newStaff.Password = txtPassword.Text;
-            newStaff.Role = (int)cbStaffRol.SelectedValue;
-            StaffDAO staffDAO = new StaffDAO();
-
-            if (IsValidateDataStructure()) 
+            if (IsNotEmpty())
             {
-                if (EmployeeNumberSelected == 0)
+                StaffPOCO newStaff = new StaffPOCO();
+                newStaff.FirstName = txtStaffName.Text;
+                newStaff.LastName = txtStaffLastName.Text;
+                newStaff.MiddleName = txtStaffSecondLastName.Text;
+                newStaff.Password = txtPassword.Text;
+                newStaff.Role = (int)cbStaffRol.SelectedValue;
+                StaffDAO staffDAO = new StaffDAO();
+
+                if (IsValidateDataStructure())
                 {
-                    try
+                    if (EmployeeNumberSelected == 0)
                     {
-                        int register = staffDAO.RegisterStaff(newStaff);
-                        if (register == 1)
+                        try
                         {
-                            MessageBox.Show("Personal registrado con éxito", "Registro", MessageBoxButton.OK, MessageBoxImage.Information);
-                            CleanFields();
-                            RegisterStaffForm.Visibility = Visibility.Collapsed;
-                            LoadStaffs();
+                            int register = staffDAO.RegisterStaff(newStaff);
+                            if (register == 1)
+                            {
+                                MessageBox.Show("Personal registrado con éxito", "Registro", MessageBoxButton.OK, MessageBoxImage.Information);
+                                CleanFields();
+                                RegisterStaffForm.Visibility = Visibility.Collapsed;
+                                LoadStaffs();
+                            }
+                        }
+                        catch (SqlException)
+                        {
+                            MessageBox.Show("Por el momento no se puede conectar a la base de datos. Intente de nuevo más tarde.", "Error al conectar a base de datos", MessageBoxButton.OK, MessageBoxImage.Error);
                         }
                     }
-                    catch (SqlException)
+                    else if (EmployeeNumberSelected != 0)
                     {
-                        MessageBox.Show("Por el momento no se puede conectar a la base de datos. Intente de nuevo más tarde.", "Error al conectar a base de datos", MessageBoxButton.OK, MessageBoxImage.Error);
-                    }
-                }
-                else if(EmployeeNumberSelected != 0)
-                {
-                    try
-                    {
-                        int update = staffDAO.UpdateStaff(newStaff, EmployeeNumberSelected);
-                        if (update == 1)
+                        try
                         {
-                            MessageBox.Show("Personal actualizado con éxito", "Registro", MessageBoxButton.OK, MessageBoxImage.Information);
-                            CleanFields();
-                            RegisterStaffForm.Visibility = Visibility.Collapsed;
-                            LoadStaffs();
+                            int update = staffDAO.UpdateStaff(newStaff, EmployeeNumberSelected);
+                            if (update == 1)
+                            {
+                                MessageBox.Show("Personal actualizado con éxito", "Registro", MessageBoxButton.OK, MessageBoxImage.Information);
+                                CleanFields();
+                                RegisterStaffForm.Visibility = Visibility.Collapsed;
+                                LoadStaffs();
+                            }
+                        }
+                        catch (SqlException)
+                        {
+                            MessageBox.Show("Por el momento no se puede conectar a la base de datos. Intente de nuevo más tarde.", "Error al conectar a base de datos", MessageBoxButton.OK, MessageBoxImage.Error);
                         }
                     }
-                    catch (SqlException)
-                    {
-                        MessageBox.Show("Por el momento no se puede conectar a la base de datos. Intente de nuevo más tarde.", "Error al conectar a base de datos", MessageBoxButton.OK, MessageBoxImage.Error);
-                    }
+
                 }
-                    
+                else
+                {
+                    MessageBox.Show("La estructura de los datos es inválida. Ingrese datos correctos e intente de nuevo.", "Estructura de datos incorrecta", MessageBoxButton.OK, MessageBoxImage.Error);
+
+                }
             }
             else
             {
                 MessageBox.Show("La estructura de los datos es inválida. Ingrese datos correctos e intente de nuevo.", "Estructura de datos incorrecta", MessageBoxButton.OK, MessageBoxImage.Error);
 
             }
-
-
         }
 
         private void BtnCancel_Click(object sender, RoutedEventArgs e)
@@ -182,6 +188,21 @@ namespace Komalli.GUIs
                 Utilities.IsValidSpanishLettersAndSpaces(lastName) && 
                 Utilities.IsValidSpanishLettersAndSpaces(secondLastName) &&
                 Utilities.IsValidSpanishLettersAndSpecialChars(password)) 
+            {
+                result = true;
+            }
+            return result;
+        }
+
+        private bool IsNotEmpty()
+        {
+            bool result = false;
+
+            if (txtStaffName.Text != "" &&
+                txtStaffLastName.Text != "" &&
+                txtStaffSecondLastName.Text != "" &&
+                txtPassword.Text != "" &&
+                cbStaffRol.SelectedItem != null) 
             {
                 result = true;
             }
