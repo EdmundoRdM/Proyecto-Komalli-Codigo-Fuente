@@ -242,7 +242,7 @@
           <NavigationProperty Name="Product1" Relationship="Self.FK__Bill__Product__5629CD9C" FromRole="Bill" ToRole="Product" />
           <NavigationProperty Name="Sale1" Relationship="Self.FK__Bill__Sale__5535A963" FromRole="Bill" ToRole="Sale" />
         </EntityType>
-        <EntityType Name="ExtraordinaryMovement">
+        <EntityType Name="ExtraordinaryMovements">
           <Key>
             <PropertyRef Name="MovementId" />
           </Key>
@@ -274,8 +274,8 @@
           <Property Name="Name" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Type" Type="Boolean" Nullable="false" />
           <Property Name="Status" Type="Boolean" Nullable="false" />
-          <NavigationProperty Name="Bills" Relationship="Self.FK__Bill__Product__5629CD9C" FromRole="Product" ToRole="Bill" />
-          <NavigationProperty Name="Spoilages" Relationship="Self.FK__Spoilage__Produc__59063A47" FromRole="Product" ToRole="Spoilage" />
+          <NavigationProperty Name="Bill" Relationship="Self.FK__Bill__Product__5629CD9C" FromRole="Product" ToRole="Bill" />
+          <NavigationProperty Name="Spoilage" Relationship="Self.FK__Spoilage__Produc__59063A47" FromRole="Product" ToRole="Spoilage" />
         </EntityType>
         <EntityType Name="Role">
           <Key>
@@ -283,7 +283,7 @@
           </Key>
           <Property Name="RoleId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Role1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Staffs" Relationship="Self.FK__Staff__Role__4D94879B" FromRole="Role" ToRole="Staff" />
+          <NavigationProperty Name="Staff" Relationship="Self.FK__Staff__Role__4D94879B" FromRole="Role" ToRole="Staff" />
         </EntityType>
         <EntityType Name="Sale">
           <Key>
@@ -295,7 +295,7 @@
           <Property Name="TotalSale" Type="Decimal" Precision="19" Scale="2" Nullable="false" />
           <Property Name="CustomerName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="StaffID" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Bills" Relationship="Self.FK__Bill__Sale__5535A963" FromRole="Sale" ToRole="Bill" />
+          <NavigationProperty Name="Bill" Relationship="Self.FK__Bill__Sale__5535A963" FromRole="Sale" ToRole="Bill" />
           <NavigationProperty Name="Staff" Relationship="Self.FK__Sale__StaffID__52593CB8" FromRole="Sale" ToRole="Staff" />
         </EntityType>
         <EntityType Name="Spoilage">
@@ -325,8 +325,8 @@
           <Property Name="Status" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="ExtraordinaryMovements" Relationship="Self.FK__Extraordi__Staff__5DCAEF64" FromRole="Staff" ToRole="ExtraordinaryMovements" />
           <NavigationProperty Name="Role1" Relationship="Self.FK__Staff__Role__4D94879B" FromRole="Staff" ToRole="Role" />
-          <NavigationProperty Name="Sales" Relationship="Self.FK__Sale__StaffID__52593CB8" FromRole="Staff" ToRole="Sale" />
-          <NavigationProperty Name="Spoilages" Relationship="Self.FK__Spoilage__StaffI__59FA5E80" FromRole="Staff" ToRole="Spoilage" />
+          <NavigationProperty Name="Sale" Relationship="Self.FK__Sale__StaffID__52593CB8" FromRole="Staff" ToRole="Sale" />
+          <NavigationProperty Name="Spoilage" Relationship="Self.FK__Spoilage__StaffI__59FA5E80" FromRole="Staff" ToRole="Spoilage" />
         </EntityType>
         <Association Name="FK__Bill__Product__5629CD9C">
           <End Role="Product" Type="Self.Product" Multiplicity="1" />
@@ -354,7 +354,7 @@
         </Association>
         <Association Name="FK__Extraordi__Movem__5CD6CB2B">
           <End Role="MovementType" Type="Self.MovementType" Multiplicity="1" />
-          <End Role="ExtraordinaryMovements" Type="Self.ExtraordinaryMovement" Multiplicity="*" />
+          <End Role="ExtraordinaryMovements" Type="Self.ExtraordinaryMovements" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="MovementType">
               <PropertyRef Name="MovementTypeId" />
@@ -366,7 +366,7 @@
         </Association>
         <Association Name="FK__Extraordi__Staff__5DCAEF64">
           <End Role="Staff" Type="Self.Staff" Multiplicity="1" />
-          <End Role="ExtraordinaryMovements" Type="Self.ExtraordinaryMovement" Multiplicity="*" />
+          <End Role="ExtraordinaryMovements" Type="Self.ExtraordinaryMovements" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Staff">
               <PropertyRef Name="StaffID" />
@@ -425,45 +425,45 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="KomalliDBEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Bills" EntityType="Self.Bill" />
-          <EntitySet Name="ExtraordinaryMovements" EntityType="Self.ExtraordinaryMovement" />
-          <EntitySet Name="MovementTypes" EntityType="Self.MovementType" />
-          <EntitySet Name="Products" EntityType="Self.Product" />
-          <EntitySet Name="Roles" EntityType="Self.Role" />
-          <EntitySet Name="Sales" EntityType="Self.Sale" />
-          <EntitySet Name="Spoilages" EntityType="Self.Spoilage" />
-          <EntitySet Name="Staffs" EntityType="Self.Staff" />
+          <EntitySet Name="Bill" EntityType="Self.Bill" />
+          <EntitySet Name="ExtraordinaryMovements" EntityType="Self.ExtraordinaryMovements" />
+          <EntitySet Name="MovementType" EntityType="Self.MovementType" />
+          <EntitySet Name="Product" EntityType="Self.Product" />
+          <EntitySet Name="Role" EntityType="Self.Role" />
+          <EntitySet Name="Sale" EntityType="Self.Sale" />
+          <EntitySet Name="Spoilage" EntityType="Self.Spoilage" />
+          <EntitySet Name="Staff" EntityType="Self.Staff" />
           <AssociationSet Name="FK__Bill__Product__5629CD9C" Association="Self.FK__Bill__Product__5629CD9C">
-            <End Role="Product" EntitySet="Products" />
-            <End Role="Bill" EntitySet="Bills" />
+            <End Role="Product" EntitySet="Product" />
+            <End Role="Bill" EntitySet="Bill" />
           </AssociationSet>
           <AssociationSet Name="FK__Bill__Sale__5535A963" Association="Self.FK__Bill__Sale__5535A963">
-            <End Role="Sale" EntitySet="Sales" />
-            <End Role="Bill" EntitySet="Bills" />
+            <End Role="Sale" EntitySet="Sale" />
+            <End Role="Bill" EntitySet="Bill" />
           </AssociationSet>
           <AssociationSet Name="FK__Extraordi__Movem__5CD6CB2B" Association="Self.FK__Extraordi__Movem__5CD6CB2B">
-            <End Role="MovementType" EntitySet="MovementTypes" />
+            <End Role="MovementType" EntitySet="MovementType" />
             <End Role="ExtraordinaryMovements" EntitySet="ExtraordinaryMovements" />
           </AssociationSet>
           <AssociationSet Name="FK__Extraordi__Staff__5DCAEF64" Association="Self.FK__Extraordi__Staff__5DCAEF64">
-            <End Role="Staff" EntitySet="Staffs" />
+            <End Role="Staff" EntitySet="Staff" />
             <End Role="ExtraordinaryMovements" EntitySet="ExtraordinaryMovements" />
           </AssociationSet>
           <AssociationSet Name="FK__Spoilage__Produc__59063A47" Association="Self.FK__Spoilage__Produc__59063A47">
-            <End Role="Product" EntitySet="Products" />
-            <End Role="Spoilage" EntitySet="Spoilages" />
+            <End Role="Product" EntitySet="Product" />
+            <End Role="Spoilage" EntitySet="Spoilage" />
           </AssociationSet>
           <AssociationSet Name="FK__Staff__Role__4D94879B" Association="Self.FK__Staff__Role__4D94879B">
-            <End Role="Role" EntitySet="Roles" />
-            <End Role="Staff" EntitySet="Staffs" />
+            <End Role="Role" EntitySet="Role" />
+            <End Role="Staff" EntitySet="Staff" />
           </AssociationSet>
           <AssociationSet Name="FK__Sale__StaffID__52593CB8" Association="Self.FK__Sale__StaffID__52593CB8">
-            <End Role="Staff" EntitySet="Staffs" />
-            <End Role="Sale" EntitySet="Sales" />
+            <End Role="Staff" EntitySet="Staff" />
+            <End Role="Sale" EntitySet="Sale" />
           </AssociationSet>
           <AssociationSet Name="FK__Spoilage__StaffI__59FA5E80" Association="Self.FK__Spoilage__StaffI__59FA5E80">
-            <End Role="Staff" EntitySet="Staffs" />
-            <End Role="Spoilage" EntitySet="Spoilages" />
+            <End Role="Staff" EntitySet="Staff" />
+            <End Role="Spoilage" EntitySet="Spoilage" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
@@ -472,7 +472,7 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="KomalliDBModelStoreContainer" CdmEntityContainer="KomalliDBEntities">
-          <EntitySetMapping Name="Bills">
+          <EntitySetMapping Name="Bill">
             <EntityTypeMapping TypeName="KomalliDBModel.Bill">
               <MappingFragment StoreEntitySet="Bill">
                 <ScalarProperty Name="Sale" ColumnName="Sale" />
@@ -483,7 +483,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ExtraordinaryMovements">
-            <EntityTypeMapping TypeName="KomalliDBModel.ExtraordinaryMovement">
+            <EntityTypeMapping TypeName="KomalliDBModel.ExtraordinaryMovements">
               <MappingFragment StoreEntitySet="ExtraordinaryMovements">
                 <ScalarProperty Name="MovementId" ColumnName="MovementId" />
                 <ScalarProperty Name="Amount" ColumnName="Amount" />
@@ -494,7 +494,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="MovementTypes">
+          <EntitySetMapping Name="MovementType">
             <EntityTypeMapping TypeName="KomalliDBModel.MovementType">
               <MappingFragment StoreEntitySet="MovementType">
                 <ScalarProperty Name="MovementTypeId" ColumnName="MovementTypeId" />
@@ -502,7 +502,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Products">
+          <EntitySetMapping Name="Product">
             <EntityTypeMapping TypeName="KomalliDBModel.Product">
               <MappingFragment StoreEntitySet="Product">
                 <ScalarProperty Name="ProductId" ColumnName="ProductId" />
@@ -515,7 +515,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Roles">
+          <EntitySetMapping Name="Role">
             <EntityTypeMapping TypeName="KomalliDBModel.Role">
               <MappingFragment StoreEntitySet="Role">
                 <ScalarProperty Name="RoleId" ColumnName="RoleId" />
@@ -523,7 +523,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Sales">
+          <EntitySetMapping Name="Sale">
             <EntityTypeMapping TypeName="KomalliDBModel.Sale">
               <MappingFragment StoreEntitySet="Sale">
                 <ScalarProperty Name="SaleId" ColumnName="SaleId" />
@@ -535,7 +535,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Spoilages">
+          <EntitySetMapping Name="Spoilage">
             <EntityTypeMapping TypeName="KomalliDBModel.Spoilage">
               <MappingFragment StoreEntitySet="Spoilage">
                 <ScalarProperty Name="SpoilageId" ColumnName="SpoilageId" />
@@ -547,7 +547,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Staffs">
+          <EntitySetMapping Name="Staff">
             <EntityTypeMapping TypeName="KomalliDBModel.Staff">
               <MappingFragment StoreEntitySet="Staff">
                 <ScalarProperty Name="StaffID" ColumnName="StaffID" />
@@ -575,7 +575,7 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />

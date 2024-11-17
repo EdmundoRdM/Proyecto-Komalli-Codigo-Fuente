@@ -15,7 +15,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Komalli.Util;
 
 namespace Komalli.GUIs
 {
@@ -33,8 +32,7 @@ namespace Komalli.GUIs
         }
 
         private void LoadButtons()
-        {
-            
+        {        
             ButtonsNavegationBar.Add("ReportsModule", btnReports);
             ButtonsNavegationBar.Add("ProductsModule", btnProducts);
             ButtonsNavegationBar.Add("StaffModule", btnStaff);
@@ -127,7 +125,7 @@ namespace Komalli.GUIs
 
         private void LogOut_Click(object sender, MouseButtonEventArgs e)
         {
-
+            Utilities.ChangePage(new LogIn());
         }
 
 

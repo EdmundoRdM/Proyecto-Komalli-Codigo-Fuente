@@ -17,8 +17,8 @@ namespace Komalli.DataBaseManagement.DataModel
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Product()
         {
-            this.Bills = new HashSet<Bill>();
-            this.Spoilages = new HashSet<Spoilage>();
+            this.Bill = new HashSet<Bill>();
+            this.Spoilage = new HashSet<Spoilage>();
         }
     
         public int ProductId { get; set; }
@@ -30,8 +30,8 @@ namespace Komalli.DataBaseManagement.DataModel
         public bool Status { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Bill> Bills { get; set; }
+        public virtual ICollection<Bill> Bill { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Spoilage> Spoilages { get; set; }
+        public virtual ICollection<Spoilage> Spoilage { get; set; }
     }
 }

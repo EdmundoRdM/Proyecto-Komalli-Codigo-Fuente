@@ -17,7 +17,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Komalli.Util;
 
 namespace Komalli.GUIs
 {
@@ -29,6 +28,8 @@ namespace Komalli.GUIs
         public LogIn()
         {
             InitializeComponent();
+            txtUserName.Text = "UV202400001";
+            txtPassword.Text = "password123";
         }
 
         private void LogIng_Click(object sender, RoutedEventArgs e)

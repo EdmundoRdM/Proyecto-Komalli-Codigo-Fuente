@@ -17,9 +17,9 @@ namespace Komalli.DataBaseManagement.DataModel
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Staff()
         {
-            this.ExtraordinaryMovements = new HashSet<ExtraordinaryMovement>();
-            this.Sales = new HashSet<Sale>();
-            this.Spoilages = new HashSet<Spoilage>();
+            this.ExtraordinaryMovements = new HashSet<ExtraordinaryMovements>();
+            this.Sale = new HashSet<Sale>();
+            this.Spoilage = new HashSet<Spoilage>();
         }
     
         public int StaffID { get; set; }
@@ -32,11 +32,11 @@ namespace Komalli.DataBaseManagement.DataModel
         public bool Status { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ExtraordinaryMovement> ExtraordinaryMovements { get; set; }
+        public virtual ICollection<ExtraordinaryMovements> ExtraordinaryMovements { get; set; }
         public virtual Role Role1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Sale> Sales { get; set; }
+        public virtual ICollection<Sale> Sale { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Spoilage> Spoilages { get; set; }
+        public virtual ICollection<Spoilage> Spoilage { get; set; }
     }
 }

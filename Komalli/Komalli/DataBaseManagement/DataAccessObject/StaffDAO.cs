@@ -1,5 +1,6 @@
 ﻿using Komalli.DataBaseManagement.DataModel;
 using Komalli.DataBaseManagement.POCOs;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,15 +11,32 @@ namespace Komalli.DataBaseManagement.DataAccessObject
 {
     internal class StaffDAO
     {
-        public int RegisterStaff(Staff staff)
+        public int RegisterStaff(StaffPOCO staff)
         {
             try
             {
                 using (var context = new KomalliDBEntities())
                 {
-                    context.Staffs.Add(staff);
+                    var lastStaff = context.Staff
+                                            .OrderByDescending(s => s.StaffID)
+                                            .FirstOrDefault();
+
+                    string newEmployeeNumber = GenerateEmployeeNumber(lastStaff);
+
+                    var newStaff = new Staff();
+                    {
+                        newStaff.EmployeeNumber = newEmployeeNumber;
+                        newStaff.Password = staff.Password;
+                        newStaff.FirstName = staff.FirstName;
+                        newStaff.LastName = staff.LastName;
+                        newStaff.MiddleName = staff.MiddleName;
+                        newStaff.Role = staff.Role;
+                        newStaff.Status = true;
+                    };
+
+                    context.Staff.Add(newStaff);
                     context.SaveChanges();
-                    return staff.StaffID;
+                    return 1;
                 }
             }
             catch (Exception ex)
@@ -27,13 +45,14 @@ namespace Komalli.DataBaseManagement.DataAccessObject
             }
         }
 
-        public int UpdateStaff(Staff staff)
+
+        public int UpdateStaff(StaffPOCO staff, int idEmployeeSelected)
         {
             try
             {
                 using (var context = new KomalliDBEntities())
                 {
-                    var existingStaff = context.Staffs.FirstOrDefault(s => s.EmployeeNumber == staff.EmployeeNumber);
+                    var existingStaff = context.Staff.FirstOrDefault(s => s.StaffID == idEmployeeSelected);
                     if (existingStaff != null)
                     {
                         existingStaff.FirstName = staff.FirstName;
@@ -41,7 +60,6 @@ namespace Komalli.DataBaseManagement.DataAccessObject
                         existingStaff.MiddleName = staff.MiddleName;
                         existingStaff.Password = staff.Password;
                         existingStaff.Role = staff.Role;
-                        existingStaff.Status = staff.Status;
                         context.SaveChanges();
                         return 1;
                     }
@@ -54,16 +72,16 @@ namespace Komalli.DataBaseManagement.DataAccessObject
             }
         }
 
-        public int DeleteStaff(string employeeNumber)
+        public int DeleteStaff(int idEmployeeSelected)
         {
             try
             {
                 using (var context = new KomalliDBEntities())
                 {
-                    var staff = context.Staffs.FirstOrDefault(s => s.EmployeeNumber == employeeNumber);
-                    if (staff != null)
+                    var existingStaff = context.Staff.FirstOrDefault(s => s.StaffID == idEmployeeSelected);
+                    if (existingStaff != null)
                     {
-                        context.Staffs.Remove(staff);
+                        existingStaff.Status = false;
                         context.SaveChanges();
                         return 1;
                     }
@@ -76,13 +94,99 @@ namespace Komalli.DataBaseManagement.DataAccessObject
             }
         }
 
+        public List<StaffWhitRole> GetLastTenStaffRecords()
+        {
+            try
+            {
+                using (var context = new KomalliDBEntities())
+                {
+                    var lastTenStaff = (from staff in context.Staff
+                                        join role in context.Role on staff.Role equals role.RoleId
+                                        where staff.Status == true
+                                        orderby staff.EmployeeNumber descending
+                                        select new StaffWhitRole
+                                        {
+                                            IdStaff = staff.StaffID,
+                                            EmployeeNumber = staff.EmployeeNumber,
+                                            FirstName = staff.FirstName,
+                                            LastName = staff.LastName,
+                                            RoleName = role.Role1
+                                        })
+                                        .Take(10)
+                                        .ToList();
+                    return lastTenStaff;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al obtener los últimos 10 registros del personal.", ex);
+            }
+        }
+
+        public StaffPOCO GetStaffById(int idStaff)
+        {
+            try
+            {
+                using (var context = new KomalliDBEntities())
+                {
+                    var staffRecord = (from staff in context.Staff
+                                       where staff.StaffID == idStaff && staff.Status == true
+                                       select new StaffPOCO
+                                       {
+                                           StaffId = staff.StaffID,
+                                           EmployeeNumber = staff.EmployeeNumber,
+                                           FirstName = staff.FirstName,
+                                           LastName = staff.LastName,
+                                           MiddleName = staff.MiddleName,
+                                           Role = staff.Role,
+                                           Password = staff.Password,
+                                           Status = staff.Status
+                                       }).FirstOrDefault();
+                    return staffRecord;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error al obtener el registro del personal con ID {idStaff}.", ex);
+            }
+        }
+
+        public List<StaffWhitRole> GetStaffByName(string partialName)
+        {
+            try
+            {
+                using (var context = new KomalliDBEntities())
+                {
+                    var staffList = (from staff in context.Staff
+                                     join role in context.Role on staff.Role equals role.RoleId
+                                     where staff.Status == true &&
+                                           staff.FirstName.ToLower().Contains(partialName.ToLower())
+                                     orderby staff.EmployeeNumber descending
+                                     select new StaffWhitRole
+                                     {
+                                         IdStaff = staff.StaffID,
+                                         EmployeeNumber = staff.EmployeeNumber,
+                                         FirstName = staff.FirstName,
+                                         LastName = staff.LastName,
+                                         RoleName = role.Role1
+                                     })
+                             .ToList();
+                    return staffList;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al obtener el personal por nombre parcial.", ex);
+            }
+        }
+
         public StaffPOCO VerifyLogin(StaffPOCO staffPoco)
         {
             try
             {
                 using (var context = new KomalliDBEntities())
                 {
-                    var staff = context.Staffs
+                    var staff = context.Staff
                         .FirstOrDefault(s => s.EmployeeNumber == staffPoco.EmployeeNumber && s.Password == staffPoco.Password);
 
                     if (staff != null)
@@ -107,5 +211,44 @@ namespace Komalli.DataBaseManagement.DataAccessObject
                 throw new Exception("Error al verificar el inicio de sesión.", ex);
             }
         }
+
+        private string GenerateEmployeeNumber(Staff lastStaff)
+        {
+            try
+            {
+                int year = DateTime.Now.Year;
+                string prefix = "UV" + year;
+                int nextNumber = 1;
+
+                if (lastStaff != null)
+                {
+                    if (string.IsNullOrEmpty(lastStaff.EmployeeNumber) || lastStaff.EmployeeNumber.Length < 6)
+                    {
+                        throw new ArgumentOutOfRangeException(nameof(lastStaff.EmployeeNumber), "El EmployeeNumber no tiene el formato esperado.");
+                    }
+
+                    string lastNumberPart = lastStaff.EmployeeNumber.Substring(6);
+                    if (!int.TryParse(lastNumberPart, out nextNumber))
+                    {
+                        throw new FormatException("El EmployeeNumber no tiene un formato numérico válido.");
+                    }
+                    nextNumber++;
+                }
+
+                string newEmployeeNumber = prefix + nextNumber.ToString("D5");
+                return newEmployeeNumber;
+            }
+            catch (ArgumentOutOfRangeException ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
+                throw;
+            }
+            catch (FormatException ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
+                throw;
+            }
+        }
     }
+
 }

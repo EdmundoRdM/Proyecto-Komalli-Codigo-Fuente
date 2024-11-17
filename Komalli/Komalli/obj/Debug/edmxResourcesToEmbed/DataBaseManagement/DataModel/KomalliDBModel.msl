@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="KomalliDBModelStoreContainer" CdmEntityContainer="KomalliDBEntities">
-    <EntitySetMapping Name="Bills">
+    <EntitySetMapping Name="Bill">
       <EntityTypeMapping TypeName="KomalliDBModel.Bill">
         <MappingFragment StoreEntitySet="Bill">
           <ScalarProperty Name="Sale" ColumnName="Sale" />
@@ -12,7 +12,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="ExtraordinaryMovements">
-      <EntityTypeMapping TypeName="KomalliDBModel.ExtraordinaryMovement">
+      <EntityTypeMapping TypeName="KomalliDBModel.ExtraordinaryMovements">
         <MappingFragment StoreEntitySet="ExtraordinaryMovements">
           <ScalarProperty Name="MovementId" ColumnName="MovementId" />
           <ScalarProperty Name="Amount" ColumnName="Amount" />
@@ -23,7 +23,7 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="MovementTypes">
+    <EntitySetMapping Name="MovementType">
       <EntityTypeMapping TypeName="KomalliDBModel.MovementType">
         <MappingFragment StoreEntitySet="MovementType">
           <ScalarProperty Name="MovementTypeId" ColumnName="MovementTypeId" />
@@ -31,7 +31,7 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Products">
+    <EntitySetMapping Name="Product">
       <EntityTypeMapping TypeName="KomalliDBModel.Product">
         <MappingFragment StoreEntitySet="Product">
           <ScalarProperty Name="ProductId" ColumnName="ProductId" />
@@ -44,7 +44,7 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Roles">
+    <EntitySetMapping Name="Role">
       <EntityTypeMapping TypeName="KomalliDBModel.Role">
         <MappingFragment StoreEntitySet="Role">
           <ScalarProperty Name="RoleId" ColumnName="RoleId" />
@@ -52,7 +52,7 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Sales">
+    <EntitySetMapping Name="Sale">
       <EntityTypeMapping TypeName="KomalliDBModel.Sale">
         <MappingFragment StoreEntitySet="Sale">
           <ScalarProperty Name="SaleId" ColumnName="SaleId" />
@@ -64,7 +64,7 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Spoilages">
+    <EntitySetMapping Name="Spoilage">
       <EntityTypeMapping TypeName="KomalliDBModel.Spoilage">
         <MappingFragment StoreEntitySet="Spoilage">
           <ScalarProperty Name="SpoilageId" ColumnName="SpoilageId" />
@@ -76,7 +76,7 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Staffs">
+    <EntitySetMapping Name="Staff">
       <EntityTypeMapping TypeName="KomalliDBModel.Staff">
         <MappingFragment StoreEntitySet="Staff">
           <ScalarProperty Name="StaffID" ColumnName="StaffID" />

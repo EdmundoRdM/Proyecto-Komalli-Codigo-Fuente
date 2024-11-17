@@ -17,13 +17,13 @@ namespace Komalli.DataBaseManagement.DataModel
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public MovementType()
         {
-            this.ExtraordinaryMovements = new HashSet<ExtraordinaryMovement>();
+            this.ExtraordinaryMovements = new HashSet<ExtraordinaryMovements>();
         }
     
         public int MovementTypeId { get; set; }
         public string MovementType1 { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ExtraordinaryMovement> ExtraordinaryMovements { get; set; }
+        public virtual ICollection<ExtraordinaryMovements> ExtraordinaryMovements { get; set; }
     }
 }
