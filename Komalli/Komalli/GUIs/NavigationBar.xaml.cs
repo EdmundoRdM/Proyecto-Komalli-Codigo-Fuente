@@ -110,7 +110,7 @@ namespace Komalli.GUIs
 
         private void BtnProductsModule_Click(object sender, RoutedEventArgs e)
         {
-
+            Utilities.ChangePage(new ProductModule());
         }
 
         private void BtnStaffModule_Click(object sender, RoutedEventArgs e)

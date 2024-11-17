@@ -68,6 +68,9 @@
     <Compile Include="DataBaseManagement\DataModel\Bill.cs">
       <DependentUpon>KomalliDBModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DataBaseManagement\DataModel\database_firewall_rules.cs">
+      <DependentUpon>KomalliDBModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="DataBaseManagement\DataModel\ExtraordinaryMovements.cs">
       <DependentUpon>KomalliDBModel.tt</DependentUpon>
     </Compile>
@@ -92,6 +95,9 @@
     <Compile Include="DataBaseManagement\DataModel\Product.cs">
       <DependentUpon>KomalliDBModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DataBaseManagement\DataModel\ProductType.cs">
+      <DependentUpon>KomalliDBModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="DataBaseManagement\DataModel\Role.cs">
       <DependentUpon>KomalliDBModel.tt</DependentUpon>
     </Compile>
@@ -99,6 +105,9 @@
       <DependentUpon>KomalliDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DataBaseManagement\DataModel\Spoilage.cs">
+      <DependentUpon>KomalliDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBaseManagement\DataModel\SpoilageDetail.cs">
       <DependentUpon>KomalliDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DataBaseManagement\DataModel\Staff.cs">
@@ -111,6 +120,9 @@
     </Compile>
     <Compile Include="GUIs\NavigationBar.xaml.cs">
       <DependentUpon>NavigationBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUIs\ProductModule.xaml.cs">
+      <DependentUpon>ProductModule.xaml</DependentUpon>
     </Compile>
     <Compile Include="GUIs\StaffModule.xaml.cs">
       <DependentUpon>StaffModule.xaml</DependentUpon>
@@ -126,6 +138,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="GUIs\NavigationBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GUIs\ProductModule.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -206,18 +222,6 @@
     <Resource Include="Media\OpenEye.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DataBaseManagement\DataModel\KomalliDBModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>KomalliDBModel.edmx</DependentUpon>
-      <LastGenOutput>KomalliDBModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="DataBaseManagement\DataModel\KomalliDBModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>KomalliDBModel.edmx</DependentUpon>
-      <LastGenOutput>KomalliDBModel.cs</LastGenOutput>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
@@ -228,6 +232,18 @@
     <Resource Include="Media\ComedoresU.png" />
     <Resource Include="Media\NewIcon.png" />
     <Resource Include="Media\SearchIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DataBaseManagement\DataModel\KomalliDBModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>KomalliDBModel.edmx</DependentUpon>
+      <LastGenOutput>KomalliDBModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DataBaseManagement\DataModel\KomalliDBModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>KomalliDBModel.edmx</DependentUpon>
+      <LastGenOutput>KomalliDBModel.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

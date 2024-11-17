@@ -8,9 +8,10 @@
     <Property Name="Sale" Type="Int32" Nullable="false" />
     <Property Name="Product" Type="Int32" Nullable="false" />
     <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <Property Name="UnitPrice" Type="Decimal" Precision="19" Scale="2" Nullable="false" />
     <Property Name="Total" Type="Decimal" Precision="19" Scale="2" Nullable="false" />
-    <NavigationProperty Name="Product1" Relationship="Self.FK__Bill__Product__5629CD9C" FromRole="Bill" ToRole="Product" />
-    <NavigationProperty Name="Sale1" Relationship="Self.FK__Bill__Sale__5535A963" FromRole="Bill" ToRole="Sale" />
+    <NavigationProperty Name="Product1" Relationship="Self.FK__Bill__Product__6C190EBB" FromRole="Bill" ToRole="Product" />
+    <NavigationProperty Name="Sale1" Relationship="Self.FK__Bill__Sale__6B24EA82" FromRole="Bill" ToRole="Sale" />
   </EntityType>
   <EntityType Name="ExtraordinaryMovements">
     <Key>
@@ -22,8 +23,8 @@
     <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="MovementType" Type="Int32" Nullable="false" />
     <Property Name="StaffID" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="MovementType1" Relationship="Self.FK__Extraordi__Movem__5CD6CB2B" FromRole="ExtraordinaryMovements" ToRole="MovementType" />
-    <NavigationProperty Name="Staff" Relationship="Self.FK__Extraordi__Staff__5DCAEF64" FromRole="ExtraordinaryMovements" ToRole="Staff" />
+    <NavigationProperty Name="MovementType1" Relationship="Self.FK__Extraordi__Movem__75A278F5" FromRole="ExtraordinaryMovements" ToRole="MovementType" />
+    <NavigationProperty Name="Staff" Relationship="Self.FK__Extraordi__Staff__76969D2E" FromRole="ExtraordinaryMovements" ToRole="Staff" />
   </EntityType>
   <EntityType Name="MovementType">
     <Key>
@@ -31,7 +32,7 @@
     </Key>
     <Property Name="MovementTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="MovementType1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-    <NavigationProperty Name="ExtraordinaryMovements" Relationship="Self.FK__Extraordi__Movem__5CD6CB2B" FromRole="MovementType" ToRole="ExtraordinaryMovements" />
+    <NavigationProperty Name="ExtraordinaryMovements" Relationship="Self.FK__Extraordi__Movem__75A278F5" FromRole="MovementType" ToRole="ExtraordinaryMovements" />
   </EntityType>
   <EntityType Name="Product">
     <Key>
@@ -42,10 +43,21 @@
     <Property Name="AvailableQuantity" Type="Int32" Nullable="false" />
     <Property Name="Description" Type="String" MaxLength="300" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Name" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="Type" Type="Boolean" Nullable="false" />
+    <Property Name="Type" Type="Int32" Nullable="false" />
     <Property Name="Status" Type="Boolean" Nullable="false" />
-    <NavigationProperty Name="Bill" Relationship="Self.FK__Bill__Product__5629CD9C" FromRole="Product" ToRole="Bill" />
-    <NavigationProperty Name="Spoilage" Relationship="Self.FK__Spoilage__Produc__59063A47" FromRole="Product" ToRole="Spoilage" />
+    <Property Name="SellingDate" Type="DateTime" Precision="0" />
+    <Property Name="FromKitchen" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Bill" Relationship="Self.FK__Bill__Product__6C190EBB" FromRole="Product" ToRole="Bill" />
+    <NavigationProperty Name="ProductType" Relationship="Self.FK__Product__Type__656C112C" FromRole="Product" ToRole="ProductType" />
+    <NavigationProperty Name="SpoilageDetail" Relationship="Self.FK__SpoilageD__Produ__72C60C4A" FromRole="Product" ToRole="SpoilageDetail" />
+  </EntityType>
+  <EntityType Name="ProductType">
+    <Key>
+      <PropertyRef Name="ProductTypeId" />
+    </Key>
+    <Property Name="ProductTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TypeName" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Product" Relationship="Self.FK__Product__Type__656C112C" FromRole="ProductType" ToRole="Product" />
   </EntityType>
   <EntityType Name="Role">
     <Key>
@@ -53,7 +65,7 @@
     </Key>
     <Property Name="RoleId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Role1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-    <NavigationProperty Name="Staff" Relationship="Self.FK__Staff__Role__4D94879B" FromRole="Role" ToRole="Staff" />
+    <NavigationProperty Name="Staff" Relationship="Self.FK__Staff__Role__628FA481" FromRole="Role" ToRole="Staff" />
   </EntityType>
   <EntityType Name="Sale">
     <Key>
@@ -65,21 +77,32 @@
     <Property Name="TotalSale" Type="Decimal" Precision="19" Scale="2" Nullable="false" />
     <Property Name="CustomerName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="StaffID" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="Bill" Relationship="Self.FK__Bill__Sale__5535A963" FromRole="Sale" ToRole="Bill" />
-    <NavigationProperty Name="Staff" Relationship="Self.FK__Sale__StaffID__52593CB8" FromRole="Sale" ToRole="Staff" />
+    <NavigationProperty Name="Bill" Relationship="Self.FK__Bill__Sale__6B24EA82" FromRole="Sale" ToRole="Bill" />
+    <NavigationProperty Name="Staff" Relationship="Self.FK__Sale__StaffID__68487DD7" FromRole="Sale" ToRole="Staff" />
   </EntityType>
   <EntityType Name="Spoilage">
     <Key>
       <PropertyRef Name="SpoilageId" />
     </Key>
     <Property Name="SpoilageId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Description" Type="String" MaxLength="300" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SpoilageConcept" Type="String" MaxLength="300" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="Product" Type="Int32" Nullable="false" />
     <Property Name="StaffID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Staff" Relationship="Self.FK__Spoilage__StaffI__6EF57B66" FromRole="Spoilage" ToRole="Staff" />
+    <NavigationProperty Name="SpoilageDetail" Relationship="Self.FK__SpoilageD__Spoil__71D1E811" FromRole="Spoilage" ToRole="SpoilageDetail" />
+  </EntityType>
+  <EntityType Name="SpoilageDetail">
+    <Key>
+      <PropertyRef Name="SpoilageId" />
+      <PropertyRef Name="ProductId" />
+    </Key>
+    <Property Name="SpoilageId" Type="Int32" Nullable="false" />
+    <Property Name="ProductId" Type="Int32" Nullable="false" />
     <Property Name="Quantity" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="Product1" Relationship="Self.FK__Spoilage__Produc__59063A47" FromRole="Spoilage" ToRole="Product" />
-    <NavigationProperty Name="Staff" Relationship="Self.FK__Spoilage__StaffI__59FA5E80" FromRole="Spoilage" ToRole="Staff" />
+    <Property Name="UnitPrice" Type="Decimal" Precision="19" Scale="2" Nullable="false" />
+    <Property Name="Total" Type="Decimal" Precision="19" Scale="2" Nullable="false" />
+    <NavigationProperty Name="Product" Relationship="Self.FK__SpoilageD__Produ__72C60C4A" FromRole="SpoilageDetail" ToRole="Product" />
+    <NavigationProperty Name="Spoilage" Relationship="Self.FK__SpoilageD__Spoil__71D1E811" FromRole="SpoilageDetail" ToRole="Spoilage" />
   </EntityType>
   <EntityType Name="Staff">
     <Key>
@@ -93,12 +116,28 @@
     <Property Name="MiddleName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Role" Type="Int32" Nullable="false" />
     <Property Name="Status" Type="Boolean" Nullable="false" />
-    <NavigationProperty Name="ExtraordinaryMovements" Relationship="Self.FK__Extraordi__Staff__5DCAEF64" FromRole="Staff" ToRole="ExtraordinaryMovements" />
-    <NavigationProperty Name="Role1" Relationship="Self.FK__Staff__Role__4D94879B" FromRole="Staff" ToRole="Role" />
-    <NavigationProperty Name="Sale" Relationship="Self.FK__Sale__StaffID__52593CB8" FromRole="Staff" ToRole="Sale" />
-    <NavigationProperty Name="Spoilage" Relationship="Self.FK__Spoilage__StaffI__59FA5E80" FromRole="Staff" ToRole="Spoilage" />
+    <NavigationProperty Name="ExtraordinaryMovements" Relationship="Self.FK__Extraordi__Staff__76969D2E" FromRole="Staff" ToRole="ExtraordinaryMovements" />
+    <NavigationProperty Name="Role1" Relationship="Self.FK__Staff__Role__628FA481" FromRole="Staff" ToRole="Role" />
+    <NavigationProperty Name="Sale" Relationship="Self.FK__Sale__StaffID__68487DD7" FromRole="Staff" ToRole="Sale" />
+    <NavigationProperty Name="Spoilage" Relationship="Self.FK__Spoilage__StaffI__6EF57B66" FromRole="Staff" ToRole="Spoilage" />
   </EntityType>
-  <Association Name="FK__Bill__Product__5629CD9C">
+  <EntityType Name="database_firewall_rules">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="name" />
+      <PropertyRef Name="start_ip_address" />
+      <PropertyRef Name="end_ip_address" />
+      <PropertyRef Name="create_date" />
+      <PropertyRef Name="modify_date" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="start_ip_address" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="end_ip_address" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="create_date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="modify_date" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <Association Name="FK__Bill__Product__6C190EBB">
     <End Role="Product" Type="Self.Product" Multiplicity="1" />
     <End Role="Bill" Type="Self.Bill" Multiplicity="*" />
     <ReferentialConstraint>
@@ -110,7 +149,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Bill__Sale__5535A963">
+  <Association Name="FK__Bill__Sale__6B24EA82">
     <End Role="Sale" Type="Self.Sale" Multiplicity="1" />
     <End Role="Bill" Type="Self.Bill" Multiplicity="*" />
     <ReferentialConstraint>
@@ -122,7 +161,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Extraordi__Movem__5CD6CB2B">
+  <Association Name="FK__Extraordi__Movem__75A278F5">
     <End Role="MovementType" Type="Self.MovementType" Multiplicity="1" />
     <End Role="ExtraordinaryMovements" Type="Self.ExtraordinaryMovements" Multiplicity="*" />
     <ReferentialConstraint>
@@ -134,7 +173,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Extraordi__Staff__5DCAEF64">
+  <Association Name="FK__Extraordi__Staff__76969D2E">
     <End Role="Staff" Type="Self.Staff" Multiplicity="1" />
     <End Role="ExtraordinaryMovements" Type="Self.ExtraordinaryMovements" Multiplicity="*" />
     <ReferentialConstraint>
@@ -146,19 +185,31 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Spoilage__Produc__59063A47">
+  <Association Name="FK__Product__Type__656C112C">
+    <End Role="ProductType" Type="Self.ProductType" Multiplicity="1" />
+    <End Role="Product" Type="Self.Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductType">
+        <PropertyRef Name="ProductTypeId" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="Type" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SpoilageD__Produ__72C60C4A">
     <End Role="Product" Type="Self.Product" Multiplicity="1" />
-    <End Role="Spoilage" Type="Self.Spoilage" Multiplicity="*" />
+    <End Role="SpoilageDetail" Type="Self.SpoilageDetail" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Product">
         <PropertyRef Name="ProductId" />
       </Principal>
-      <Dependent Role="Spoilage">
-        <PropertyRef Name="Product" />
+      <Dependent Role="SpoilageDetail">
+        <PropertyRef Name="ProductId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Staff__Role__4D94879B">
+  <Association Name="FK__Staff__Role__628FA481">
     <End Role="Role" Type="Self.Role" Multiplicity="1" />
     <End Role="Staff" Type="Self.Staff" Multiplicity="*" />
     <ReferentialConstraint>
@@ -170,7 +221,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Sale__StaffID__52593CB8">
+  <Association Name="FK__Sale__StaffID__68487DD7">
     <End Role="Staff" Type="Self.Staff" Multiplicity="1" />
     <End Role="Sale" Type="Self.Sale" Multiplicity="*" />
     <ReferentialConstraint>
@@ -182,7 +233,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Spoilage__StaffI__59FA5E80">
+  <Association Name="FK__Spoilage__StaffI__6EF57B66">
     <End Role="Staff" Type="Self.Staff" Multiplicity="1" />
     <End Role="Spoilage" Type="Self.Spoilage" Multiplicity="*" />
     <ReferentialConstraint>
@@ -194,46 +245,69 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK__SpoilageD__Spoil__71D1E811">
+    <End Role="Spoilage" Type="Self.Spoilage" Multiplicity="1" />
+    <End Role="SpoilageDetail" Type="Self.SpoilageDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Spoilage">
+        <PropertyRef Name="SpoilageId" />
+      </Principal>
+      <Dependent Role="SpoilageDetail">
+        <PropertyRef Name="SpoilageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="KomalliDBEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Bill" EntityType="Self.Bill" />
     <EntitySet Name="ExtraordinaryMovements" EntityType="Self.ExtraordinaryMovements" />
     <EntitySet Name="MovementType" EntityType="Self.MovementType" />
     <EntitySet Name="Product" EntityType="Self.Product" />
+    <EntitySet Name="ProductType" EntityType="Self.ProductType" />
     <EntitySet Name="Role" EntityType="Self.Role" />
     <EntitySet Name="Sale" EntityType="Self.Sale" />
     <EntitySet Name="Spoilage" EntityType="Self.Spoilage" />
+    <EntitySet Name="SpoilageDetail" EntityType="Self.SpoilageDetail" />
     <EntitySet Name="Staff" EntityType="Self.Staff" />
-    <AssociationSet Name="FK__Bill__Product__5629CD9C" Association="Self.FK__Bill__Product__5629CD9C">
+    <EntitySet Name="database_firewall_rules" EntityType="Self.database_firewall_rules" />
+    <AssociationSet Name="FK__Bill__Product__6C190EBB" Association="Self.FK__Bill__Product__6C190EBB">
       <End Role="Product" EntitySet="Product" />
       <End Role="Bill" EntitySet="Bill" />
     </AssociationSet>
-    <AssociationSet Name="FK__Bill__Sale__5535A963" Association="Self.FK__Bill__Sale__5535A963">
+    <AssociationSet Name="FK__Bill__Sale__6B24EA82" Association="Self.FK__Bill__Sale__6B24EA82">
       <End Role="Sale" EntitySet="Sale" />
       <End Role="Bill" EntitySet="Bill" />
     </AssociationSet>
-    <AssociationSet Name="FK__Extraordi__Movem__5CD6CB2B" Association="Self.FK__Extraordi__Movem__5CD6CB2B">
+    <AssociationSet Name="FK__Extraordi__Movem__75A278F5" Association="Self.FK__Extraordi__Movem__75A278F5">
       <End Role="MovementType" EntitySet="MovementType" />
       <End Role="ExtraordinaryMovements" EntitySet="ExtraordinaryMovements" />
     </AssociationSet>
-    <AssociationSet Name="FK__Extraordi__Staff__5DCAEF64" Association="Self.FK__Extraordi__Staff__5DCAEF64">
+    <AssociationSet Name="FK__Extraordi__Staff__76969D2E" Association="Self.FK__Extraordi__Staff__76969D2E">
       <End Role="Staff" EntitySet="Staff" />
       <End Role="ExtraordinaryMovements" EntitySet="ExtraordinaryMovements" />
     </AssociationSet>
-    <AssociationSet Name="FK__Spoilage__Produc__59063A47" Association="Self.FK__Spoilage__Produc__59063A47">
+    <AssociationSet Name="FK__Product__Type__656C112C" Association="Self.FK__Product__Type__656C112C">
+      <End Role="ProductType" EntitySet="ProductType" />
       <End Role="Product" EntitySet="Product" />
-      <End Role="Spoilage" EntitySet="Spoilage" />
     </AssociationSet>
-    <AssociationSet Name="FK__Staff__Role__4D94879B" Association="Self.FK__Staff__Role__4D94879B">
+    <AssociationSet Name="FK__SpoilageD__Produ__72C60C4A" Association="Self.FK__SpoilageD__Produ__72C60C4A">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="SpoilageDetail" EntitySet="SpoilageDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Staff__Role__628FA481" Association="Self.FK__Staff__Role__628FA481">
       <End Role="Role" EntitySet="Role" />
       <End Role="Staff" EntitySet="Staff" />
     </AssociationSet>
-    <AssociationSet Name="FK__Sale__StaffID__52593CB8" Association="Self.FK__Sale__StaffID__52593CB8">
+    <AssociationSet Name="FK__Sale__StaffID__68487DD7" Association="Self.FK__Sale__StaffID__68487DD7">
       <End Role="Staff" EntitySet="Staff" />
       <End Role="Sale" EntitySet="Sale" />
     </AssociationSet>
-    <AssociationSet Name="FK__Spoilage__StaffI__59FA5E80" Association="Self.FK__Spoilage__StaffI__59FA5E80">
+    <AssociationSet Name="FK__Spoilage__StaffI__6EF57B66" Association="Self.FK__Spoilage__StaffI__6EF57B66">
       <End Role="Staff" EntitySet="Staff" />
       <End Role="Spoilage" EntitySet="Spoilage" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SpoilageD__Spoil__71D1E811" Association="Self.FK__SpoilageD__Spoil__71D1E811">
+      <End Role="Spoilage" EntitySet="Spoilage" />
+      <End Role="SpoilageDetail" EntitySet="SpoilageDetail" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

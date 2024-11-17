@@ -12,15 +12,15 @@ namespace Komalli.DataBaseManagement.DataModel
     using System;
     using System.Collections.Generic;
     
-    public partial class Bill
+    public partial class SpoilageDetail
     {
-        public int Sale { get; set; }
-        public int Product { get; set; }
+        public int SpoilageId { get; set; }
+        public int ProductId { get; set; }
         public int Quantity { get; set; }
         public decimal UnitPrice { get; set; }
         public decimal Total { get; set; }
     
-        public virtual Product Product1 { get; set; }
-        public virtual Sale Sale1 { get; set; }
+        public virtual Product Product { get; set; }
+        public virtual Spoilage Spoilage { get; set; }
     }
 }
