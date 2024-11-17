@@ -106,6 +106,9 @@
     </Compile>
     <Compile Include="DataBaseManagement\POCOs\RolePOCO.cs" />
     <Compile Include="DataBaseManagement\POCOs\StaffWhitRole.cs" />
+    <Compile Include="GUIs\CashierLanding.xaml.cs">
+      <DependentUpon>CashierLanding.xaml</DependentUpon>
+    </Compile>
     <Compile Include="GUIs\ManagerLanding.xaml.cs">
       <DependentUpon>ManagerLanding.xaml</DependentUpon>
     </Compile>
@@ -117,6 +120,10 @@
     </Compile>
     <Compile Include="Util\StaffToken.cs" />
     <Compile Include="Util\Utilities.cs" />
+    <Page Include="GUIs\CashierLanding.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="GUIs\LogIn.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -216,6 +223,9 @@
       <DependentUpon>KomalliDBModel.edmx</DependentUpon>
       <LastGenOutput>KomalliDBModel.cs</LastGenOutput>
     </Content>
+    <Resource Include="Media\ComedoresUVCircular.png" />
+    <Resource Include="Media\InfoIcon.png" />
+    <Resource Include="Media\FoodDrawing.jpeg" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
