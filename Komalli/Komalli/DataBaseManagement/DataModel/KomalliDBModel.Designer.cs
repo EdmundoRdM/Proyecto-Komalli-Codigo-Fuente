@@ -1,4 +1,4 @@
-﻿// La generación de código T4 está habilitada para el modelo 'C:\Users\nando\Desktop\Trabajos UV\Desarrollo de software\Proyecto\Codigo\Proyecto-Komalli-Codigo-Fuente\Komalli\Komalli\DataBaseManagement\DataModel\KomalliDBModel.edmx'. 
+﻿// La generación de código T4 está habilitada para el modelo 'D:\Escuela\Semestre 7\Desarrollo de red\Proyecto-Komalli-Codigo-Fuente\Komalli\Komalli\DataBaseManagement\DataModel\KomalliDBModel.edmx'. 
 // Para habilitar la generación de código heredada, cambie el valor de la propiedad del diseñador 'Estrategia de generación de código'
 // por 'ObjectContext heredado'. Esta propiedad está disponible en la ventana Propiedades cuando se abre
 // el modelo en el diseñador.

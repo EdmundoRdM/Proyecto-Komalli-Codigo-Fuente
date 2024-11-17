@@ -12,15 +12,18 @@ namespace Komalli.DataBaseManagement.DataModel
     using System;
     using System.Collections.Generic;
     
-    public partial class Bill
+    public partial class ProductType
     {
-        public int Sale { get; set; }
-        public int Product { get; set; }
-        public int Quantity { get; set; }
-        public decimal UnitPrice { get; set; }
-        public decimal Total { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public ProductType()
+        {
+            this.Product = new HashSet<Product>();
+        }
     
-        public virtual Product Product1 { get; set; }
-        public virtual Sale Sale1 { get; set; }
+        public int ProductTypeId { get; set; }
+        public string TypeName { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Product> Product { get; set; }
     }
 }

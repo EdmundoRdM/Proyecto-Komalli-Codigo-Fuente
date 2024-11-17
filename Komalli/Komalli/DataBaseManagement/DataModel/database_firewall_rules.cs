@@ -12,15 +12,13 @@ namespace Komalli.DataBaseManagement.DataModel
     using System;
     using System.Collections.Generic;
     
-    public partial class Bill
+    public partial class database_firewall_rules
     {
-        public int Sale { get; set; }
-        public int Product { get; set; }
-        public int Quantity { get; set; }
-        public decimal UnitPrice { get; set; }
-        public decimal Total { get; set; }
-    
-        public virtual Product Product1 { get; set; }
-        public virtual Sale Sale1 { get; set; }
+        public int id { get; set; }
+        public string name { get; set; }
+        public string start_ip_address { get; set; }
+        public string end_ip_address { get; set; }
+        public System.DateTime create_date { get; set; }
+        public System.DateTime modify_date { get; set; }
     }
 }
