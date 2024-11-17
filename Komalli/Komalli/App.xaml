@@ -8,6 +8,76 @@
             <BitmapImage x:Key="LogoUV"  UriSource="Media/UV.png"/>
             <BitmapImage x:Key="LogoComedor"  UriSource="Media/ComedoresUV.png"/>
             <BitmapImage x:Key="Back"  UriSource="Media/BackButton.png"/>
+            <BitmapImage x:Key="Profile"  UriSource="Media/Profile.png"/>
+            <BitmapImage x:Key="UVFoundation"  UriSource="Media/UVLogos.png"/>
+            <BitmapImage x:Key="ComedoresPNG"  UriSource="Media/ComedoresUVPNG.png"/>
+            <BitmapImage x:Key="LogInImage"  UriSource="Media/LogInImage.png"/>
+            <BitmapImage x:Key="SearchIcon"  UriSource="Media/SearchIcon.png"/>
+            <BitmapImage x:Key="NewIcon"  UriSource="Media/NewIcon.png"/>
+            <BitmapImage x:Key="ComedoresU"  UriSource="Media/ComedoresU.png"/>
+            <BitmapImage x:Key="LogosUV"  UriSource="Media/LogoUV.png"/>
+            <BitmapImage x:Key="EditIcon"  UriSource="Media/EditIcon.png"/>
+            <BitmapImage x:Key="TrashIcon"  UriSource="Media/TrashIcon.png"/>
+            <BitmapImage x:Key="ReloadIcon"  UriSource="Media/ReloadIcon.png"/>
+            
+            <Style x:Key="RoundedTextBox" TargetType="TextBox">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="TextBox">
+                            <Border Background="{TemplateBinding Background}" 
+                        BorderBrush="{TemplateBinding BorderBrush}" 
+                        BorderThickness="3" 
+                        CornerRadius="5">
+                                <ScrollViewer Margin="0" 
+                                  x:Name="PART_ContentHost"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <Style x:Key="RoundedPasswordBox" TargetType="PasswordBox">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="PasswordBox">
+                            <Border Background="{TemplateBinding Background}" 
+                        BorderBrush="{TemplateBinding BorderBrush}" 
+                        BorderThickness="3" 
+                        CornerRadius="5">
+                                <ScrollViewer Margin="0" 
+                                  x:Name="PART_ContentHost" 
+                                  CanContentScroll="false"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <Style x:Key="RoundedGreenButton" TargetType="Button">
+                <Setter Property="Background" Value="Green"/>
+                <Setter Property="Foreground" Value="White"/>
+                <Setter Property="FontWeight" Value="Bold"/>
+                <Setter Property="Padding" Value="10,5"/>
+                <Setter Property="BorderBrush" Value="Green"/>
+                <Setter Property="BorderThickness" Value="1"/>
+                <Setter Property="HorizontalAlignment" Value="Center"/>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="{TemplateBinding Background}"
+                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                    BorderThickness="{TemplateBinding BorderThickness}"
+                                    CornerRadius="5">
+                                <ContentPresenter HorizontalAlignment="Center"
+                                                  VerticalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+
         </ResourceDictionary>
     </Application.Resources>
 </Application>

@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Komalli.GUIs;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +25,7 @@ namespace Komalli
         public MainWindow()
         {
             InitializeComponent();
+            frameContainer.Navigate(new LogIn());
         }
         // Cambia el cursor a "Mano" cuando el mouse pasa por la imagen
         private void Image_MouseEnter(object sender, MouseEventArgs e)
