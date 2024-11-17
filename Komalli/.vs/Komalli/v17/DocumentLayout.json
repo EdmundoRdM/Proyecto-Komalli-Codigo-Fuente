@@ -7,7 +7,7 @@
       "RelativeMoniker": "D:0:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|solutionrelative:komalli\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|c:\\uv_proyectos\\7mo_semestre\\repositoriodds\\proyecto-komalli-codigo-fuente\\komalli\\komalli\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|C:\\UV_Proyectos\\7mo_Semestre\\RepositorioDDS\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\komalli\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|solutionrelative:komalli\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
@@ -52,7 +52,7 @@
               "RelativeDocumentMoniker": "Komalli\\App.config",
               "ToolTip": "C:\\UV_Proyectos\\7mo_Semestre\\RepositorioDDS\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\App.config",
               "RelativeToolTip": "Komalli\\App.config",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAWAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
               "WhenOpened": "2024-10-11T06:39:49.255Z",
               "EditorCaption": ""
@@ -66,8 +66,7 @@
               "ToolTip": "C:\\UV_Proyectos\\7mo_Semestre\\RepositorioDDS\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\App.xaml",
               "RelativeToolTip": "Komalli\\App.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-10-11T05:37:57.946Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-11T05:37:57.946Z"
             },
             {
               "$type": "Document",
