@@ -1,0 +1,44 @@
+﻿<Page x:Class="Komalli.GUIs.OrdersModuleCook"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Komalli.GUIs"
+      mc:Ignorable="d" 
+      d:DesignHeight="922.16" d:DesignWidth="1742.8"
+      Title="OrdersModuleCook">
+
+    <Grid x:Name="OrderModuleCookBackground">
+        
+        <Grid Background="white">
+            <Rectangle 
+                HorizontalAlignment="Left" 
+                Margin="295,50,0,738"  
+                Width="1448" 
+                Fill="#2C9B00"
+                RadiusX="20" 
+                RadiusY="20"/>
+
+            <Label Content="Pedidos&#xD;&#xA;rsonal" 
+               HorizontalAlignment="Left" 
+               Margin="559,44,0,0" 
+               VerticalAlignment="Top" 
+               FontFamily="Titan One"
+               FontWeight="Bold"
+               Foreground="#FFFFFDFD"
+               FontSize="120" Height="140"/>
+
+            <Image
+                 HorizontalAlignment="Left"
+                 Height="184" 
+                 Margin="328,29,0,0" 
+                 VerticalAlignment="Top"
+                 Width="228" 
+                 Source="{StaticResource ComedoresU}"/>
+        </Grid>
+
+        <local:NavigationBar Grid.Column="0" HorizontalAlignment="Left" Width="300"/>
+        
+        
+    </Grid>
+</Page>

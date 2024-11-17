@@ -65,7 +65,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="DataBaseManagement\DataAccessObject\ProductDAO.cs" />
-    <Compile Include="DataBaseManagement\DataAccessObject\RoleDAO.cs" />
+    <Compile Include="DataBaseManagement\DataAccessObject\SaleDAO.cs" />
     <Compile Include="DataBaseManagement\DataModel\Bill.cs">
       <DependentUpon>KomalliDBModel.tt</DependentUpon>
     </Compile>
@@ -126,6 +126,9 @@
     <Compile Include="GUIs\NavigationBar.xaml.cs">
       <DependentUpon>NavigationBar.xaml</DependentUpon>
     </Compile>
+    <Compile Include="GUIs\OrdersModuleCook.xaml.cs">
+      <DependentUpon>OrdersModuleCook.xaml</DependentUpon>
+    </Compile>
     <Compile Include="GUIs\ProductModule.xaml.cs">
       <DependentUpon>ProductModule.xaml</DependentUpon>
     </Compile>
@@ -147,6 +150,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="GUIs\NavigationBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GUIs\OrdersModuleCook.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
