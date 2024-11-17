@@ -19,6 +19,7 @@
             <BitmapImage x:Key="EditIcon"  UriSource="Media/EditIcon.png"/>
             <BitmapImage x:Key="TrashIcon"  UriSource="Media/TrashIcon.png"/>
             <BitmapImage x:Key="ReloadIcon"  UriSource="Media/ReloadIcon.png"/>
+            <BitmapImage x:Key="FoodDrawing"  UriSource="Media/FoodDrawing.jpeg"/>
             
             <Style x:Key="RoundedTextBox" TargetType="TextBox">
                 <Setter Property="Template">
@@ -75,6 +76,14 @@
                         </ControlTemplate>
                     </Setter.Value>
                 </Setter>
+            </Style>
+            
+            <Style x:Key="RoundedRectangle" TargetType="Border">
+                <Setter Property="CornerRadius" Value="15"/>
+                <Setter Property="BorderThickness" Value="2"/>
+                <Setter Property="BorderBrush" Value="#2C9B00"/>
+                <Setter Property="Background" Value="White"/>
+                <Setter Property="Margin" Value="10"/>
             </Style>
 
 

@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\Escuela\Semestre 7\Desarrollo de red\Proyecto-Komalli-Codigo-Fuente\Komalli\Komalli\obj\Debug\
+C:\UV_Proyectos\7mo_Semestre\RepositorioDDS\Proyecto-Komalli-Codigo-Fuente\Komalli\Komalli\obj\Debug\
 Komalli
 none
 false
 DEBUG;TRACE
-D:\Escuela\Semestre 7\Desarrollo de red\Proyecto-Komalli-Codigo-Fuente\Komalli\Komalli\App.xaml
-6-634728214
-21504120897
-31716992685
-18-763681087
-GUIs\LogIn.xaml;GUIs\ManagerLanding.xaml;GUIs\NavigationBar.xaml;GUIs\ProductModule.xaml;GUIs\StaffModule.xaml;MainWindow.xaml;
+C:\UV_Proyectos\7mo_Semestre\RepositorioDDS\Proyecto-Komalli-Codigo-Fuente\Komalli\Komalli\App.xaml
+7658771532
+4-1286725502
+35-365584290
+18-480257567
+GUIs\CashierLanding.xaml;GUIs\LogIn.xaml;GUIs\ManagerLanding.xaml;GUIs\NavigationBar.xaml;GUIs\ProductModule.xaml;GUIs\StaffModule.xaml;MainWindow.xaml;
 
-False
+True
 

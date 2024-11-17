@@ -107,7 +107,7 @@
                 Style="{StaticResource RoundedGreenButton}" 
                 Width="186" 
                 Height="33" Click="LogIng_Click"/>
-        
+
         <Image x:Name="btnSeePassword"
                Visibility="Collapsed"
                MouseLeftButtonUp="SeePassword"
@@ -117,7 +117,7 @@
                Margin="1577,518,0,0" 
                VerticalAlignment="Top"
                Source="\Media\OpenEye.png"/>
-        
+
         <Image x:Name="btnHidePassword"
             MouseLeftButtonUp="HidePassword"
             HorizontalAlignment="Left" 
@@ -126,6 +126,15 @@
             Margin="1577,518,0,0" 
             VerticalAlignment="Top"
             Source="/Media/ClosedEye.png"/>
+
+        <Label x:Name="lblLoading"
+            Content="Cargando..."
+            FontSize="30"
+            Foreground="#0047AB"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Visibility="Collapsed" Margin="1286,641,0,0"/>
+
 
     </Grid>
 </Page>

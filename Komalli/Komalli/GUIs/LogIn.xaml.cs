@@ -32,7 +32,7 @@ namespace Komalli.GUIs
             txtPassword.Text = "password123";
         }
 
-        private void LogIng_Click(object sender, RoutedEventArgs e)
+        private async void LogIng_Click(object sender, RoutedEventArgs e)
         {
             int fieldsOk = ValidateFields();
             string username = "";
@@ -45,17 +45,34 @@ namespace Komalli.GUIs
                 case 1:
                     username = txtUserName.Text;
                     password = pwdPassword.Password;
-                    VerifyLogin(username, password);
+                    await HandleLoginAsync(username, password);
                     break;
                 case 2:
                     username = txtUserName.Text;
                     password = txtPassword.Text;
-                    VerifyLogin(username, password);
+                    await HandleLoginAsync(username, password);
                     break;
 
                 default:
                     MessageBox.Show("Ocurrió un error inesperado.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                     break;
+            }
+        }
+
+        private async Task HandleLoginAsync(string username, string password)
+        {
+            lblLoading.Visibility = Visibility.Visible; // Muestra el indicador de carga
+            try
+            {
+                await Task.Run(() => VerifyLogin(username, password));
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error durante el inicio de sesión: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            finally
+            {
+                lblLoading.Visibility = Visibility.Collapsed; // Oculta el indicador de carga
             }
         }
 
@@ -105,17 +122,26 @@ namespace Komalli.GUIs
 
                 if (role != -1)
                 {
-                    StaffToken.SetEmployeePOCO(pocoLogIn);
-                    GoToRoleLanding(role);
+                    Application.Current.Dispatcher.Invoke(() =>
+                    {
+                        StaffToken.SetEmployeePOCO(pocoLogIn);
+                        GoToRoleLanding(role);
+                    });
                 }
                 else
                 {
-                    MessageBox.Show("Número de empleado o contraseña incorrectos.", "Error de inicio de sesión", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    Application.Current.Dispatcher.Invoke(() =>
+                    {
+                        MessageBox.Show("Número de empleado o contraseña incorrectos.", "Error de inicio de sesión", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    });
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error al iniciar sesión: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                Application.Current.Dispatcher.Invoke(() =>
+                {
+                    MessageBox.Show($"Error al iniciar sesión: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                });
             }
         }
 
@@ -135,6 +161,7 @@ namespace Komalli.GUIs
 
                 case 2:
                     MessageBox.Show("Bienvenido Cajero. Id emleado:" +rol , "Inicio de Sesión", MessageBoxButton.OK, MessageBoxImage.Information);
+                    Utilities.ChangePage(new CashierLanding());
                     //NavigationService.Navigate(new Uri("CajeroPage.xaml", UriKind.Relative));
                     break;
 

@@ -1,0 +1,170 @@
+﻿<Page x:Class="Komalli.GUIs.CashierLanding"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Komalli.GUIs"
+      mc:Ignorable="d" 
+      d:DesignHeight="922.16" d:DesignWidth="1742.8"
+      Title="CashierLanding">
+
+    <Grid x:Name="StaffModuleBackground" >
+
+        <Grid x:Name="DefaultBackground" 
+            Background="white" Visibility="Visible">
+            <Image
+                 HorizontalAlignment="Left"
+                 Height="525" 
+                 Margin="719,189,0,0" 
+                 VerticalAlignment="Top"
+                 Width="613" 
+                 Source="{StaticResource ComedoresU}"/>
+        </Grid>
+
+        <Grid x:Name="MenuForm" Visibility="Hidden"
+            Background="White">
+
+            <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Margin="386,190,0,0"
+                        Width="1274" 
+                        Height="100"
+                        Background="Transparent">
+
+                <Button x:Name="btnTodaysMenu"
+                        Style="{StaticResource RoundedGreenButton}"
+                        Content="Menú del día"
+                        FontSize="30"
+                        Width="300"
+                        Height="40"
+                        Margin="10,0"/> 
+
+                <Button x:Name="btnGeneralMenu"
+                        Style="{StaticResource RoundedGreenButton}"
+                        Content="De la carta"
+                        FontSize="30"
+                        Width="300"
+                        Height="40"
+                        Margin="10,0"/>
+
+                <Button x:Name="btnDrinks"
+                        Style="{StaticResource RoundedGreenButton}"
+                        Content="Bebidas"
+                        FontSize="30"
+                        Width="300"
+                        Height="40"
+                        Margin="10,0"/>
+
+                <Button x:Name="btnDesserts"
+                        Style="{StaticResource RoundedGreenButton}"
+                        Content="Postres"
+                        FontSize="30"
+                        Width="300"
+                        Height="40"
+                        Margin="10,0"/>
+            </StackPanel>
+
+
+            <Rectangle Fill="#2C9B00"
+                HorizontalAlignment="Left" 
+                Height="100" 
+                Width="1442"
+                Margin="301,53,0,0" 
+                Stroke="Black" 
+                VerticalAlignment="Top"/>
+
+            <Border Style="{StaticResource RoundedRectangle}"
+                HorizontalAlignment="Left" 
+                Height="531" 
+                Width="1281"
+                Margin="385,287,0,0"
+                VerticalAlignment="Top" >
+
+            </Border>
+            <Image Source="\Media\FoodDrawing.jpeg" Margin="1176,305,112,138"/>
+            <Image Source="\Media\InfoIcon.png" Margin="893,681,768,152"/>
+
+            <Image Source="\Media\ComedoresUVCircular.png"
+                HorizontalAlignment="Left" 
+                Height="200" 
+                Width="200"
+                Margin="408,5,0,0" 
+                VerticalAlignment="Top" />
+
+            <Button Style="{StaticResource RoundedGreenButton}"
+                Background="#005BAA"
+                Content="Carrito"
+                FontSize="30"
+                Width="300"
+                Height="40"
+                Margin="880,837,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+
+            <Border Background="#1E5AA6" 
+                Width="420" 
+                Height="75" 
+                CornerRadius="10,10,0,0"
+                HorizontalAlignment="Left" 
+                VerticalAlignment="Top" 
+                Margin="445,344,0,0" >
+                <Label x:Name="lblMenuDate"
+                        Content="Menu del dia"
+                       FontSize="30"/>
+            </Border>
+
+            <Border Background="White" 
+                Width="700" 
+                Height="250" 
+                CornerRadius="0,0,10,10"
+                HorizontalAlignment="Left" 
+                VerticalAlignment="Top" 
+                Margin="445,410,0,0" >
+            </Border>
+
+            <Button Style="{StaticResource RoundedGreenButton}"
+                        Content="Agregar al carrito"
+                        FontSize="30"
+                        Width="300"
+                        Height="40"
+                        Margin="531,705,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+
+            <Label 
+                Content="Desayuno" 
+                FontSize="25"
+                HorizontalAlignment="Left" 
+                Margin="477,424,0,0" 
+                VerticalAlignment="Top" 
+                Height="48" Width="146"/>
+
+            <Label 
+                Content="Comida" 
+                FontSize="25"
+                HorizontalAlignment="Left" 
+                Margin="827,429,0,0" 
+                VerticalAlignment="Top" 
+                Height="38" Width="146"/>
+
+            <Label x:Name="lblBreakfast"
+                Content="Descripcion desayuno" 
+                FontSize="25"
+                HorizontalAlignment="Left" 
+                Margin="484,468,0,0" 
+                VerticalAlignment="Top" 
+                Height="179" Width="300"/>
+
+            <Label x:Name="lblMeal"
+                Content="descripcion desayuno" 
+                FontSize="25"
+                HorizontalAlignment="Left" 
+                Margin="826,467,0,0" 
+                VerticalAlignment="Top" 
+                Height="180" Width="301"/>
+
+        </Grid>
+
+        <local:NavigationBar Grid.Column="0" HorizontalAlignment="Left" Width="300"/>
+
+    </Grid>
+
+
+</Page>
