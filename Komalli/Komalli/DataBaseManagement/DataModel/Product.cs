@@ -18,7 +18,7 @@ namespace Komalli.DataBaseManagement.DataModel
         public Product()
         {
             this.Bill = new HashSet<Bill>();
-            this.Spoilage = new HashSet<Spoilage>();
+            this.SpoilageDetail = new HashSet<SpoilageDetail>();
         }
     
         public int ProductId { get; set; }
@@ -26,12 +26,15 @@ namespace Komalli.DataBaseManagement.DataModel
         public int AvailableQuantity { get; set; }
         public string Description { get; set; }
         public string Name { get; set; }
-        public bool Type { get; set; }
+        public int Type { get; set; }
         public bool Status { get; set; }
+        public Nullable<System.DateTime> SellingDate { get; set; }
+        public bool FromKitchen { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Bill> Bill { get; set; }
+        public virtual ProductType ProductType { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Spoilage> Spoilage { get; set; }
+        public virtual ICollection<SpoilageDetail> SpoilageDetail { get; set; }
     }
 }

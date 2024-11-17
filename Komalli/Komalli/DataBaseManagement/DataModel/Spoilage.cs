@@ -14,14 +14,19 @@ namespace Komalli.DataBaseManagement.DataModel
     
     public partial class Spoilage
     {
-        public int SpoilageId { get; set; }
-        public string Description { get; set; }
-        public System.DateTime Date { get; set; }
-        public int Product { get; set; }
-        public int StaffID { get; set; }
-        public int Quantity { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Spoilage()
+        {
+            this.SpoilageDetail = new HashSet<SpoilageDetail>();
+        }
     
-        public virtual Product Product1 { get; set; }
+        public int SpoilageId { get; set; }
+        public string SpoilageConcept { get; set; }
+        public System.DateTime Date { get; set; }
+        public int StaffID { get; set; }
+    
         public virtual Staff Staff { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<SpoilageDetail> SpoilageDetail { get; set; }
     }
 }

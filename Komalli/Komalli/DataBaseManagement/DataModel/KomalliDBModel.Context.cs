@@ -29,9 +29,12 @@ namespace Komalli.DataBaseManagement.DataModel
         public virtual DbSet<ExtraordinaryMovements> ExtraordinaryMovements { get; set; }
         public virtual DbSet<MovementType> MovementType { get; set; }
         public virtual DbSet<Product> Product { get; set; }
+        public virtual DbSet<ProductType> ProductType { get; set; }
         public virtual DbSet<Role> Role { get; set; }
         public virtual DbSet<Sale> Sale { get; set; }
         public virtual DbSet<Spoilage> Spoilage { get; set; }
+        public virtual DbSet<SpoilageDetail> SpoilageDetail { get; set; }
         public virtual DbSet<Staff> Staff { get; set; }
+        public virtual DbSet<database_firewall_rules> database_firewall_rules { get; set; }
     }
 }
