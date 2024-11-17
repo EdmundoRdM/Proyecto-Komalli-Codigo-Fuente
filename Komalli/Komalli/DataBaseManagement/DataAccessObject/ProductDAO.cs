@@ -109,6 +109,7 @@ namespace Komalli.DataBaseManagement.DataAccessObject
                 try
                 {
                     return context.Product
+                        .Where(p => p.Status == true)
                         .Select(p => new ProductPOCO
                         {
                             ProductId = p.ProductId,
