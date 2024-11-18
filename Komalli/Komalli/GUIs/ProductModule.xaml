@@ -29,27 +29,24 @@
             <Setter Property="HorizontalContentAlignment" Value="Center"/>
             <Setter Property="VerticalContentAlignment" Value="Center"/>
             <Setter Property="FontSize" Value="25"/>
+            <Setter Property="Margin" Value="0,0,5,0"/>
+            <Setter Property="IsHitTestVisible" Value="False"/>
         </Style>
 
         <!-- Estilo para ListViewItem -->
         <Style TargetType="{x:Type ListViewItem}">
+            <Setter Property="Background" Value="Transparent"/>
             <Setter Property="FontWeight" Value="SemiBold"/>
             <Setter Property="Foreground" Value="Black"/>
             <Setter Property="HorizontalContentAlignment" Value="Center"/>
             <Setter Property="VerticalContentAlignment" Value="Center"/>
             <Setter Property="FontSize" Value="20"/>
-            <!-- Opcional: Estilos para cuando el elemento está seleccionado -->
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type ListViewItem}">
-                        <Border x:Name="Border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
-                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                        <Border BorderBrush="#030a00" BorderThickness="0,0,0,1" Background="{TemplateBinding Background}">
+                            <ContentPresenter/>
                         </Border>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsSelected" Value="True">
-                                <Setter TargetName="Border" Property="Background" Value="#FFBDE6F8"/>
-                            </Trigger>
-                        </ControlTemplate.Triggers>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
@@ -159,17 +156,18 @@
 
         <ListView 
         Style="{DynamicResource ListViewStyle}" x:Name="ProductListView"
-           Background="AliceBlue"
-           Margin="358,352,52,50"
-           Grid.Row="4"
-           Grid.Column="1"
-           Grid.RowSpan="2"
-           Grid.ColumnSpan="4"
-           FontSize="15">
+            Background="AliceBlue"
+    Margin="358,352,50,50"
+    Grid.Row="4"
+    Grid.Column="1"
+    Grid.RowSpan="2"
+    Grid.ColumnSpan="4"
+    FontSize="15"
+    >
             <ListView.View>
                 <GridView>
                     <GridViewColumn>
-                        <GridViewColumnHeader Content="Nombre" />
+                        <GridViewColumnHeader Content="Nombre" Width="280"/>
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <TextBlock Style="{DynamicResource CellTextBlockStyle}" Text="{Binding ProductName}" />
@@ -177,7 +175,31 @@
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
                     <GridViewColumn>
-                        <GridViewColumnHeader Content="Tipo" />
+                        <GridViewColumnHeader Content="Tipo" Width="250" />
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Style="{DynamicResource CellTextBlockStyle}" Text="{Binding ProductName}" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn>
+                        <GridViewColumnHeader Content="Precio" Width="250" />
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Style="{DynamicResource CellTextBlockStyle}" Text="{Binding ProductName}" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn>
+                        <GridViewColumnHeader Content="Disponible" Width="250" />
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Style="{DynamicResource CellTextBlockStyle}" Text="{Binding ProductName}" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn>
+                        <GridViewColumnHeader Content="Opciones" Width="280" />
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <TextBlock Style="{DynamicResource CellTextBlockStyle}" Text="{Binding ProductName}" />
