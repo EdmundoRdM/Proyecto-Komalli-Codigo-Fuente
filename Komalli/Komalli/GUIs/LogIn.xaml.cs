@@ -167,7 +167,7 @@ namespace Komalli.GUIs
 
                 case 3: 
                     MessageBox.Show("Bienvenido Cocinero. Id emleado:" +rol, "Inicio de Sesión", MessageBoxButton.OK, MessageBoxImage.Information);
-                    Utilities.ChangePage(new OrdersModuleCook());
+                    Utilities.ChangePage(new CookLanding());
                     break;
 
                 case 4: 

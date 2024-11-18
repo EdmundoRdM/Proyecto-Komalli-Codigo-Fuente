@@ -8,8 +8,109 @@
       d:DesignHeight="922.16" d:DesignWidth="1742.8"
       Title="OrdersModuleCook">
 
+    <Page.Resources>
+        <Style x:Key="{ComponentResourceKey ResourceId=DataGridSelectAllButtonStyle, TypeInTargetAssembly={x:Type DataGrid}}" TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid>
+                            <Rectangle x:Name="Border" Fill="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" SnapsToDevicePixels="True"/>
+                            <Polygon x:Name="Arrow" Fill="Black" HorizontalAlignment="Right" Margin="8,8,3,3" Opacity="0.15" Points="0,10 10,10 10,0" Stretch="Uniform" VerticalAlignment="Bottom"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Stroke" TargetName="Border" Value="{DynamicResource {x:Static SystemColors.ControlDarkBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Fill" TargetName="Border" Value="{DynamicResource {x:Static SystemColors.ControlDarkBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Visibility" TargetName="Arrow" Value="Collapsed"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <!--REGION DATAGRID-->
+        <Style x:Key="DataGridStyle" TargetType="{x:Type DataGrid}">
+            <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderBrush" Value="#FF688CAF"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="RowDetailsVisibilityMode" Value="VisibleWhenSelected"/>
+            <Setter Property="ScrollViewer.CanContentScroll" Value="true"/>
+            <Setter Property="ScrollViewer.PanningMode" Value="Both"/>
+            <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type DataGrid}">
+                        <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Padding="{TemplateBinding Padding}" SnapsToDevicePixels="True">
+                            <ScrollViewer x:Name="DG_ScrollViewer" Focusable="false">
+                                <ScrollViewer.Template>
+                                    <ControlTemplate TargetType="{x:Type ScrollViewer}">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="Auto"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="Auto"/>
+                                            </Grid.RowDefinitions>
+                                            <Button Command="{x:Static DataGrid.SelectAllCommand}" Focusable="false" Style="{DynamicResource {ComponentResourceKey ResourceId=DataGridSelectAllButtonStyle, TypeInTargetAssembly={x:Type DataGrid}}}" Visibility="{Binding HeadersVisibility, ConverterParameter={x:Static DataGridHeadersVisibility.All}, Converter={x:Static DataGrid.HeadersVisibilityConverter}, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}" Width="{Binding CellsPanelHorizontalOffset, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}"/>
+                                            <DataGridColumnHeadersPresenter x:Name="PART_ColumnHeadersPresenter" Grid.Column="1" Visibility="{Binding HeadersVisibility, ConverterParameter={x:Static DataGridHeadersVisibility.Column}, Converter={x:Static DataGrid.HeadersVisibilityConverter}, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}"/>
+                                            <ScrollContentPresenter x:Name="PART_ScrollContentPresenter" CanContentScroll="{TemplateBinding CanContentScroll}" Grid.ColumnSpan="2" Grid.Row="1"/>
+                                            <ScrollBar x:Name="PART_VerticalScrollBar" Grid.Column="2" Maximum="{TemplateBinding ScrollableHeight}" Orientation="Vertical" Grid.Row="1" Value="{Binding VerticalOffset, Mode=OneWay, RelativeSource={RelativeSource Mode=TemplatedParent}}" ViewportSize="{TemplateBinding ViewportHeight}" Visibility="{TemplateBinding ComputedVerticalScrollBarVisibility}"/>
+                                            <Grid Grid.Column="1" Grid.Row="2">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="{Binding NonFrozenColumnsViewportHorizontalOffset, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <ScrollBar x:Name="PART_HorizontalScrollBar" Grid.Column="1" Maximum="{TemplateBinding ScrollableWidth}" Orientation="Horizontal" Value="{Binding HorizontalOffset, Mode=OneWay, RelativeSource={RelativeSource Mode=TemplatedParent}}" ViewportSize="{TemplateBinding ViewportWidth}" Visibility="{TemplateBinding ComputedHorizontalScrollBarVisibility}"/>
+                                            </Grid>
+                                        </Grid>
+                                    </ControlTemplate>
+                                </ScrollViewer.Template>
+                                <ItemsPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                            </ScrollViewer>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <MultiTrigger>
+                    <MultiTrigger.Conditions>
+                        <Condition Property="IsGrouping" Value="true"/>
+                        <Condition Property="VirtualizingPanel.IsVirtualizingWhenGrouping" Value="false"/>
+                    </MultiTrigger.Conditions>
+                    <Setter Property="ScrollViewer.CanContentScroll" Value="false"/>
+                </MultiTrigger>
+            </Style.Triggers>
+        </Style>
+        <Style TargetType="{x:Type DataGridColumnHeader}">
+            <Setter Property="Background" Value="#1f6700"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Height" Value="50"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="25"/>
+        </Style>
+        <Style TargetType="DataGridCell">
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <!-- Cambia esto si prefieres otro color de texto -->
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="20"/>
+        </Style>
+    </Page.Resources>
+
     <Grid x:Name="OrderModuleCookBackground">
-        
+
         <Grid Background="white">
             <Rectangle 
                 HorizontalAlignment="Left" 
@@ -38,7 +139,180 @@
         </Grid>
 
         <local:NavigationBar Grid.Column="0" HorizontalAlignment="Left" Width="300"/>
-        
-        
+
+        <DataGrid x:Name="SalesDataGrid" 
+                  AutoGenerateColumns="False" 
+                  CanUserAddRows="False" 
+                  CanUserResizeColumns="False"
+                  CanUserSortColumns="False"
+                  Margin="389,264,100,50">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Número de orden" Binding="{Binding SaleId}" Width="300"/>
+                <DataGridTextColumn Header="Fecha de  venta" Binding="{Binding SaleDate, StringFormat='yyyy-MM-dd HH:mm:ss'}" Width="400"/>
+                <DataGridTextColumn Header="Nombre de cliente" Binding="{Binding CustomerName}" Width="300"/>
+                <DataGridTemplateColumn Header="Información"
+                    Width="*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" >
+                                <Button x:Name="btnShowOrderDetail"
+                                    VerticalAlignment="Center" 
+                                    HorizontalAlignment="Center" 
+                                    Height="40" 
+                                    Width="40" 
+                                    Cursor="Hand"
+                                    Click = "BtnShowOrderDetail_Click"
+                                    CommandParameter="{Binding SaleId}"
+                                    Background="Transparent"
+                                    BorderBrush="Transparent"
+                                    Margin="5,0,5,0">
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image
+                                            HorizontalAlignment="Center" 
+                                            Height="35" 
+                                            VerticalAlignment="Center"
+                                            Width="35"
+                                            RenderTransformOrigin="0.511,0.545" 
+                                            Source="{StaticResource InfoIcon}"
+                                            Cursor="Hand"/>
+                                    </StackPanel>
+                                </Button>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Grid x:Name="OrderDetail" Visibility="Collapsed">
+            <Rectangle HorizontalAlignment="Left" 
+               Height="648" 
+               Margin="390,234,0,0" 
+               VerticalAlignment="Top" 
+               Width="1280" 
+               Fill="#D9D9D9"/>
+
+            <TextBox x:Name="txtOrderId"
+            HorizontalAlignment="Left" 
+            Margin="462,402,0,0"
+            TextWrapping="Wrap"
+            VerticalAlignment="Top"
+            FontSize="30"
+            Width="467"
+            Height="54"
+            Background="#BEBEBE"
+            Foreground="#FF262222"
+            BorderBrush="#FF262222"
+            BorderThickness="3"
+            IsReadOnly="True"/>
+
+            <TextBox x:Name="txtAditionalRequest"
+            HorizontalAlignment="Left" 
+            Margin="462,546,0,0"
+            TextWrapping="Wrap"
+            VerticalAlignment="Top"
+            FontSize="30"
+            Width="467"
+            Height="163"
+            Background="#BEBEBE"
+            Foreground="#FF262222"
+            BorderBrush="#FF262222"
+            BorderThickness="3"
+            IsReadOnly="True"/>
+
+            <Button x:Name="btnCancel" 
+            HorizontalAlignment="Left" 
+            Margin="674,754,0,0" 
+            VerticalAlignment="Top" 
+            Height="100" 
+            Width="329" 
+            Foreground="#FFF8F8F8" 
+            Cursor="Hand"
+            FontFamily="Inter" 
+            FontSize="50"
+            BorderThickness="0"
+            BorderBrush="#FF31318C" 
+            Click = "BtnCancel_Click"
+            FontWeight="SemiBold">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#005BAA"/>
+                        <GradientStop Color="#004f94" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+                <Button.Effect>
+                    <DropShadowEffect Color="Black" ShadowDepth="5" BlurRadius="10" Direction="270"/>
+                </Button.Effect>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Cancelar" 
+                   Foreground="White" 
+                   FontFamily="Inter"
+                   Margin="0,10,0,0">
+                    </Label>
+                </StackPanel>
+            </Button>
+
+            <Button x:Name="btnUpdateStatus" 
+            HorizontalAlignment="Left" 
+            Margin="1114,754,0,0" 
+            VerticalAlignment="Top" 
+            Height="100" 
+            Width="439" 
+            Foreground="#FFF8F8F8" 
+            Cursor="Hand"
+            FontFamily="Inter" 
+            FontSize="50"
+            BorderThickness="0"
+            BorderBrush="#FF31318C" 
+            Click = "BtnUpdateStatusOrder_Click"
+            FontWeight="SemiBold">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#005BAA"/>
+                        <GradientStop Color="#004f94" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+                <Button.Effect>
+                    <DropShadowEffect Color="Black" ShadowDepth="5" BlurRadius="10" Direction="270"/>
+                </Button.Effect>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Pedido preparado" 
+                   Foreground="White" 
+                   FontFamily="Inter"
+                   Margin="0,10,0,0">
+                    </Label>
+                </StackPanel>
+            </Button>
+
+            <Label Content="Número de pedido:" 
+               HorizontalAlignment="Left" 
+               Margin="455,332,0,0" 
+               VerticalAlignment="Top"
+               FontSize="45"
+               Foreground="#292929"
+               FontFamily="Inter"
+               FontWeight="UltraBold"/>
+
+            <Label Content="Solicitudes adicionales:" 
+           HorizontalAlignment="Left" 
+           Margin="462,483,0,0" 
+           VerticalAlignment="Top"
+           FontSize="40"
+           Foreground="#292929"
+           FontFamily="Inter"
+           FontWeight="UltraBold" Width="518"/>
+
+            <DataGrid x:Name="OrderDetailDataGrid" 
+              AutoGenerateColumns="False" 
+              CanUserAddRows="False" 
+              CanUserResizeColumns="False"
+              CanUserSortColumns="False"
+              Margin="1030,264,128,213">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Producto" Binding="{Binding ProductName}" Width="420"/>
+                    <DataGridTextColumn Header="Cantidad" Binding="{Binding Quantity}" Width="*"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
     </Grid>
 </Page>

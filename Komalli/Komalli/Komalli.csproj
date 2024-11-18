@@ -114,11 +114,16 @@
     <Compile Include="DataBaseManagement\DataModel\Staff.cs">
       <DependentUpon>KomalliDBModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DataBaseManagement\POCOs\OrderPOCO.cs" />
     <Compile Include="DataBaseManagement\POCOs\ProductPOCO.cs" />
     <Compile Include="DataBaseManagement\POCOs\RolePOCO.cs" />
+    <Compile Include="DataBaseManagement\POCOs\SalePOCO.cs" />
     <Compile Include="DataBaseManagement\POCOs\StaffWhitRole.cs" />
     <Compile Include="GUIs\CashierLanding.xaml.cs">
       <DependentUpon>CashierLanding.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUIs\CookLanding.xaml.cs">
+      <DependentUpon>CookLanding.xaml</DependentUpon>
     </Compile>
     <Compile Include="GUIs\ManagerLanding.xaml.cs">
       <DependentUpon>ManagerLanding.xaml</DependentUpon>
@@ -138,6 +143,10 @@
     <Compile Include="Util\StaffToken.cs" />
     <Compile Include="Util\Utilities.cs" />
     <Page Include="GUIs\CashierLanding.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GUIs\CookLanding.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
