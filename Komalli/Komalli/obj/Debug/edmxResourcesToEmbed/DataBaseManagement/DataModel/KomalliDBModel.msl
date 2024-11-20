@@ -72,15 +72,6 @@
           <ScalarProperty Name="TotalSale" ColumnName="TotalSale" />
           <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
           <ScalarProperty Name="StaffID" ColumnName="StaffID" />
-          <ScalarProperty Name="SaleStatus" ColumnName="SaleStatus" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="SaleStatus">
-      <EntityTypeMapping TypeName="KomalliDBModel.SaleStatus">
-        <MappingFragment StoreEntitySet="SaleStatus">
-          <ScalarProperty Name="StatusId" ColumnName="StatusId" />
-          <ScalarProperty Name="Status" ColumnName="Status" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

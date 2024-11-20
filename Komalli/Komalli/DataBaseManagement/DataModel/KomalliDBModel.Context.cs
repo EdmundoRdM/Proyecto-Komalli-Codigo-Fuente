@@ -32,7 +32,6 @@ namespace Komalli.DataBaseManagement.DataModel
         public virtual DbSet<ProductType> ProductType { get; set; }
         public virtual DbSet<Role> Role { get; set; }
         public virtual DbSet<Sale> Sale { get; set; }
-        public virtual DbSet<SaleStatus> SaleStatus { get; set; }
         public virtual DbSet<Spoilage> Spoilage { get; set; }
         public virtual DbSet<SpoilageDetail> SpoilageDetail { get; set; }
         public virtual DbSet<Staff> Staff { get; set; }
