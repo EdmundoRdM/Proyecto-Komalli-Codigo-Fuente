@@ -132,6 +132,7 @@
     <Compile Include="GUIs\StaffModule.xaml.cs">
       <DependentUpon>StaffModule.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Util\Converters.cs" />
     <Compile Include="Util\StaffToken.cs" />
     <Compile Include="Util\Utilities.cs" />
     <Page Include="GUIs\CashierLanding.xaml">
@@ -241,6 +242,7 @@
       <DependentUpon>KomalliDBModel.edmx</DependentUpon>
       <LastGenOutput>KomalliDBModel.cs</LastGenOutput>
     </Content>
+    <Resource Include="Media\ShoppingCart.png" />
     <Resource Include="Media\ComedoresUVCircular.png" />
     <Resource Include="Media\InfoIcon.png" />
     <Resource Include="Media\FoodDrawing.jpeg" />
