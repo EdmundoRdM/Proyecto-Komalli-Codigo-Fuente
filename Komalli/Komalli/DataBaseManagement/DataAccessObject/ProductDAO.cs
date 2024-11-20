@@ -8,8 +8,23 @@ using System.Threading.Tasks;
 
 namespace Komalli.DataBaseManagement.DataAccessObject
 {
-    internal class ProductDAO
+    public class ProductDAO
     {
+        public int RegisterProduct(ProductPOCO product)
+        {
+            try
+            {
+                using (var context = new KomalliDBEntities())
+                {
+                    return 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al registrar el empleado.", ex);
+            }
+        }
+
         public List<ProductPOCO> GetProductByName(string partialName)
         {
             try

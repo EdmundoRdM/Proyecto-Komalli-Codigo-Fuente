@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Komalli.DataBaseManagement.POCOs
 {
-    internal class ProductPOCO
+    public class ProductPOCO
     {
         public int ProductId { get; set; }
         public decimal ProductPrice { get; set; }
