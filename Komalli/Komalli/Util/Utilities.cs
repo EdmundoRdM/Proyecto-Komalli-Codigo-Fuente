@@ -45,5 +45,30 @@ namespace Komalli.Util
             return match.Success && input.Length >= 5;
         }
 
+        public static bool IsValidInteger(string input)
+        {
+            if (string.IsNullOrWhiteSpace(input))
+            {
+                return false;
+            }
+            string pattern = @"^\d{1,}$";
+            Regex regex = new Regex(pattern);
+            Match match = regex.Match(input);
+
+            return match.Success;
+        }
+
+        public static bool IsValidDecimal(string input)
+        {
+            if (string.IsNullOrWhiteSpace(input))
+            {
+                return false;
+            }
+            string pattern = @"^\d{1,}[.,]\d{1,}$";
+            Regex regex = new Regex(pattern);
+            Match match = regex.Match(input);
+            return match.Success;
+        }
+
     }
 }

@@ -3,28 +3,20 @@
   "WorkspaceRootPath": "D:\\Escuela\\Semestre 7\\Desarrollo de red\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|d:\\escuela\\semestre 7\\desarrollo de red\\proyecto-komalli-codigo-fuente\\komalli\\komalli\\guis\\productmodule.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|solutionrelative:komalli\\guis\\productmodule.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|D:\\Escuela\\Semestre 7\\Desarrollo de red\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\komalli\\databasemanagement\\dataaccessobject\\productdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|solutionrelative:komalli\\databasemanagement\\dataaccessobject\\productdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|D:\\Escuela\\Semestre 7\\Desarrollo de red\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\komalli\\guis\\staffmodule.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|solutionrelative:komalli\\guis\\staffmodule.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|d:\\escuela\\semestre 7\\desarrollo de red\\proyecto-komalli-codigo-fuente\\komalli\\komalli\\util\\utilities.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|solutionrelative:komalli\\util\\utilities.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|D:\\Escuela\\Semestre 7\\Desarrollo de red\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\komalli\\guis\\productmodule.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|solutionrelative:komalli\\guis\\productmodule.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|D:\\Escuela\\Semestre 7\\Desarrollo de red\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\komalli\\databasemanagement\\dataaccessobject\\staffdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|solutionrelative:komalli\\databasemanagement\\dataaccessobject\\staffdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|D:\\Escuela\\Semestre 7\\Desarrollo de red\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\komalli\\databasemanagement\\dataaccessobject\\productdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|solutionrelative:komalli\\databasemanagement\\dataaccessobject\\productdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|D:\\Escuela\\Semestre 7\\Desarrollo de red\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\komalli\\databasemanagement\\pocos\\staffwhitrole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|solutionrelative:komalli\\databasemanagement\\pocos\\staffwhitrole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|d:\\escuela\\semestre 7\\desarrollo de red\\proyecto-komalli-codigo-fuente\\komalli\\komalli\\guis\\productmodule.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|solutionrelative:komalli\\guis\\productmodule.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|D:\\Escuela\\Semestre 7\\Desarrollo de red\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\komalli\\guis\\staffmodule.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -33,6 +25,30 @@
     {
       "AbsoluteMoniker": "D:0:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|D:\\Escuela\\Semestre 7\\Desarrollo de red\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\komalli\\databasemanagement\\pocos\\productpoco.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|solutionrelative:komalli\\databasemanagement\\pocos\\productpoco.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|d:\\escuela\\semestre 7\\desarrollo de red\\proyecto-komalli-codigo-fuente\\komalli\\komalli\\databasemanagement\\datamodel\\komallidbmodel.tt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|solutionrelative:komalli\\databasemanagement\\datamodel\\komallidbmodel.tt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|D:\\Escuela\\Semestre 7\\Desarrollo de red\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\komalli\\databasemanagement\\dataaccessobject\\staffdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|solutionrelative:komalli\\databasemanagement\\dataaccessobject\\staffdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|d:\\escuela\\semestre 7\\desarrollo de red\\proyecto-komalli-codigo-fuente\\komalli\\komalli\\databasemanagement\\pocos\\producttypepoco.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|solutionrelative:komalli\\databasemanagement\\pocos\\producttypepoco.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|d:\\escuela\\semestre 7\\desarrollo de red\\proyecto-komalli-codigo-fuente\\komalli\\komalli\\databasemanagement\\dataaccessobject\\producttypedao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|solutionrelative:komalli\\databasemanagement\\dataaccessobject\\producttypedao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|D:\\Escuela\\Semestre 7\\Desarrollo de red\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\komalli\\guis\\staffmodule.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|solutionrelative:komalli\\guis\\staffmodule.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|D:\\Escuela\\Semestre 7\\Desarrollo de red\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\komalli\\databasemanagement\\pocos\\staffwhitrole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|solutionrelative:komalli\\databasemanagement\\pocos\\staffwhitrole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,8 +58,12 @@
       "DocumentGroups": [
         {
           "DockedHeight": 410,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 7,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
@@ -54,7 +74,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
+              "Title": "Utilities.cs",
+              "DocumentMoniker": "D:\\Escuela\\Semestre 7\\Desarrollo de red\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\Util\\Utilities.cs",
+              "RelativeDocumentMoniker": "Komalli\\Util\\Utilities.cs",
+              "ToolTip": "D:\\Escuela\\Semestre 7\\Desarrollo de red\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\Util\\Utilities.cs",
+              "RelativeToolTip": "Komalli\\Util\\Utilities.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEUAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T09:56:44.167Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "ProductModule.xaml",
               "DocumentMoniker": "D:\\Escuela\\Semestre 7\\Desarrollo de red\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\GUIs\\ProductModule.xaml",
               "RelativeDocumentMoniker": "Komalli\\GUIs\\ProductModule.xaml",
@@ -66,7 +99,123 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ProductModule.xaml.cs",
+              "DocumentMoniker": "D:\\Escuela\\Semestre 7\\Desarrollo de red\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\GUIs\\ProductModule.xaml.cs",
+              "RelativeDocumentMoniker": "Komalli\\GUIs\\ProductModule.xaml.cs",
+              "ToolTip": "D:\\Escuela\\Semestre 7\\Desarrollo de red\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\GUIs\\ProductModule.xaml.cs",
+              "RelativeToolTip": "Komalli\\GUIs\\ProductModule.xaml.cs",
+              "ViewState": "AgIAAEcAAABgtJmZmZkowG8AAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T18:56:13.203Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "StaffModule.xaml.cs",
+              "DocumentMoniker": "D:\\Escuela\\Semestre 7\\Desarrollo de red\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\GUIs\\StaffModule.xaml.cs",
+              "RelativeDocumentMoniker": "Komalli\\GUIs\\StaffModule.xaml.cs",
+              "ToolTip": "D:\\Escuela\\Semestre 7\\Desarrollo de red\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\GUIs\\StaffModule.xaml.cs",
+              "RelativeToolTip": "Komalli\\GUIs\\StaffModule.xaml.cs",
+              "ViewState": "AgIAAL8AAAAA1MzMzEwfwJgAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T18:56:46.274Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ProductDAO.cs",
+              "DocumentMoniker": "D:\\Escuela\\Semestre 7\\Desarrollo de red\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\DataBaseManagement\\DataAccessObject\\ProductDAO.cs",
+              "RelativeDocumentMoniker": "Komalli\\DataBaseManagement\\DataAccessObject\\ProductDAO.cs",
+              "ToolTip": "D:\\Escuela\\Semestre 7\\Desarrollo de red\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\DataBaseManagement\\DataAccessObject\\ProductDAO.cs",
+              "RelativeToolTip": "Komalli\\DataBaseManagement\\DataAccessObject\\ProductDAO.cs",
+              "ViewState": "AgIAADUAAAAA5czMzMwUwBIAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T12:26:15.606Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "KomalliDBModel.tt",
+              "DocumentMoniker": "D:\\Escuela\\Semestre 7\\Desarrollo de red\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\DataBaseManagement\\DataModel\\KomalliDBModel.tt",
+              "RelativeDocumentMoniker": "Komalli\\DataBaseManagement\\DataModel\\KomalliDBModel.tt",
+              "ToolTip": "D:\\Escuela\\Semestre 7\\Desarrollo de red\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\DataBaseManagement\\DataModel\\KomalliDBModel.tt",
+              "RelativeToolTip": "Komalli\\DataBaseManagement\\DataModel\\KomalliDBModel.tt",
+              "ViewState": "AgIAAK8CAAAAAAAAAAAIwNwCAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2024-11-18T11:16:24.992Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 5,
+              "Title": "ProductPOCO.cs",
+              "DocumentMoniker": "D:\\Escuela\\Semestre 7\\Desarrollo de red\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\DataBaseManagement\\POCOs\\ProductPOCO.cs",
+              "RelativeDocumentMoniker": "Komalli\\DataBaseManagement\\POCOs\\ProductPOCO.cs",
+              "ToolTip": "D:\\Escuela\\Semestre 7\\Desarrollo de red\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\DataBaseManagement\\POCOs\\ProductPOCO.cs",
+              "RelativeToolTip": "Komalli\\DataBaseManagement\\POCOs\\ProductPOCO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T16:38:38.399Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ProductTypeDAO.cs",
+              "DocumentMoniker": "D:\\Escuela\\Semestre 7\\Desarrollo de red\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\DataBaseManagement\\DataAccessObject\\ProductTypeDAO.cs",
+              "RelativeDocumentMoniker": "Komalli\\DataBaseManagement\\DataAccessObject\\ProductTypeDAO.cs",
+              "ToolTip": "D:\\Escuela\\Semestre 7\\Desarrollo de red\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\DataBaseManagement\\DataAccessObject\\ProductTypeDAO.cs",
+              "RelativeToolTip": "Komalli\\DataBaseManagement\\DataAccessObject\\ProductTypeDAO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAmwBYAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T09:29:12.217Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "StaffDAO.cs",
+              "DocumentMoniker": "D:\\Escuela\\Semestre 7\\Desarrollo de red\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\DataBaseManagement\\DataAccessObject\\StaffDAO.cs",
+              "RelativeDocumentMoniker": "Komalli\\DataBaseManagement\\DataAccessObject\\StaffDAO.cs",
+              "ToolTip": "D:\\Escuela\\Semestre 7\\Desarrollo de red\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\DataBaseManagement\\DataAccessObject\\StaffDAO.cs",
+              "RelativeToolTip": "Komalli\\DataBaseManagement\\DataAccessObject\\StaffDAO.cs",
+              "ViewState": "AgIAAAYAAAAAnJmZmZkjwA0AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T20:01:51.62Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ProductTypePOCO.cs",
+              "DocumentMoniker": "D:\\Escuela\\Semestre 7\\Desarrollo de red\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\DataBaseManagement\\POCOs\\ProductTypePOCO.cs",
+              "RelativeDocumentMoniker": "Komalli\\DataBaseManagement\\POCOs\\ProductTypePOCO.cs",
+              "ToolTip": "D:\\Escuela\\Semestre 7\\Desarrollo de red\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\DataBaseManagement\\POCOs\\ProductTypePOCO.cs",
+              "RelativeToolTip": "Komalli\\DataBaseManagement\\POCOs\\ProductTypePOCO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T08:13:05.124Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "StaffModule.xaml",
+              "DocumentMoniker": "D:\\Escuela\\Semestre 7\\Desarrollo de red\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\GUIs\\StaffModule.xaml",
+              "RelativeDocumentMoniker": "Komalli\\GUIs\\StaffModule.xaml",
+              "ToolTip": "D:\\Escuela\\Semestre 7\\Desarrollo de red\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\GUIs\\StaffModule.xaml",
+              "RelativeToolTip": "Komalli\\GUIs\\StaffModule.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-11-17T18:56:44.876Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "StaffWhitRole.cs",
               "DocumentMoniker": "D:\\Escuela\\Semestre 7\\Desarrollo de red\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\DataBaseManagement\\POCOs\\StaffWhitRole.cs",
               "RelativeDocumentMoniker": "Komalli\\DataBaseManagement\\POCOs\\StaffWhitRole.cs",
@@ -75,81 +224,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-17T20:01:38.205Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "StaffDAO.cs",
-              "DocumentMoniker": "D:\\Escuela\\Semestre 7\\Desarrollo de red\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\DataBaseManagement\\DataAccessObject\\StaffDAO.cs",
-              "RelativeDocumentMoniker": "Komalli\\DataBaseManagement\\DataAccessObject\\StaffDAO.cs",
-              "ToolTip": "D:\\Escuela\\Semestre 7\\Desarrollo de red\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\DataBaseManagement\\DataAccessObject\\StaffDAO.cs",
-              "RelativeToolTip": "Komalli\\DataBaseManagement\\DataAccessObject\\StaffDAO.cs",
-              "ViewState": "AgIAAE4AAAAAnJmZmZkhwGAAAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T20:01:51.62Z"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "StaffModule.xaml",
-              "DocumentMoniker": "D:\\Escuela\\Semestre 7\\Desarrollo de red\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\GUIs\\StaffModule.xaml",
-              "RelativeDocumentMoniker": "Komalli\\GUIs\\StaffModule.xaml",
-              "ToolTip": "D:\\Escuela\\Semestre 7\\Desarrollo de red\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\GUIs\\StaffModule.xaml",
-              "RelativeToolTip": "Komalli\\GUIs\\StaffModule.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-11-17T18:56:44.876Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ProductModule.xaml.cs",
-              "DocumentMoniker": "D:\\Escuela\\Semestre 7\\Desarrollo de red\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\GUIs\\ProductModule.xaml.cs",
-              "RelativeDocumentMoniker": "Komalli\\GUIs\\ProductModule.xaml.cs",
-              "ToolTip": "D:\\Escuela\\Semestre 7\\Desarrollo de red\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\GUIs\\ProductModule.xaml.cs",
-              "RelativeToolTip": "Komalli\\GUIs\\ProductModule.xaml.cs",
-              "ViewState": "AgIAADgAAAAAAAAAAAAcwE0AAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T18:56:13.203Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "StaffModule.xaml.cs",
-              "DocumentMoniker": "D:\\Escuela\\Semestre 7\\Desarrollo de red\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\GUIs\\StaffModule.xaml.cs",
-              "RelativeDocumentMoniker": "Komalli\\GUIs\\StaffModule.xaml.cs",
-              "ToolTip": "D:\\Escuela\\Semestre 7\\Desarrollo de red\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\GUIs\\StaffModule.xaml.cs",
-              "RelativeToolTip": "Komalli\\GUIs\\StaffModule.xaml.cs",
-              "ViewState": "AgIAAG4AAABAiWZmZsY5wHsAAAA/AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T18:56:46.274Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ProductDAO.cs",
-              "DocumentMoniker": "D:\\Escuela\\Semestre 7\\Desarrollo de red\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\DataBaseManagement\\DataAccessObject\\ProductDAO.cs",
-              "RelativeDocumentMoniker": "Komalli\\DataBaseManagement\\DataAccessObject\\ProductDAO.cs",
-              "ToolTip": "D:\\Escuela\\Semestre 7\\Desarrollo de red\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\DataBaseManagement\\DataAccessObject\\ProductDAO.cs",
-              "RelativeToolTip": "Komalli\\DataBaseManagement\\DataAccessObject\\ProductDAO.cs",
-              "ViewState": "AgIAAGEAAACAvpmZmZkswG8AAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T12:26:15.606Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ProductPOCO.cs",
-              "DocumentMoniker": "D:\\Escuela\\Semestre 7\\Desarrollo de red\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\DataBaseManagement\\POCOs\\ProductPOCO.cs",
-              "RelativeDocumentMoniker": "Komalli\\DataBaseManagement\\POCOs\\ProductPOCO.cs",
-              "ToolTip": "D:\\Escuela\\Semestre 7\\Desarrollo de red\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\DataBaseManagement\\POCOs\\ProductPOCO.cs",
-              "RelativeToolTip": "Komalli\\DataBaseManagement\\POCOs\\ProductPOCO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAA2AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-17T16:38:38.399Z"
             }
           ]
         },

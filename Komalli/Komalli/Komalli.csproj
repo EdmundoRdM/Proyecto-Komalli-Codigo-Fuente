@@ -65,6 +65,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="DataBaseManagement\DataAccessObject\ProductDAO.cs" />
+    <Compile Include="DataBaseManagement\DataAccessObject\ProductTypeDAO.cs" />
     <Compile Include="DataBaseManagement\DataAccessObject\RoleDAO.cs" />
     <Compile Include="DataBaseManagement\DataModel\Bill.cs">
       <DependentUpon>KomalliDBModel.tt</DependentUpon>
@@ -115,6 +116,7 @@
       <DependentUpon>KomalliDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DataBaseManagement\POCOs\ProductPOCO.cs" />
+    <Compile Include="DataBaseManagement\POCOs\ProductTypePOCO.cs" />
     <Compile Include="DataBaseManagement\POCOs\RolePOCO.cs" />
     <Compile Include="DataBaseManagement\POCOs\StaffWhitRole.cs" />
     <Compile Include="GUIs\CashierLanding.xaml.cs">

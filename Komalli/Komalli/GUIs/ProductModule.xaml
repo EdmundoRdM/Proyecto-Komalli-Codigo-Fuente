@@ -9,8 +9,8 @@
       Title="ProductModule">
 
     <Page.Resources>
-        <!-- Estilo para el ListView -->
-        <Style x:Key="ListViewStyle" TargetType="{x:Type ListView}">
+        <!-- Estilo para el ListBox -->
+        <Style x:Key="ListBoxStyle" TargetType="{x:Type ListBox}">
             <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
             <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
             <Setter Property="BorderBrush" Value="#FF688CAF"/>
@@ -20,21 +20,8 @@
             <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
         </Style>
 
-        <!-- Estilo para GridViewColumnHeader -->
-        <Style TargetType="{x:Type GridViewColumnHeader}">
-            <Setter Property="Background" Value="#1f6700"/>
-            <Setter Property="FontWeight" Value="SemiBold"/>
-            <Setter Property="Foreground" Value="White"/>
-            <Setter Property="Height" Value="50"/>
-            <Setter Property="HorizontalContentAlignment" Value="Center"/>
-            <Setter Property="VerticalContentAlignment" Value="Center"/>
-            <Setter Property="FontSize" Value="25"/>
-            <Setter Property="Margin" Value="0,0,5,0"/>
-            <Setter Property="IsHitTestVisible" Value="False"/>
-        </Style>
-
-        <!-- Estilo para ListViewItem -->
-        <Style TargetType="{x:Type ListViewItem}">
+        <!-- Estilo para los ítems del ListBox -->
+        <Style TargetType="{x:Type ListBoxItem}">
             <Setter Property="Background" Value="Transparent"/>
             <Setter Property="FontWeight" Value="SemiBold"/>
             <Setter Property="Foreground" Value="Black"/>
@@ -43,7 +30,7 @@
             <Setter Property="FontSize" Value="20"/>
             <Setter Property="Template">
                 <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type ListViewItem}">
+                    <ControlTemplate TargetType="{x:Type ListBoxItem}">
                         <Border BorderBrush="#030a00" BorderThickness="0,0,0,1" Background="{TemplateBinding Background}">
                             <ContentPresenter/>
                         </Border>
@@ -60,7 +47,20 @@
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="FontSize" Value="20"/>
         </Style>
+
+        <!-- Estilo para los encabezados de columna -->
+        <Style x:Key="HeaderTextBlockStyle" TargetType="{x:Type TextBlock}">
+            <Setter Property="Background" Value="#1f6700"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="Margin" Value="0,0,5,0"/>
+            <Setter Property="Padding" Value="5,0"/>
+
+        </Style>
     </Page.Resources>
+
 
 
     <Grid x:Name="ProductModuleBackground" >
@@ -104,12 +104,12 @@
 
             <TextBox x:Name="txtProductSearch"
             HorizontalAlignment="Left" 
-            Margin="397,255,0,594"
+            Margin="397,264,0,0"
             TextWrapping="Wrap"
             VerticalAlignment="Top"
             FontSize="30"
             Width="813"
-            Height="55"
+            Height="46"
             Background="#BEBEBE"
             Foreground="#FF262222">
             </TextBox>
@@ -154,62 +154,105 @@
             MouseLeftButtonUp="BtnRegisterProduct_Click"/>
         </Grid>
 
-        <ListView 
-        Style="{DynamicResource ListViewStyle}" x:Name="ProductListView"
-            Background="AliceBlue"
+        <Grid
     Margin="358,352,50,50"
     Grid.Row="4"
     Grid.Column="1"
     Grid.RowSpan="2"
-    Grid.ColumnSpan="4"
-    FontSize="15"
-    >
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn>
-                        <GridViewColumnHeader Content="Nombre" Width="280"/>
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <TextBlock Style="{DynamicResource CellTextBlockStyle}" Text="{Binding ProductName}" />
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                    <GridViewColumn>
-                        <GridViewColumnHeader Content="Tipo" Width="250" />
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <TextBlock Style="{DynamicResource CellTextBlockStyle}" Text="{Binding ProductName}" />
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                    <GridViewColumn>
-                        <GridViewColumnHeader Content="Precio" Width="250" />
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <TextBlock Style="{DynamicResource CellTextBlockStyle}" Text="{Binding ProductName}" />
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                    <GridViewColumn>
-                        <GridViewColumnHeader Content="Disponible" Width="250" />
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <TextBlock Style="{DynamicResource CellTextBlockStyle}" Text="{Binding ProductName}" />
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                    <GridViewColumn>
-                        <GridViewColumnHeader Content="Opciones" Width="280" />
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <TextBlock Style="{DynamicResource CellTextBlockStyle}" Text="{Binding ProductName}" />
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                </GridView>
-            </ListView.View>
-            
-        </ListView>
+    Grid.ColumnSpan="4">
+
+            <!-- Encabezados de columna -->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="280"/>
+                    <ColumnDefinition Width="250"/>
+                    <ColumnDefinition Width="250"/>
+                    <ColumnDefinition Width="250"/>
+                    <ColumnDefinition Width="280"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0" Text="Nombre" FontWeight="Bold" Style="{StaticResource HeaderTextBlockStyle}"/>
+                <TextBlock Grid.Column="1" Text="Tipo" FontWeight="Bold" Style="{StaticResource HeaderTextBlockStyle}"/>
+                <TextBlock Grid.Column="2" Text="Precio" FontWeight="Bold" Style="{StaticResource HeaderTextBlockStyle}"/>
+                <TextBlock Grid.Column="3" Text="Disponible" FontWeight="Bold" Style="{StaticResource HeaderTextBlockStyle}"/>
+                <TextBlock Grid.Column="4" Text="Opciones" FontWeight="Bold" Style="{StaticResource HeaderTextBlockStyle}"/>
+            </Grid>
+
+            <!-- ListBox con los datos -->
+            <ListBox
+        Style="{DynamicResource ListBoxStyle}"
+        x:Name="ProductListView"
+        Background="AliceBlue"
+        Margin="0,30,28,0"
+        FontSize="15"
+        ItemsSource="{Binding ProductViewsModel}">
+
+                <!-- Plantilla de ítems -->
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="280"/>
+                                <ColumnDefinition Width="250"/>
+                                <ColumnDefinition Width="250"/>
+                                <ColumnDefinition Width="250"/>
+                                <ColumnDefinition Width="280"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="0" Style="{DynamicResource CellTextBlockStyle}" Text="{Binding ProductName}" />
+                            <TextBlock Grid.Column="1" Style="{DynamicResource CellTextBlockStyle}" Text="{Binding ProductType}" />
+                            <TextBlock Grid.Column="2" Style="{DynamicResource CellTextBlockStyle}" Text="{Binding ProductPrice}" />
+                            <TextBlock Grid.Column="3" Style="{DynamicResource CellTextBlockStyle}" Text="{Binding ProductAvailableQuantity}" />
+                            <StackPanel Grid.Column="4" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <!-- Botón Actualizar -->
+                                <Button x:Name="btnUpdateProduct"
+                                VerticalAlignment="Center" 
+                                HorizontalAlignment="Center" 
+                                Height="40" 
+                                Width="40" 
+                                Cursor="Hand"
+                                Click="BtnUpdateProduct_Click"
+                                CommandParameter="{Binding IdStaff}"
+                                Background="Transparent"
+                                BorderBrush="Transparent"
+                                Margin="5,0,5,0">
+                                    <Image
+                                HorizontalAlignment="Center" 
+                                Height="35" 
+                                VerticalAlignment="Center"
+                                Width="35"
+                                RenderTransformOrigin="0.511,0.545" 
+                                Source="{StaticResource EditIcon}"
+                                Cursor="Hand"/>
+                                </Button>
+
+                                <!-- Botón Eliminar -->
+                                <Button x:Name="btnDeleteProduct"
+                                VerticalAlignment="Center"
+                                HorizontalAlignment="Center" 
+                                Height="40" 
+                                Width="40" 
+                                Cursor="Hand"
+                                Click="BtnDeleteProduct_Click"
+                                CommandParameter="{Binding IdStaff}"
+                                Background="Transparent"
+                                BorderBrush="Transparent"
+                                Margin="5,0,5,0">
+                                    <Image 
+                                 HorizontalAlignment="Center" 
+                                 Height="35" 
+                                 VerticalAlignment="Center"
+                                 Width="35"
+                                 RenderTransformOrigin="0.511,0.545" 
+                                 Source="{StaticResource TrashIcon}"
+                                 Cursor="Hand"/>
+                                </Button>
+                            </StackPanel>
+                        </Grid>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </Grid>
+
+
 
         <local:NavigationBar Grid.Column="0" HorizontalAlignment="Left" Width="300"/>
 
@@ -258,7 +301,8 @@
                 Background="#BEBEBE"
                 Foreground="#FF262222"
                 BorderBrush="#FF262222"
-                BorderThickness="3"/>
+                BorderThickness="3"
+                MaxLength="40"/>
 
                 <TextBox x:Name="txtProductPrice"
                 HorizontalAlignment="Left" 
@@ -271,7 +315,8 @@
                 Background="#BEBEBE"
                 Foreground="#FF262222"
                 BorderBrush="#FF262222"
-                BorderThickness="3"/>
+                BorderThickness="3"
+               MaxLength="6"/>
 
                 <TextBox x:Name="txtProductDescription"
                 HorizontalAlignment="Left" 
@@ -284,7 +329,8 @@
                 Background="#BEBEBE"
                 Foreground="#FF262222"
                 BorderBrush="#FF262222"
-                BorderThickness="3"/>
+                BorderThickness="3"
+                MaxLength="300"/>
 
                 <TextBox x:Name="txtProductAvailableQuantity"
                 HorizontalAlignment="Left" 
@@ -297,11 +343,12 @@
                 Background="#BEBEBE"
                 Foreground="#FF262222"
                 BorderBrush="#FF262222"
-                BorderThickness="3"/>
+                BorderThickness="3"
+                MaxLength="3"/>
 
                 <ComboBox x:Name="cbProductType"
-                DisplayMemberPath="RoleName"
-                SelectedValuePath="RoleId"
+                DisplayMemberPath="ProductTypeName"
+                SelectedValuePath="ProductTypeId"
                 Margin="409,684,880,170" 
                 Width="454" 
                 Height="68"
