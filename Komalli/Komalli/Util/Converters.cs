@@ -8,7 +8,7 @@ using System.Windows.Data;
 
 namespace Komalli.Util
 {
-    public class Converters : IValueConverter
+    public class PriceConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {

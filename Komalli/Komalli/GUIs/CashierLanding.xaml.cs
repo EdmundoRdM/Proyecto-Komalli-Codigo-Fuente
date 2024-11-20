@@ -34,7 +34,8 @@ namespace Komalli.GUIs
         {
             MenuForm.Visibility = Visibility.Visible;
             DefaultBackground.Visibility = Visibility.Hidden;
-            TodaysMealsGrid.Visibility = Visibility.Visible;
+            TodaysMealsGrid.Visibility = Visibility.Visible; 
+            GeneralMenuGrid.Visibility = Visibility.Hidden;
             List<ProductPOCO> todaysMeals = productDAO.GetMealsForToday(DateTime.Now);
             UpdateMenuLabels(todaysMeals, DateTime.Now);
         }
@@ -94,10 +95,24 @@ namespace Komalli.GUIs
             }
         }
 
+
+        private void btnTodaysMenu_Click(object sender, RoutedEventArgs e)
+        {
+            MenuForm.Visibility = Visibility.Visible;
+            DefaultBackground.Visibility = Visibility.Hidden;
+            TodaysMealsGrid.Visibility = Visibility.Visible;
+            GeneralMenuGrid.Visibility = Visibility.Hidden;
+            lblGeneralMenu.Content = "Menú Cafetería FEIGE: Menu del Día";
+            Products = productDAO.GetProductsByType(4);
+            this.GeneralMenuList.ItemsSource = Products;
+
+        }
         private void btnDrinks_Click(object sender, RoutedEventArgs e)
         {
-            MenuForm.Visibility = Visibility.Hidden;
-            DefaultBackground.Visibility = Visibility.Visible;
+            MenuForm.Visibility = Visibility.Visible;
+            DefaultBackground.Visibility = Visibility.Hidden;
+            TodaysMealsGrid.Visibility = Visibility.Hidden;
+            GeneralMenuGrid.Visibility = Visibility.Visible;
             lblGeneralMenu.Content = "Menú Cafetería FEIGE: Bebidas";
             Products = productDAO.GetProductsByType(4);
             this.GeneralMenuList.ItemsSource = Products;
@@ -106,8 +121,10 @@ namespace Komalli.GUIs
 
         private void btnDesserts_Click(object sender, RoutedEventArgs e)
         {
-            MenuForm.Visibility = Visibility.Hidden;
-            DefaultBackground.Visibility = Visibility.Visible;
+            MenuForm.Visibility = Visibility.Visible;
+            DefaultBackground.Visibility = Visibility.Hidden;
+            TodaysMealsGrid.Visibility = Visibility.Hidden;
+            GeneralMenuGrid.Visibility = Visibility.Visible;
             lblGeneralMenu.Content = "Menú Cafetería FEIGE: Postres";
             Products = productDAO.GetProductsByType(5);
             this.GeneralMenuList.ItemsSource = Products;
