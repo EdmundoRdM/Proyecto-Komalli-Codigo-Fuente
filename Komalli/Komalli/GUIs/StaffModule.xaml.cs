@@ -132,8 +132,8 @@ namespace Komalli.GUIs
 
         private void LoadRoles()
         {
-            RoleDAO roleDAO = new RoleDAO();
-            List<RolePOCO> roleList = roleDAO.GetAllRoles();
+            StaffDAO staffDAO = new StaffDAO();
+            List<RolePOCO> roleList = staffDAO.GetAllRoles();
             cbStaffRol.ItemsSource = roleList;
         }
         private void BtnUpdateStaff_Click(object sender, RoutedEventArgs e)

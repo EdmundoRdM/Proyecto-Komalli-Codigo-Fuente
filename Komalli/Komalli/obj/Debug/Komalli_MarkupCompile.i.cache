@@ -5,6 +5,7 @@ winexe
 C#
 .cs
 D:\Escuela\Semestre 7\Desarrollo de red\Proyecto-Komalli-Codigo-Fuente\Komalli\Komalli\obj\Debug\
+C:\Users\nando\Desktop\Trabajos UV\Desarrollo de software\Proyecto\Codigo\Proyecto-Komalli-Codigo-Fuente\Komalli\Komalli\obj\Debug\
 Komalli
 none
 false
@@ -15,6 +16,12 @@ D:\Escuela\Semestre 7\Desarrollo de red\Proyecto-Komalli-Codigo-Fuente\Komalli\K
 35-365584290
 18-763681087
 GUIs\CashierLanding.xaml;GUIs\LogIn.xaml;GUIs\ManagerLanding.xaml;GUIs\NavigationBar.xaml;GUIs\ProductModule.xaml;GUIs\StaffModule.xaml;MainWindow.xaml;
+C:\Users\nando\Desktop\Trabajos UV\Desarrollo de software\Proyecto\Codigo\Proyecto-Komalli-Codigo-Fuente\Komalli\Komalli\App.xaml
+9-437104830
+21504120897
+401820229716
+181309625545
+GUIs\CashierLanding.xaml;GUIs\CookLanding.xaml;GUIs\LogIn.xaml;GUIs\ManagerLanding.xaml;GUIs\NavigationBar.xaml;GUIs\OrdersModuleCook.xaml;GUIs\ProductModule.xaml;GUIs\StaffModule.xaml;MainWindow.xaml;
 
 True
 

@@ -67,6 +67,14 @@
     <Property Name="TotalSale" Type="decimal" Precision="19" Scale="2" Nullable="false" />
     <Property Name="CustomerName" Type="varchar" MaxLength="100" Nullable="false" />
     <Property Name="StaffID" Type="int" Nullable="false" />
+    <Property Name="SaleStatus" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SaleStatus">
+    <Key>
+      <PropertyRef Name="StatusId" />
+    </Key>
+    <Property Name="StatusId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Status" Type="varchar" MaxLength="20" Nullable="false" />
   </EntityType>
   <EntityType Name="Spoilage">
     <Key>
@@ -239,6 +247,18 @@ advertencia 6002: La tabla o vista 'KomalliDB.sys.database_firewall_rules' no ti
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_Sale_SaleStatus">
+    <End Role="SaleStatus" Type="Self.SaleStatus" Multiplicity="1" />
+    <End Role="Sale" Type="Self.Sale" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SaleStatus">
+        <PropertyRef Name="StatusId" />
+      </Principal>
+      <Dependent Role="Sale">
+        <PropertyRef Name="SaleStatus" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="KomalliDBModelStoreContainer">
     <EntitySet Name="Bill" EntityType="Self.Bill" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ExtraordinaryMovements" EntityType="Self.ExtraordinaryMovements" Schema="dbo" store:Type="Tables" />
@@ -247,6 +267,7 @@ advertencia 6002: La tabla o vista 'KomalliDB.sys.database_firewall_rules' no ti
     <EntitySet Name="ProductType" EntityType="Self.ProductType" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Sale" EntityType="Self.Sale" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SaleStatus" EntityType="Self.SaleStatus" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Spoilage" EntityType="Self.Spoilage" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="SpoilageDetail" EntityType="Self.SpoilageDetail" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Staff" EntityType="Self.Staff" Schema="dbo" store:Type="Tables" />
@@ -299,6 +320,10 @@ advertencia 6002: La tabla o vista 'KomalliDB.sys.database_firewall_rules' no ti
     <AssociationSet Name="FK__Staff__Role__628FA481" Association="Self.FK__Staff__Role__628FA481">
       <End Role="Role" EntitySet="Role" />
       <End Role="Staff" EntitySet="Staff" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sale_SaleStatus" Association="Self.FK_Sale_SaleStatus">
+      <End Role="SaleStatus" EntitySet="SaleStatus" />
+      <End Role="Sale" EntitySet="Sale" />
     </AssociationSet>
   </EntityContainer>
 </Schema>
