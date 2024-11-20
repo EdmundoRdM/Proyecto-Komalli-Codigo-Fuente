@@ -105,6 +105,9 @@
     <Compile Include="DataBaseManagement\DataModel\Sale.cs">
       <DependentUpon>KomalliDBModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DataBaseManagement\DataModel\SaleStatus.cs">
+      <DependentUpon>KomalliDBModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="DataBaseManagement\DataModel\Spoilage.cs">
       <DependentUpon>KomalliDBModel.tt</DependentUpon>
     </Compile>
@@ -247,16 +250,6 @@
     <Resource Include="Media\OpenEye.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DataBaseManagement\DataModel\KomalliDBModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>KomalliDBModel.edmx</DependentUpon>
-      <LastGenOutput>KomalliDBModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="DataBaseManagement\DataModel\KomalliDBModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>KomalliDBModel.edmx</DependentUpon>
-      <LastGenOutput>KomalliDBModel.cs</LastGenOutput>
-    </Content>
     <Resource Include="Media\ComedoresUVCircular.png" />
     <Resource Include="Media\InfoIcon.png" />
     <Resource Include="Media\FoodDrawing.jpeg" />
