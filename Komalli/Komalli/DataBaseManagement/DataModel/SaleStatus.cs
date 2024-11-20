@@ -12,25 +12,18 @@ namespace Komalli.DataBaseManagement.DataModel
     using System;
     using System.Collections.Generic;
     
-    public partial class Sale
+    public partial class SaleStatus
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Sale()
+        public SaleStatus()
         {
-            this.Bill = new HashSet<Bill>();
+            this.Sale = new HashSet<Sale>();
         }
     
-        public int SaleId { get; set; }
-        public System.DateTime SaleDate { get; set; }
-        public string AdditionalRequest { get; set; }
-        public decimal TotalSale { get; set; }
-        public string CustomerName { get; set; }
-        public int StaffID { get; set; }
-        public int SaleStatus { get; set; }
+        public int StatusId { get; set; }
+        public string Status { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Bill> Bill { get; set; }
-        public virtual Staff Staff { get; set; }
-        public virtual SaleStatus SaleStatus1 { get; set; }
+        public virtual ICollection<Sale> Sale { get; set; }
     }
 }

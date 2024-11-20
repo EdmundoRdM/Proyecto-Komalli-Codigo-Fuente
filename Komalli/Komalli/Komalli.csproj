@@ -65,7 +65,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="DataBaseManagement\DataAccessObject\ProductDAO.cs" />
-    <Compile Include="DataBaseManagement\DataAccessObject\RoleDAO.cs" />
+    <Compile Include="DataBaseManagement\DataAccessObject\SaleDAO.cs" />
     <Compile Include="DataBaseManagement\DataModel\Bill.cs">
       <DependentUpon>KomalliDBModel.tt</DependentUpon>
     </Compile>
@@ -105,6 +105,9 @@
     <Compile Include="DataBaseManagement\DataModel\Sale.cs">
       <DependentUpon>KomalliDBModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DataBaseManagement\DataModel\SaleStatus.cs">
+      <DependentUpon>KomalliDBModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="DataBaseManagement\DataModel\Spoilage.cs">
       <DependentUpon>KomalliDBModel.tt</DependentUpon>
     </Compile>
@@ -114,17 +117,25 @@
     <Compile Include="DataBaseManagement\DataModel\Staff.cs">
       <DependentUpon>KomalliDBModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DataBaseManagement\POCOs\OrderPOCO.cs" />
     <Compile Include="DataBaseManagement\POCOs\ProductPOCO.cs" />
     <Compile Include="DataBaseManagement\POCOs\RolePOCO.cs" />
+    <Compile Include="DataBaseManagement\POCOs\SalePOCO.cs" />
     <Compile Include="DataBaseManagement\POCOs\StaffWhitRole.cs" />
     <Compile Include="GUIs\CashierLanding.xaml.cs">
       <DependentUpon>CashierLanding.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUIs\CookLanding.xaml.cs">
+      <DependentUpon>CookLanding.xaml</DependentUpon>
     </Compile>
     <Compile Include="GUIs\ManagerLanding.xaml.cs">
       <DependentUpon>ManagerLanding.xaml</DependentUpon>
     </Compile>
     <Compile Include="GUIs\NavigationBar.xaml.cs">
       <DependentUpon>NavigationBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUIs\OrdersModuleCook.xaml.cs">
+      <DependentUpon>OrdersModuleCook.xaml</DependentUpon>
     </Compile>
     <Compile Include="GUIs\ProductModule.xaml.cs">
       <DependentUpon>ProductModule.xaml</DependentUpon>
@@ -139,6 +150,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="GUIs\CookLanding.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="GUIs\LogIn.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -148,6 +163,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="GUIs\NavigationBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GUIs\OrdersModuleCook.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

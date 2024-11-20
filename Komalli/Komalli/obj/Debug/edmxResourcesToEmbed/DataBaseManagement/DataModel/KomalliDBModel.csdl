@@ -77,8 +77,18 @@
     <Property Name="TotalSale" Type="Decimal" Precision="19" Scale="2" Nullable="false" />
     <Property Name="CustomerName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="StaffID" Type="Int32" Nullable="false" />
+    <Property Name="SaleStatus" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Bill" Relationship="Self.FK__Bill__Sale__6B24EA82" FromRole="Sale" ToRole="Bill" />
     <NavigationProperty Name="Staff" Relationship="Self.FK__Sale__StaffID__68487DD7" FromRole="Sale" ToRole="Staff" />
+    <NavigationProperty Name="SaleStatus1" Relationship="Self.FK_Sale_SaleStatus" FromRole="Sale" ToRole="SaleStatus" />
+  </EntityType>
+  <EntityType Name="SaleStatus">
+    <Key>
+      <PropertyRef Name="StatusId" />
+    </Key>
+    <Property Name="StatusId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Status" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Sale" Relationship="Self.FK_Sale_SaleStatus" FromRole="SaleStatus" ToRole="Sale" />
   </EntityType>
   <EntityType Name="Spoilage">
     <Key>
@@ -233,6 +243,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_Sale_SaleStatus">
+    <End Role="SaleStatus" Type="Self.SaleStatus" Multiplicity="1" />
+    <End Role="Sale" Type="Self.Sale" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SaleStatus">
+        <PropertyRef Name="StatusId" />
+      </Principal>
+      <Dependent Role="Sale">
+        <PropertyRef Name="SaleStatus" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK__Spoilage__StaffI__6EF57B66">
     <End Role="Staff" Type="Self.Staff" Multiplicity="1" />
     <End Role="Spoilage" Type="Self.Spoilage" Multiplicity="*" />
@@ -265,6 +287,7 @@
     <EntitySet Name="ProductType" EntityType="Self.ProductType" />
     <EntitySet Name="Role" EntityType="Self.Role" />
     <EntitySet Name="Sale" EntityType="Self.Sale" />
+    <EntitySet Name="SaleStatus" EntityType="Self.SaleStatus" />
     <EntitySet Name="Spoilage" EntityType="Self.Spoilage" />
     <EntitySet Name="SpoilageDetail" EntityType="Self.SpoilageDetail" />
     <EntitySet Name="Staff" EntityType="Self.Staff" />
@@ -299,6 +322,10 @@
     </AssociationSet>
     <AssociationSet Name="FK__Sale__StaffID__68487DD7" Association="Self.FK__Sale__StaffID__68487DD7">
       <End Role="Staff" EntitySet="Staff" />
+      <End Role="Sale" EntitySet="Sale" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sale_SaleStatus" Association="Self.FK_Sale_SaleStatus">
+      <End Role="SaleStatus" EntitySet="SaleStatus" />
       <End Role="Sale" EntitySet="Sale" />
     </AssociationSet>
     <AssociationSet Name="FK__Spoilage__StaffI__6EF57B66" Association="Self.FK__Spoilage__StaffI__6EF57B66">

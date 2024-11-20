@@ -131,15 +131,14 @@ namespace Komalli.GUIs
 
         private void BtnGenerateOrderModule_Click(object sender, RoutedEventArgs e)
         {
-            CashierLanding cashierLanding = new CashierLanding();
-            cashierLanding.ShowMenuForm();
-            Utilities.ChangePage(cashierLanding);
-
+                CashierLanding cashierLanding = new CashierLanding();
+                cashierLanding.ShowMenuForm();
+                Utilities.ChangePage(cashierLanding);
         }
 
         private void BtnOrderModule_Click(object sender, RoutedEventArgs e)
         {
-
+                Utilities.ChangePage(new OrdersModuleCook());
         }
 
         private void BtnSpoilageModule_Click(object sender, RoutedEventArgs e)
