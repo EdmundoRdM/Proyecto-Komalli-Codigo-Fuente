@@ -26,6 +26,7 @@ namespace Komalli.GUIs
     {
         private Timer timer;
         SaleDAO saleDAO = new SaleDAO();
+        private int saleId;
 
         public OrdersModuleCook()
         {
@@ -62,18 +63,27 @@ namespace Komalli.GUIs
 
         private void BtnShowOrderDetail_Click(object sender, RoutedEventArgs e)
         {
-            int saleId = (int)((Button)sender).CommandParameter;
+            saleId = (int)((Button)sender).CommandParameter;
             OrderDetail.Visibility = Visibility.Visible;
             var saleSelected = saleDAO.GetSaleById(saleId);
             txtOrderId.Text = saleSelected.SaleId.ToString();
-            txtAditionalRequest.Text = saleSelected.AdditionalRequest.ToString();
+            if (string.IsNullOrEmpty(saleSelected.AdditionalRequest)) {
+                txtAditionalRequest.Text = "Sin especificaciones adicionales";
+            }
+            else {
+                txtAditionalRequest.Text = saleSelected.AdditionalRequest.ToString();
+            }
             LoadOrderDetailProducts(saleId);
 
         }
 
         private void BtnUpdateStatusOrder_Click(object sender, RoutedEventArgs e)
         {
-
+            int preparedState = 2;
+            saleDAO.UpdateSaleStatus(saleId, preparedState);
+            OrderDetail.Visibility = Visibility.Collapsed;
+            clearFields();
+            LoadSales();
         }
 
         private void BtnCancel_Click(object sender, RoutedEventArgs e)
