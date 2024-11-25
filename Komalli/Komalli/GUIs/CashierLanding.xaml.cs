@@ -349,6 +349,11 @@ namespace Komalli.GUIs
         private void UpdateShoppingCart()
         {
             ShoppingCartDetails.Items.Refresh();
+
+            var totalSale = ShoppingCart.Instance.GetProducts()
+                .Sum(product => product.TotalPrice);
+
+            Total.Content = $"Total: {totalSale:C}";
         }
 
         private void DeleteProduct_Click(object sender, MouseButtonEventArgs e)
@@ -368,6 +373,8 @@ namespace Komalli.GUIs
 
                         ShoppingCartDetails.ItemsSource = null;
                         ShoppingCartDetails.ItemsSource = ShoppingCart.Instance.GetProducts();
+
+                        UpdateShoppingCart();
 
                         MessageBox.Show($"{product.ProductName} ha sido eliminado del carrito.",
                                         "Producto Eliminado",

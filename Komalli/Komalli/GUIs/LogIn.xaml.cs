@@ -160,18 +160,18 @@ namespace Komalli.GUIs
                     break;
 
                 case 2:
-                    MessageBox.Show("Bienvenido Cajero. Id emleado:" +rol , "Inicio de Sesión", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBox.Show("Bienvenido Cajero." , "Inicio de Sesión", MessageBoxButton.OK, MessageBoxImage.Information);
                     Utilities.ChangePage(new CashierLanding());
                     //NavigationService.Navigate(new Uri("CajeroPage.xaml", UriKind.Relative));
                     break;
 
                 case 3: 
-                    MessageBox.Show("Bienvenido Cocinero. Id emleado:" +rol, "Inicio de Sesión", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBox.Show("Bienvenido Cocinero. ", "Inicio de Sesión", MessageBoxButton.OK, MessageBoxImage.Information);
                     Utilities.ChangePage(new CookLanding());
                     break;
 
                 case 4: 
-                    MessageBox.Show("Bienvenido Usuario Anónimo. Id emleado:" +rol, "Inicio de Sesión", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBox.Show("Bienvenido Usuario Anónimo. ", "Inicio de Sesión", MessageBoxButton.OK, MessageBoxImage.Information);
                     //NavigationService.Navigate(new Uri("AnonimoPage.xaml", UriKind.Relative));
                     break;
 

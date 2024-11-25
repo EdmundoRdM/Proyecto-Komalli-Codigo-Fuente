@@ -8,6 +8,7 @@ namespace Komalli.DataBaseManagement.POCOs
 {
     internal class OrderPOCO
     {
+        List<ProductPOCO> products;
         public int SaleId { get; set; }
         public int ProductId { get; set; }
         public string ProductName { get; set; }

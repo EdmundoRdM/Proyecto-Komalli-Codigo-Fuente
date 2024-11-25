@@ -143,9 +143,28 @@ namespace Komalli.GUIs
 
         private void BtnOrderModule_Click(object sender, RoutedEventArgs e)
         {
-            if (RemoveTempSaleIfExists())
+            StaffPOCO staffPOCO = StaffToken.GetEmployeePOCO();
+            int rol = staffPOCO.Role;
+
+            switch (rol)
             {
-                Utilities.ChangePage(new OrdersCashier());
+                case 2:
+                    if (RemoveTempSaleIfExists())
+                    {
+                        Utilities.ChangePage(new OrdersCashier());
+                    }
+                    break;
+
+                case 3:
+                    if (RemoveTempSaleIfExists())
+                    {
+                        Utilities.ChangePage(new OrdersModuleCook());
+                    }
+                    break;
+
+                default:
+                    MessageBox.Show("No tiene permisos para acceder a esta sección.", "Acceso denegado", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    break;
             }
         }
 

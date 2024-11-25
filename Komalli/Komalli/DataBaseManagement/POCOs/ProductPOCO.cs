@@ -22,5 +22,7 @@ namespace Komalli.DataBaseManagement.POCOs
         public int Quantity { get; set; }
         public decimal TotalPrice => ProductPrice * Quantity;
 
+        public decimal TotalInDB { get; set; }
+
     }
 }

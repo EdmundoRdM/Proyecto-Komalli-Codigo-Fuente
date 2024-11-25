@@ -20,8 +20,43 @@ namespace Komalli.DataBaseManagement.DataAccessObject
                     var today = DateTime.Today;
                     var tomorrow = today.AddDays(1);
                     var todaySales = context.Sale
-                        .Where(s => s.SaleDate >= today && s.SaleDate < tomorrow && s.SaleStatus == 1)
+                        .Where(s => s.SaleDate >= today && s.SaleDate < tomorrow && s.SaleStatus == 1 && s.CustomerName != "Temporal")
                         .ToList();
+
+                    return todaySales;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al obtener las ventas del día actual.", ex);
+            }
+        }
+
+
+        public List<SalePOCO> GetSalesByStatus(int status)
+        {
+            try
+            {
+                using (var context = new KomalliDBEntities())
+                {
+                    var today = DateTime.Today;
+                    var tomorrow = today.AddDays(1);
+
+                    var todaySales = (from s in context.Sale
+                                      where s.SaleDate >= today
+                                            && s.SaleDate < tomorrow
+                                            && s.SaleStatus == status
+                                            && s.CustomerName != "Temporal"
+                                      select new SalePOCO
+                                      {
+                                          SaleId = s.SaleId,
+                                          SaleDate = s.SaleDate,
+                                          AdditionalRequest = s.AdditionalRequest,
+                                          TotalSale = s.TotalSale,
+                                          CustomerName = s.CustomerName,
+                                          StaffID = s.StaffID,
+                                          SaleStatus = s.SaleStatus
+                                      }).ToList();
 
                     return todaySales;
                 }
