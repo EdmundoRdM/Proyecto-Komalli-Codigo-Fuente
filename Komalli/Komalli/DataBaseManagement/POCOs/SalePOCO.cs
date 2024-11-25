@@ -14,5 +14,6 @@ namespace Komalli.DataBaseManagement.POCOs
         public decimal TotalSale { get; set; }
         public string CustomerName { get; set; }
         public int StaffID { get; set; }
+        public int SaleStatus { get; set; }
     }
 }

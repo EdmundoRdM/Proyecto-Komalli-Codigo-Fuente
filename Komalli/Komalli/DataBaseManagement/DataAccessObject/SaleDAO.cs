@@ -20,7 +20,7 @@ namespace Komalli.DataBaseManagement.DataAccessObject
                     var today = DateTime.Today;
                     var tomorrow = today.AddDays(1);
                     var todaySales = context.Sale
-                        .Where(s => s.SaleDate >= today && s.SaleDate < tomorrow)
+                        .Where(s => s.SaleDate >= today && s.SaleDate < tomorrow && s.SaleStatus == 1)
                         .ToList();
 
                     return todaySales;
@@ -47,7 +47,8 @@ namespace Komalli.DataBaseManagement.DataAccessObject
                                     AdditionalRequest = s.AdditionalRequest,
                                     TotalSale = s.TotalSale,
                                     CustomerName = s.CustomerName,
-                                    StaffID = s.StaffID
+                                    StaffID = s.StaffID,
+                                    SaleStatus = s.SaleStatus
                                 }).FirstOrDefault();
 
                     if (sale == null)
@@ -71,7 +72,7 @@ namespace Komalli.DataBaseManagement.DataAccessObject
                 {
                     var result = (from b in context.Bill
                                   join p in context.Product on b.Product equals p.ProductId
-                                  where b.Sale == saleId
+                                  where b.Sale == saleId && p.FromKitchen == true
                                   select new OrderPOCO
                                   {
                                       SaleId = b.Sale,
@@ -177,6 +178,26 @@ namespace Komalli.DataBaseManagement.DataAccessObject
         }
 
 
+        public void UpdateSaleStatus(int saleId, int newStatus)
+        {
+            try
+            {
+                using (var context = new KomalliDBEntities())
+                {
+                    var sale = context.Sale.FirstOrDefault(s => s.SaleId == saleId);
+                    if (sale == null)
+                    {
+                        throw new Exception($"No se encontró una venta con el ID {saleId}.");
+                    }
+                    sale.SaleStatus = newStatus;
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al actualizar el estado de la venta: " + ex.Message);
+            }
+        }
     }
 
 
