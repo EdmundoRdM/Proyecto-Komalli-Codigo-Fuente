@@ -5,43 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Komalli"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="KomalliSystem"
+        WindowState="Maximized"
+        Background="Transparent"
+        Height="922.16" 
+        Width="1742.8">
 
-        <Grid Background="Gray" Width="200" HorizontalAlignment="Left">
-
-            <Image Source="{StaticResource LogoUV}" Width="130" Height="130" Margin="39,22,0,0"
-                   HorizontalAlignment="Left" VerticalAlignment="Top" Cursor="Hand" 
-                   MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave"/>
-
-
-            <Button Content="Menús" Width="130" Height="40" Margin="37,151,0,243"
-                    HorizontalAlignment="Left" Background="Green" Foreground="White" FontSize="14"/>
-
-
-            <Button Content="Productos" Width="130" Height="40" Margin="0,201,0,193"
-                    HorizontalAlignment="Center" Background="Green" Foreground="White" FontSize="14"/>
-
-
-            <Button Content="Pedidos" Width="130" Height="40" Margin="0,253,0,141"
-                    HorizontalAlignment="Center" Background="Green" Foreground="White" FontSize="14"/>
-
-
-            <Button Content="Movimientos extraordinarios" Width="130" Height="40" Margin="0,303,0,91"
-                    HorizontalAlignment="Center" Background="Green" Foreground="White" FontSize="14"/>
-
-
-            <Image Source="{StaticResource Back}" Width="40" Height="40" Margin="76,365,0,0"
-                   HorizontalAlignment="Left" VerticalAlignment="Top" Cursor="Hand" 
-                   MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave"/>
-        </Grid>
-
-
-        <Grid>
-            <Image Source="{StaticResource LogoComedor}" Width="180" Height="180" 
-                   HorizontalAlignment="Left" VerticalAlignment="Top" Cursor="Hand" 
-                   MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave" Margin="404,119,0,0"/>
-        </Grid>
+    <Grid Background="Transparent">
+        <Viewbox Stretch="Fill">
+            <Frame x:Name="frameContainer" NavigationUIVisibility="Hidden" Height="906" Width="1743"/>
+        </Viewbox>
     </Grid>
 
 
