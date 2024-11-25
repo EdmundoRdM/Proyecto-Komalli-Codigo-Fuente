@@ -2,6 +2,8 @@
 using Komalli.DataBaseManagement.POCOs;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
+using System.Data.Entity.Core;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -85,6 +87,56 @@ namespace Komalli.DataBaseManagement.DataAccessObject
                 }
             }
         }
+
+        public List<ProductPOCO> GetMealsForToday(DateTime todayDate)
+        {
+            List<ProductPOCO> meals = new List<ProductPOCO>();
+
+            try
+            {
+                using (var context = new KomalliDBEntities())
+                {
+                    int breakfastTypeId = 1; // Asegúrate de que estos IDs sean correctos
+                    int lunchTypeId = 2;
+
+                    var query = context.Product
+                        .Where(p => (p.Type == breakfastTypeId || p.Type == lunchTypeId) &&
+                                    DbFunctions.TruncateTime(p.SellingDate) == DbFunctions.TruncateTime(todayDate) &&
+                                    p.Status == true &&
+                                    p.AvailableQuantity > 0)
+                        .Select(p => new ProductPOCO
+                        {
+                            ProductId = p.ProductId,
+                            ProductPrice = p.Price,
+                            ProductAvailableQuantity = p.AvailableQuantity,
+                            ProductDescription = p.Description,
+                            ProductName = p.Name,
+                            ProductTypeId = p.Type,
+                            ProductType = p.ProductType.TypeName,
+                            ProductStatus = p.Status,
+                            ProductSellingDate = p.SellingDate ?? DateTime.MinValue,
+                            ProductFromKitchen = p.FromKitchen
+                        });
+
+                    meals = query.ToList();
+                }
+            }
+            catch (EntityException ex)
+            {
+                throw new Exception("Error de conexión con la base de datos.", ex);
+            }
+            catch (InvalidOperationException ex)
+            {
+                throw new Exception("Operación no válida durante la ejecución de la consulta.", ex);
+            }
+            catch (TimeoutException ex)
+            {
+                throw new Exception("La consulta excedió el tiempo de espera.", ex);
+            }
+
+            return meals;
+        }
+
 
         public ProductPOCO GetProductById(int productId)
         {
@@ -203,6 +255,36 @@ namespace Komalli.DataBaseManagement.DataAccessObject
                 }
             }
         }
+
+        public bool ReduceProductQuantity(int productId, int quantityToReduce)
+        {
+            using (var context = new KomalliDBEntities())
+            {
+                try
+                {
+                    var product = context.Product.FirstOrDefault(p => p.ProductId == productId);
+                    if (product == null)
+                    {
+                        throw new Exception("Producto no encontrado.");
+                    }
+
+                    if (quantityToReduce > product.AvailableQuantity)
+                    {
+                        throw new Exception("La cantidad a reducir es mayor que la cantidad disponible.");
+                    }
+
+                    product.AvailableQuantity -= quantityToReduce;
+
+                    context.SaveChanges();
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Error al reducir la cantidad del producto.", ex);
+                }
+            }
+        }
+
 
 
     }

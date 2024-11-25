@@ -19,5 +19,8 @@ namespace Komalli.DataBaseManagement.POCOs
         public DateTime ProductSellingDate { get; set; }
         public Boolean ProductFromKitchen { get; set; }
 
+        public int Quantity { get; set; }
+        public decimal Total {  get; set; }
+
     }
 }

@@ -68,6 +68,7 @@
     <Compile Include="DataBaseManagement\DataAccessObject\SaleDAO.cs" />
     <Compile Include="DataBaseManagement\DataAccessObject\ProductTypeDAO.cs" />
     <Compile Include="DataBaseManagement\DataAccessObject\RoleDAO.cs" />
+    <Compile Include="DataBaseManagement\DataAccessObject\ShoppingCart.cs" />
     <Compile Include="DataBaseManagement\DataModel\Bill.cs">
       <DependentUpon>KomalliDBModel.tt</DependentUpon>
     </Compile>
@@ -146,6 +147,7 @@
     <Compile Include="GUIs\StaffModule.xaml.cs">
       <DependentUpon>StaffModule.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Util\Converters.cs" />
     <Compile Include="Util\StaffToken.cs" />
     <Compile Include="Util\Utilities.cs" />
     <Page Include="GUIs\CashierLanding.xaml">
@@ -253,6 +255,18 @@
     <Resource Include="Media\OpenEye.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="DataBaseManagement\DataModel\KomalliDBModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>KomalliDBModel.edmx</DependentUpon>
+      <LastGenOutput>KomalliDBModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DataBaseManagement\DataModel\KomalliDBModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>KomalliDBModel.edmx</DependentUpon>
+      <LastGenOutput>KomalliDBModel.cs</LastGenOutput>
+    </Content>
+    <Resource Include="Media\TrashCanIcon.png" />
+    <Resource Include="Media\ShoppingCart.png" />
     <Resource Include="Media\ComedoresUVCircular.png" />
     <Resource Include="Media\InfoIcon.png" />
     <Resource Include="Media\FoodDrawing.jpeg" />
