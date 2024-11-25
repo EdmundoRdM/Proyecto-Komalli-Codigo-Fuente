@@ -27,6 +27,7 @@
             <BitmapImage x:Key="TrashIcon"  UriSource="Media/TrashIcon.png"/>
             <BitmapImage x:Key="ReloadIcon"  UriSource="Media/ReloadIcon.png"/>
             <BitmapImage x:Key="FoodDrawing"  UriSource="Media/FoodDrawing.jpeg"/>
+            <BitmapImage x:Key="InfoIcon"  UriSource="Media/InfoIcon.png"/>
 
             <Style x:Key="RoundedTextBox" TargetType="TextBox">
                 <Setter Property="Template">
