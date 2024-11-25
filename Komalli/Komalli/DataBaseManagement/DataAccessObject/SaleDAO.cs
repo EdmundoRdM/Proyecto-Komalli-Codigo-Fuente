@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace Komalli.DataBaseManagement.DataAccessObject
 {
@@ -89,7 +90,94 @@ namespace Komalli.DataBaseManagement.DataAccessObject
                 throw new Exception("Error al recuperar los pedidos para la venta especificada.", ex);
             }
         }
+
+        public int CreateTempSale()
+        {
+            using (var context = new KomalliDBEntities())
+            {
+                try
+                {
+                    var tempSale = new Sale
+                    {
+                        SaleDate = DateTime.Now,
+                        TotalSale = 0,
+                        CustomerName = "Temporal",
+                        StaffID = 1,
+                        SaleStatus = 1
+                    };
+
+                    context.Sale.Add(tempSale);
+                    context.SaveChanges();
+                    return tempSale.SaleId;
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Error al crear la venta temporal.", ex);
+                }
+            }
+        }
+
+        public void FinalizeSale(int tempSaleId, string customerName, string customerRequest, decimal totalSale, List<ProductPOCO> products)
+        {
+            if (products == null || !products.Any())
+            {
+                throw new InvalidOperationException("La lista de productos está vacía. No se puede procesar la venta.");
+            }
+
+            using (var context = new KomalliDBEntities())
+            {
+                using (var transaction = context.Database.BeginTransaction())
+                {
+                    try
+                    {
+                        var sale = context.Sale.FirstOrDefault(s => s.SaleId == tempSaleId);
+                        if (sale == null)
+                        {
+                            throw new InvalidOperationException("No se encontró la venta temporal.");
+                        }
+
+                        sale.CustomerName = customerName;
+                        sale.AdditionalRequest = customerRequest;
+                        sale.TotalSale = totalSale;
+                        sale.SaleDate = DateTime.Now;
+                        sale.SaleStatus = 1; 
+
+                        foreach (var product in products)
+                        {
+                            var dbProduct = context.Product.FirstOrDefault(p => p.ProductId == product.ProductId);
+                            if (dbProduct == null || dbProduct.AvailableQuantity < product.Quantity)
+                            {
+                                throw new Exception($"El producto {product.ProductName} no tiene suficiente cantidad disponible.");
+                            }
+
+                            dbProduct.AvailableQuantity -= product.Quantity;
+
+                            var bill = new Bill
+                            {
+                                Sale = sale.SaleId,
+                                Product = product.ProductId,
+                                Quantity = product.Quantity,
+                                UnitPrice = product.ProductPrice,
+                                Total = product.ProductPrice * product.Quantity
+                            };
+
+                            context.Bill.Add(bill);
+                        }
+
+                        context.SaveChanges();
+                        transaction.Commit(); 
+                    }
+                    catch (Exception ex)
+                    {
+                        transaction.Rollback();
+                        throw new Exception($"Error al finalizar la venta: {ex.Message}", ex);
+                    }
+                }
+            }
+        }
+
+
     }
 
-    
+
 }

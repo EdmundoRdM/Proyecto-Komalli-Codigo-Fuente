@@ -241,6 +241,36 @@ namespace Komalli.DataBaseManagement.DataAccessObject
             }
         }
 
+        public bool ReduceProductQuantity(int productId, int quantityToReduce)
+        {
+            using (var context = new KomalliDBEntities())
+            {
+                try
+                {
+                    var product = context.Product.FirstOrDefault(p => p.ProductId == productId);
+                    if (product == null)
+                    {
+                        throw new Exception("Producto no encontrado.");
+                    }
+
+                    if (quantityToReduce > product.AvailableQuantity)
+                    {
+                        throw new Exception("La cantidad a reducir es mayor que la cantidad disponible.");
+                    }
+
+                    product.AvailableQuantity -= quantityToReduce;
+
+                    context.SaveChanges();
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Error al reducir la cantidad del producto.", ex);
+                }
+            }
+        }
+
+
 
     }
 }

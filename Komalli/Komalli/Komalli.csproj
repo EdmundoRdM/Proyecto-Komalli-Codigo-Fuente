@@ -66,6 +66,7 @@
     </ApplicationDefinition>
     <Compile Include="DataBaseManagement\DataAccessObject\ProductDAO.cs" />
     <Compile Include="DataBaseManagement\DataAccessObject\SaleDAO.cs" />
+    <Compile Include="DataBaseManagement\DataAccessObject\ShoppingCart.cs" />
     <Compile Include="DataBaseManagement\DataModel\Bill.cs">
       <DependentUpon>KomalliDBModel.tt</DependentUpon>
     </Compile>
@@ -261,6 +262,7 @@
       <DependentUpon>KomalliDBModel.edmx</DependentUpon>
       <LastGenOutput>KomalliDBModel.cs</LastGenOutput>
     </Content>
+    <Resource Include="Media\TrashCanIcon.png" />
     <Resource Include="Media\ShoppingCart.png" />
     <Resource Include="Media\ComedoresUVCircular.png" />
     <Resource Include="Media\InfoIcon.png" />

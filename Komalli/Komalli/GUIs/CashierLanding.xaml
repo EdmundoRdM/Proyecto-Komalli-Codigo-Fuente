@@ -17,6 +17,8 @@
                     <ColumnDefinition Width="60" />
                     <ColumnDefinition Width="60" />
                     <ColumnDefinition Width="0"/>
+                    <ColumnDefinition Width="0"/>
+                    <ColumnDefinition Width="0"/>
                 </Grid.ColumnDefinitions>
 
                 <Label Content="{Binding ProductName}" 
@@ -60,9 +62,92 @@
                    Margin="10,0" />
 
                 <Label Content="{Binding ProductId}" 
-                       Visibility="Hidden"/>
+                       Visibility="Hidden"
+                        Grid.Column="5"/>
+                <Label Content="{Binding ProductDescription}" 
+                       Visibility="Hidden"
+                        Grid.Column="6"/>
+                <Label Content="{Binding ProductTypeId}" 
+                       Visibility="Hidden"
+                        Grid.Column="7"/>
             </Grid>
-            </DataTemplate>
+        </DataTemplate>
+
+
+        <DataTemplate x:Key="ShoppingCartTemplate">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="600" />
+                    <ColumnDefinition Width="200" />
+                    <ColumnDefinition Width="150" />
+                    <ColumnDefinition Width="0" />
+                    <ColumnDefinition Width="0" />
+                    <ColumnDefinition Width="0" />
+                    <ColumnDefinition Width="150" />
+                </Grid.ColumnDefinitions>
+
+                <Label Content="{Binding ProductName}" 
+               FontSize="30"
+               Grid.Column="0"
+               VerticalAlignment="Center"
+               Margin="10,0" />
+
+                <Label Content="{Binding ProductPrice, Converter={StaticResource PriceConverter}}"
+               FontSize="30"
+               Grid.Column="1"
+               VerticalAlignment="Center"
+               HorizontalAlignment="Center"
+               Margin="10,0" />
+
+                <StackPanel Orientation="Horizontal" 
+                            Grid.Column="2" 
+                            HorizontalAlignment="Center" 
+                            VerticalAlignment="Center">
+                    <Button Content="+" 
+                        FontSize="20" 
+                        Width="30" 
+                        Height="30" 
+                        Margin="0,0,5,0"
+                        Click="IncreaseQuantity_Click"
+                        Tag="{Binding}" />
+                    <Label Content="{Binding Quantity}" 
+                                FontSize="20" 
+                                Width="40" 
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                HorizontalContentAlignment="Center" />
+                    <Button Content="-" 
+                        FontSize="20" 
+                        Width="30" 
+                        Height="30"
+                        Margin="5,0,0,0"
+                        Click="DecreaseQuantity_Click"
+                        Tag="{Binding}" />
+                </StackPanel>
+                <Label Content="{Binding ProductId}" 
+                   Visibility="Hidden"
+                   Grid.Column="3" />
+                <Label Content="{Binding ProductDescription}" 
+                   Visibility="Hidden"
+                   Grid.Column="4" />
+                <Label Content="{Binding ProductTypeId}" 
+                   Visibility="Hidden"
+                   Grid.Column="5" />
+
+                <Image Source="/Media/TrashCanIcon.PNG"
+                   Grid.Column="6"
+                   Width="40"
+                   Height="40"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"
+                   Cursor="Hand"
+                   MouseLeftButtonDown="DeleteProduct_Click"
+                   Margin="10,0" />
+
+            </Grid>
+        </DataTemplate>
+
+
     </Page.Resources>
 
 
@@ -143,11 +228,12 @@
 
             <Button Style="{StaticResource RoundedGreenButton}"
                 Background="#005BAA"
+                x:Name="btnShoppingCart"
                 Content="Carrito"
                 FontSize="30"
                 Width="300"
                 Height="50"
-                Margin="880,837,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                Margin="880,837,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="btnShoppingCart_Click"/>
 
 
             <Border Style="{StaticResource RoundedRectangle}"
@@ -256,8 +342,149 @@
                              Background="Gray" Margin="32,107,31,25"
                              ItemsSource="{Binding Products}"
                              x:Name="GeneralMenuList">
-                        
+
                     </ListBox>
+                </Grid>
+            </Border>
+
+
+            <Border Style="{StaticResource RoundedRectangle}"
+                x:Name="ProductDetailsGrid"
+                Visibility="Hidden"
+                HorizontalAlignment="Left" 
+                Height="531" 
+                Width="1281"
+                Margin="385,287,0,0"
+                VerticalAlignment="Top" >
+                <Grid Margin="6,8,5,5">
+                    <Border Background="#1E5AA6" 
+                            Width="1204" 
+                            Height="75" 
+                            CornerRadius="10,10,0,0"
+                            HorizontalAlignment="Center" 
+                            VerticalAlignment="Top" 
+                            Margin="0,33,0,0" >
+                        <Label x:Name="lblProductDetails"
+                                Content="Detalles del producto"
+                                FontSize="60"
+                                FontWeight="Bold"
+                                Foreground="White" Margin="16,-15,-16,5"/>
+                    </Border>
+                    <Border Background="White"
+                            BorderBrush="#1E5AA6"
+                            BorderThickness="5"
+                            Width="1204" 
+                            Height="379" 
+                            HorizontalAlignment="Center" 
+                            VerticalAlignment="Top" Margin="0,106,0,0">
+                    </Border>
+                    <Label x:Name="lblProductName"
+                           Content="Nombre del producto"
+                           FontSize="25" Margin="57,123,797,338"
+                        />
+                    <TextBlock x:Name="txtBProductDescription"
+                           Text="Descripción del producto"
+                           FontSize="25"
+                           Margin="57,189,79,112"
+                           TextWrapping="Wrap"
+                           MaxWidth="600" />
+
+                    <Button Style="{StaticResource RoundedGreenButton}"
+                        x:Name="btnBackToMenu"
+                        Background="#005BAA"
+                        Content="Volver al menu"
+                        FontSize="28"
+                        Margin="0,429,0,0" VerticalAlignment="Top" Width="298" Height="44" 
+                        Click="btnBackToMenu_Click"/>
+                </Grid>
+            </Border>
+
+
+            <Border Style="{StaticResource RoundedRectangle}"
+                x:Name="ShoppingCartGrid"
+                Visibility="Hidden"
+                HorizontalAlignment="Left" 
+                Height="531" 
+                Width="1281"
+                Margin="385,287,0,0"
+                VerticalAlignment="Top" >
+                <Grid Margin="6,8,5,5">
+                    <Border Background="#1E5AA6" 
+                            Width="1204" 
+                            Height="75" 
+                            CornerRadius="10,10,0,0"
+                            HorizontalAlignment="Center" 
+                            VerticalAlignment="Top" 
+                            Margin="0,11,0,0" >
+                        <Label Content="Carrito de compra"
+                            FontSize="60"
+                            FontWeight="Bold"
+                            Foreground="White" Margin="16,-15,-16,5"/>
+                    </Border>
+                    <ListBox ItemTemplate="{StaticResource ShoppingCartTemplate}"
+                         Background="Gray" Margin="31,84,31,162"
+                         ItemsSource="{Binding Products}"
+                         x:Name="ShoppingCartDetails">
+
+                    </ListBox>
+
+                    <Label Content="Nombre del cliente" 
+                           FontSize="20"
+                           FontWeight="Bold"
+                           Margin="35,358,848,125" ></Label>
+
+                    <TextBox x:Name="TxTCustumerName"
+                        Margin="34,399,709,73"/>
+
+                    <Label 
+                        Content="Anotaciones del cliente" 
+                        FontWeight="Bold"
+                        FontSize="20"
+                        Margin="574,355,309,128" />
+
+                    <Border BorderBrush="Black" 
+                            BorderThickness="1" 
+                            CornerRadius="5" 
+                            Margin="572,401,31,73">
+                        <TextBlock
+                                x:Name="TxtCustumerPrefferences"
+                                Margin="5,0,0,0" 
+                                VerticalAlignment="Center"
+                                HorizontalAlignment="Left" Width="655" Height="38"/>
+                    </Border>
+
+
+                    <Button Style="{StaticResource RoundedGreenButton}"
+                         Background="#005BAA"
+                         x:Name="btnCloseShoppingCart"
+                         Content="Volver al menú"
+                         FontSize="30"
+                         Width="300"
+                         Height="50" HorizontalAlignment="Left" Margin="155,456,0,0" VerticalAlignment="Top" 
+                         Click="btnCloseShoppingCart_Click"/>
+
+                    <Button Style="{StaticResource RoundedGreenButton}"
+                         x:Name="btnEndOrder"
+                         Content="Terminar venta"
+                         FontSize="30"
+                         Width="300"
+                         Height="50" 
+                         HorizontalAlignment="Left" 
+                         Margin="517,455,0,0" 
+                         VerticalAlignment="Top" 
+                         Click="btnEndOrder_Click" />
+
+                    <Button Style="{StaticResource RoundedGreenButton}"
+                        Background="Red"
+                        x:Name="EmptyCart"
+                        Content="Vaciar carrito"
+                        FontSize="30"
+                        Width="300"
+                        Height="50" 
+                        HorizontalAlignment="Left" 
+                        Margin="863,454,0,0" 
+                        VerticalAlignment="Top" Click="EmptyCart_Click"/>
+
                 </Grid>
             </Border>
 
