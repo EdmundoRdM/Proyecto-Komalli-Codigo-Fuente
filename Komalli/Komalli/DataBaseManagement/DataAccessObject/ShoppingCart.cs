@@ -2,6 +2,7 @@
 using Komalli.DataBaseManagement.POCOs;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -42,6 +43,41 @@ namespace Komalli.DataBaseManagement.DataAccessObject
                 CalculateTotal();
             }
         }
+
+        public void AddProduct(ProductPOCO product, int quantityToAdd, bool isStudent)
+        {
+            if (product != null)
+            {
+                string newProductName = isStudent ? $"{product.ProductName} (Estudiante)" : $"{product.ProductName} (General)";
+                decimal newProductPrice = isStudent ? 30 : 50;
+
+                var existingProduct = _products.FirstOrDefault(p => p.ProductId == product.ProductId);
+
+                if (existingProduct != null)
+                {
+                    if (existingProduct.ProductName != newProductName)
+                    {
+                        throw new InvalidOperationException("Solo se puede vender un tipo de menú por venta.");
+                    }
+                    else
+                    {
+                        existingProduct.Quantity += quantityToAdd;
+                        CalculateTotal();
+                    }
+                }
+                else
+                {
+                    product.ProductName = newProductName;
+                    product.ProductPrice = newProductPrice;
+                    product.Quantity = quantityToAdd;
+                    _products.Add(product);
+                    CalculateTotal();
+                }
+            }
+        }
+
+
+
 
         public void ReduceProductQuantity(int productId)
         {
@@ -108,7 +144,12 @@ namespace Komalli.DataBaseManagement.DataAccessObject
         public void ClearCart()
         {
             _products.Clear();
-            TempSaleId = 0; 
+        }
+        
+        public void DeleteCart()
+        {
+            _products.Clear();
+            TempSaleId = 0;
         }
 
         public void CreateTempSale()
@@ -133,8 +174,9 @@ namespace Komalli.DataBaseManagement.DataAccessObject
 
             try
             {
+                CalculateTotal();
                 saleDAO.FinalizeSale(TempSaleId,CustomerName, CustomerRequest, TotalSale, _products);
-                ClearCart();
+                DeleteCart();
                 CreateTempSale();
                 MessageBox.Show("La venta se registró con éxito.", "Venta Completada", MessageBoxButton.OK, MessageBoxImage.Information);
             }

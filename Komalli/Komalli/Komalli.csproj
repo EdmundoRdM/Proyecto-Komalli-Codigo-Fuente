@@ -137,6 +137,9 @@
     <Compile Include="GUIs\NavigationBar.xaml.cs">
       <DependentUpon>NavigationBar.xaml</DependentUpon>
     </Compile>
+    <Compile Include="GUIs\OrdersCashier.xaml.cs">
+      <DependentUpon>OrdersCashier.xaml</DependentUpon>
+    </Compile>
     <Compile Include="GUIs\OrdersModuleCook.xaml.cs">
       <DependentUpon>OrdersModuleCook.xaml</DependentUpon>
     </Compile>
@@ -166,6 +169,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="GUIs\NavigationBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GUIs\OrdersCashier.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

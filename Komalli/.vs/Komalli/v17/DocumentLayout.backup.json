@@ -17,6 +17,18 @@
     {
       "AbsoluteMoniker": "D:0:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|c:\\users\\nando\\desktop\\trabajos uv\\desarrollo de software\\proyecto\\codigo\\proyecto-komalli-codigo-fuente\\komalli\\komalli\\guis\\cooklanding.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|solutionrelative:komalli\\guis\\cooklanding.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      
+    },
+    {"AbsoluteMoniker": "D:0:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|c:\\uv_proyectos\\7mo_semestre\\repositoriodds\\proyecto-komalli-codigo-fuente\\komalli\\komalli\\guis\\orderscashier.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|solutionrelative:komalli\\guis\\orderscashier.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|C:\\UV_Proyectos\\7mo_Semestre\\RepositorioDDS\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\komalli\\guis\\cashierlanding.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|solutionrelative:komalli\\guis\\cashierlanding.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|c:\\uv_proyectos\\7mo_semestre\\repositoriodds\\proyecto-komalli-codigo-fuente\\komalli\\komalli\\guis\\navigationbar.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|solutionrelative:komalli\\guis\\navigationbar.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -77,6 +89,27 @@
               "ViewState": "AgIAAEEAAAAAAAAAAAAswAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-25T18:23:11.405Z",
+              "DocumentIndex": 2,
+              "Title": "NavigationBar.xaml.cs",
+              "DocumentMoniker": "C:\\UV_Proyectos\\7mo_Semestre\\RepositorioDDS\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\GUIs\\NavigationBar.xaml.cs",
+              "RelativeDocumentMoniker": "Komalli\\GUIs\\NavigationBar.xaml.cs",
+              "ToolTip": "C:\\UV_Proyectos\\7mo_Semestre\\RepositorioDDS\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\GUIs\\NavigationBar.xaml.cs",
+              "RelativeToolTip": "Komalli\\GUIs\\NavigationBar.xaml.cs",
+              "ViewState": "AgIAAH8AAAAAAAAAAADwv5sAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-25T19:13:42.893Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "OrdersCashier.xaml",
+              "DocumentMoniker": "C:\\UV_Proyectos\\7mo_Semestre\\RepositorioDDS\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\GUIs\\OrdersCashier.xaml",
+              "RelativeDocumentMoniker": "Komalli\\GUIs\\OrdersCashier.xaml",
+              "ToolTip": "C:\\UV_Proyectos\\7mo_Semestre\\RepositorioDDS\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\GUIs\\OrdersCashier.xaml",
+              "RelativeToolTip": "Komalli\\GUIs\\OrdersCashier.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-11-25T19:11:36.828Z",
               "EditorCaption": ""
             },
             {

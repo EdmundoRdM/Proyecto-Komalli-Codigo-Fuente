@@ -177,7 +177,6 @@ namespace Komalli.DataBaseManagement.DataAccessObject
             }
         }
 
-
         public void UpdateSaleStatus(int saleId, int newStatus)
         {
             try
@@ -187,7 +186,7 @@ namespace Komalli.DataBaseManagement.DataAccessObject
                     var sale = context.Sale.FirstOrDefault(s => s.SaleId == saleId);
                     if (sale == null)
                     {
-                        throw new Exception($"No se encontró una venta con el ID {saleId}.");
+                        throw new Exception($"No se encontro una venta con el ID {saleId}.");
                     }
                     sale.SaleStatus = newStatus;
                     context.SaveChanges();
@@ -198,6 +197,28 @@ namespace Komalli.DataBaseManagement.DataAccessObject
                 throw new Exception("Error al actualizar el estado de la venta: " + ex.Message);
             }
         }
+
+        public void DeleteTempSale(int tempSaleId)
+        {
+            try
+            {
+                using (var context = new KomalliDBEntities())
+                {
+                    var tempSale = context.Sale.FirstOrDefault(s => s.SaleId == tempSaleId);
+
+                    if (tempSale != null)
+                    {
+                        context.Sale.Remove(tempSale);
+                        context.SaveChanges();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error al eliminar la venta temporal: {ex.Message}", ex);
+            }
+        }
+
     }
 
 
