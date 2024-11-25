@@ -177,6 +177,27 @@ namespace Komalli.DataBaseManagement.DataAccessObject
         }
 
 
+        public void DeleteTempSale(int tempSaleId)
+        {
+            try
+            {
+                using (var context = new KomalliDBEntities())
+                {
+                    var tempSale = context.Sale.FirstOrDefault(s => s.SaleId == tempSaleId);
+
+                    if (tempSale != null)
+                    {
+                        context.Sale.Remove(tempSale);
+                        context.SaveChanges();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error al eliminar la venta temporal: {ex.Message}", ex);
+            }
+        }
+
     }
 
 

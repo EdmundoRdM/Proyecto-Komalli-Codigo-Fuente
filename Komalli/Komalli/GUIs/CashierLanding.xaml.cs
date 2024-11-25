@@ -28,6 +28,7 @@ namespace Komalli.GUIs
         public List<ProductPOCO> Products { get; set; }
         public int productTypeSelected = 1;
         private int TempSaleID; 
+        private List <ProductPOCO> todaysMeals;
         public CashierLanding()
         {
             InitializeComponent();
@@ -49,7 +50,7 @@ namespace Komalli.GUIs
         {
             HideAllGrids();
             TodaysMealsGrid.Visibility = Visibility.Visible;
-            List<ProductPOCO> todaysMeals = productDAO.GetMealsForToday(DateTime.Now);
+            todaysMeals = productDAO.GetMealsForToday(DateTime.Now);
             UpdateMenuLabels(todaysMeals, DateTime.Now);
         }
 
@@ -71,6 +72,7 @@ namespace Komalli.GUIs
                 if (breakfast != null)
                 {
                     lblBreakfast.Content = FormatDescription(breakfast.ProductDescription);
+                    lblBreakfastQuantity.Content = $"Cantidad disponible: {breakfast.ProductAvailableQuantity}" ;
                 }
                 else
                 {
@@ -80,6 +82,7 @@ namespace Komalli.GUIs
                 if (lunch != null)
                 {
                     lblMeal.Content = FormatDescription(lunch.ProductDescription);
+                    lblMealQuantity.Content = $"Cantidad disponible: {lunch.ProductAvailableQuantity}";
                 }
                 else
                 {
@@ -298,6 +301,8 @@ namespace Komalli.GUIs
                                     "Carrito Vacío",
                                     MessageBoxButton.OK,
                                     MessageBoxImage.Information);
+                    ShowMenuForm();
+
                 }
                 catch (Exception ex)
                 {
@@ -307,7 +312,6 @@ namespace Komalli.GUIs
                                     MessageBoxImage.Error);
                 }
             }
-
         }
 
 
@@ -380,6 +384,51 @@ namespace Komalli.GUIs
                 }
             }
         }
+
+        private void AddMeal_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                var currentTime = DateTime.Now.TimeOfDay;
+                var mealType = currentTime < new TimeSpan(13, 0, 0) ? 1 : 2;
+                var selectedMeal = todaysMeals.FirstOrDefault(p => p.ProductTypeId == mealType);
+
+                if (selectedMeal != null)
+                {
+                    var result = MessageBox.Show("¿Es para estudiante?", "Tipo de Cliente", MessageBoxButton.YesNo, MessageBoxImage.Question);
+
+                    bool isStudent = result == MessageBoxResult.Yes;
+
+                    ShoppingCart.Instance.AddProduct(selectedMeal, 1, isStudent);
+
+                    selectedMeal.ProductAvailableQuantity--;
+
+                    if (mealType == 1)
+                    {
+                        lblBreakfastQuantity.Content = $"Cantidad disponible: {selectedMeal.ProductAvailableQuantity}";
+                    }
+                    else
+                    {
+                        lblMealQuantity.Content = $"Cantidad disponible: {selectedMeal.ProductAvailableQuantity}";
+                    }
+
+                    MessageBox.Show($"{selectedMeal.ProductName} se ha agregado al carrito.", "Producto Agregado", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+                else
+                {
+                    MessageBox.Show("No hay menú disponible para el tipo seleccionado.", "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
+            }
+            catch (InvalidOperationException ex)
+            {
+                MessageBox.Show(ex.Message, "Operación no permitida", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al agregar el menú: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
 
     }
 }

@@ -1,4 +1,5 @@
-﻿using Komalli.DataBaseManagement.DataModel;
+﻿using Komalli.DataBaseManagement.DataAccessObject;
+using Komalli.DataBaseManagement.DataModel;
 using Komalli.DataBaseManagement.POCOs;
 using Komalli.Util;
 using System;
@@ -120,6 +121,10 @@ namespace Komalli.GUIs
 
         private void BtnExtraordinaryMovementsModule_Click(object sender, RoutedEventArgs e)
         {
+            if (RemoveTempSaleIfExists())
+            {
+                //Utilities.ChangePage(new ExtraordinaryMovementsModule());
+            }
 
         }
 
@@ -138,12 +143,38 @@ namespace Komalli.GUIs
 
         private void BtnOrderModule_Click(object sender, RoutedEventArgs e)
         {
-                Utilities.ChangePage(new OrdersModuleCook());
+            if (RemoveTempSaleIfExists())
+            {
+                Utilities.ChangePage(new OrdersCashier());
+            }
         }
 
         private void BtnSpoilageModule_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private bool RemoveTempSaleIfExists()
+        {
+            try
+            {
+                int tempSaleId = ShoppingCart.Instance.TempSaleId;
+
+                if (tempSaleId != 0)
+                {
+                    SaleDAO saleDAO = new SaleDAO();
+                    saleDAO.DeleteTempSale(tempSaleId); 
+                    ShoppingCart.Instance.DeleteCart();
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al eliminar la venta temporal: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return false;
+            }
+
+            return true;
         }
     }
 }

@@ -20,7 +20,7 @@ namespace Komalli.DataBaseManagement.POCOs
         public Boolean ProductFromKitchen { get; set; }
 
         public int Quantity { get; set; }
-        public decimal Total {  get; set; }
+        public decimal TotalPrice => ProductPrice * Quantity;
 
     }
 }
