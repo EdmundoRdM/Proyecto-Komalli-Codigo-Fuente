@@ -85,8 +85,8 @@ namespace Komalli.GUIs
                     {
                         try
                         {
-                            int register = productDAO.RegisterProduct(newProduct);
-                            if (register == 1)
+                            bool register = productDAO.RegisterProduct(newProduct);
+                            if (register == true)
                             {
                                 MessageBox.Show("Product registrado con éxito", "Registro", MessageBoxButton.OK, MessageBoxImage.Information);
                                 ClearFields();

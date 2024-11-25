@@ -12,18 +12,32 @@ namespace Komalli.DataBaseManagement.DataAccessObject
 {
     public class ProductDAO
     {
-        public int RegisterProduct(ProductPOCO product)
+        public bool RegisterProduct(ProductPOCO product)
         {
             try
             {
                 using (var context = new KomalliDBEntities())
                 {
-                    return 0;
+                    var newProduct = new Product
+                    {
+                        Price = product.ProductPrice,
+                        AvailableQuantity = product.ProductAvailableQuantity,
+                        Description = product.ProductDescription,
+                        Name = product.ProductName,
+                        Type = product.ProductTypeId,
+                        Status = product.ProductStatus,
+                        SellingDate = product.ProductSellingDate,
+                        FromKitchen = product.ProductFromKitchen
+                    };
+                    context.Product.Add(newProduct);
+                    context.SaveChanges();
+                    return true;
                 }
             }
             catch (Exception ex)
             {
                 throw new Exception("Error al registrar el empleado.", ex);
+                return false;
             }
         }
 
