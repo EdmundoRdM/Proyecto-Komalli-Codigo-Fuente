@@ -67,7 +67,6 @@
     <Compile Include="DataBaseManagement\DataAccessObject\ProductDAO.cs" />
     <Compile Include="DataBaseManagement\DataAccessObject\SaleDAO.cs" />
     <Compile Include="DataBaseManagement\DataAccessObject\ProductTypeDAO.cs" />
-    <Compile Include="DataBaseManagement\DataAccessObject\RoleDAO.cs" />
     <Compile Include="DataBaseManagement\DataAccessObject\ShoppingCart.cs" />
     <Compile Include="DataBaseManagement\DataModel\Bill.cs">
       <DependentUpon>KomalliDBModel.tt</DependentUpon>
