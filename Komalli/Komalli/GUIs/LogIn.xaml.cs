@@ -155,7 +155,7 @@ namespace Komalli.GUIs
                 //Aqui va la navegacion al landin que corresponda. LEs dejo ejemplos. leugo borran los comentarios paro.
 
                 case 1:
-                    MessageBox.Show("Bienvenido Gerente. Id emleado: "  , "Inicio de Sesión", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBox.Show("Bienvenido Gerente. "  , "Inicio de Sesión", MessageBoxButton.OK, MessageBoxImage.Information);
                     Utilities.ChangePage(new ManagerLanding());
                     break;
 
