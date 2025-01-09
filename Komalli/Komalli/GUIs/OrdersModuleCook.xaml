@@ -244,7 +244,7 @@
                     <DropShadowEffect Color="Black" ShadowDepth="5" BlurRadius="10" Direction="270"/>
                 </Button.Effect>
                 <StackPanel Orientation="Horizontal">
-                    <Label Content="Cancelar" 
+                    <Label Content="Regresar" 
                    Foreground="White" 
                    FontFamily="Inter"
                    Margin="0,10,0,0">

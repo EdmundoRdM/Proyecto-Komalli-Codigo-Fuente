@@ -84,7 +84,7 @@
                     <ColumnDefinition Width="0" />
                     <ColumnDefinition Width="0" />
                     <ColumnDefinition Width="150" />
-                    <ColumnDefinition Width="50" />
+                    <ColumnDefinition Width="70" />
                 </Grid.ColumnDefinitions>
 
                 <Label Content="{Binding ProductName}" 
@@ -325,7 +325,7 @@
                         Margin="390,194,0,0" 
                         VerticalAlignment="Top" 
                         Height="180" Width="301" Grid.RowSpan="2"/>
-                    
+
                     <Label x:Name="lblBreakfastQuantity"
                         Content="Cantidad Disponible:" 
                         FontSize="25"
@@ -333,7 +333,7 @@
                         Margin="50,66,0,0" 
                         VerticalAlignment="Top" 
                         Height="48" Width="296" Grid.Row="1"/>
-                    
+
                     <Label x:Name="lblMealQuantity"
                         Content="Cantidad Disponible:" 
                         FontSize="25"
@@ -341,7 +341,7 @@
                         Margin="395,62,0,0" 
                         VerticalAlignment="Top" 
                         Height="48" Width="296" Grid.Row="1"/>
-                    
+
                     <Label 
                         Content="Estudiantes: $30   General $50" 
                         FontSize="25"
@@ -481,27 +481,20 @@
                     <Label Content="Nombre del cliente" 
                            FontSize="20"
                            FontWeight="Bold"
-                           Margin="35,358,848,125" ></Label>
+                           Margin="35,358,848,119" ></Label>
 
                     <TextBox x:Name="TxTCustumerName"
                         Margin="34,399,709,73"/>
+
+                    <TextBox x:Name="TxtCustumerPrefferences"
+                        Margin="578,399,165,73"/>
+
 
                     <Label 
                         Content="Anotaciones del cliente" 
                         FontWeight="Bold"
                         FontSize="20"
-                        Margin="574,355,309,128" />
-
-                    <Border BorderBrush="Black" 
-                            BorderThickness="1" 
-                            CornerRadius="5" 
-                            Margin="572,401,31,73">
-                        <TextBlock
-                                x:Name="TxtCustumerPrefferences"
-                                Margin="5,0,0,0" 
-                                VerticalAlignment="Center"
-                                HorizontalAlignment="Left" Width="655" Height="38"/>
-                    </Border>
+                        Margin="574,355,384,118" />
 
 
                     <Button Style="{StaticResource RoundedGreenButton}"
@@ -534,6 +527,13 @@
                         HorizontalAlignment="Left" 
                         Margin="863,454,0,0" 
                         VerticalAlignment="Top" Click="EmptyCart_Click"/>
+                    
+                    <Label x:Name="Total"
+                        Content="Total:" 
+                        FontWeight="Bold"
+                        FontSize="20"
+                        Margin="920,355,32,118" />
+
 
                 </Grid>
             </Border>

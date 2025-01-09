@@ -12,6 +12,21 @@ namespace Komalli.DataBaseManagement.DataAccessObject
 {
     public class ProductDAO
     {
+        public int RegisterProduct(ProductPOCO product)
+        {
+            try
+            {
+                using (var context = new KomalliDBEntities())
+                {
+                    return 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al registrar el empleado.", ex);
+            }
+        }
+
         public List<ProductPOCO> GetProductByName(string partialName)
         {
             try
@@ -211,6 +226,41 @@ namespace Komalli.DataBaseManagement.DataAccessObject
                 }
             }
         }
+
+        public List<ProductPOCO> GetProductsBySaleId(int saleId)
+        {
+            using (var context = new KomalliDBEntities())
+            {
+                try
+                {
+                    var products = (from bill in context.Bill
+                                    join product in context.Product on bill.Product equals product.ProductId
+                                    where bill.Sale == saleId
+                                    select new ProductPOCO
+                                    {
+                                        ProductId = product.ProductId,
+                                        ProductPrice = product.Price,
+                                        ProductAvailableQuantity = product.AvailableQuantity,
+                                        ProductDescription = product.Description,
+                                        ProductName = product.Name,
+                                        ProductTypeId = product.Type,
+                                        ProductType = product.ProductType.TypeName,
+                                        ProductStatus = product.Status,
+                                        ProductSellingDate = product.SellingDate ?? DateTime.MinValue,
+                                        ProductFromKitchen = product.FromKitchen,
+                                        Quantity = bill.Quantity,
+                                        TotalInDB = bill.UnitPrice * bill.Quantity
+                                    }).ToList();
+
+                    return products;
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Error al obtener los productos asociados a la venta.", ex);
+                }
+            }
+        }
+
 
         public List<ProductPOCO> GetProductsByIds(List<int> productIds)
         {

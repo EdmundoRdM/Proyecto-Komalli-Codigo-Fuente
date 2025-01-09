@@ -8,6 +8,51 @@
       d:DesignHeight="922.16" d:DesignWidth="1742.8"
       Title="OrdersCashier">
 
+    <Page.Resources>
+        <DataTemplate x:Key="OrderDetailsTemplate">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="600" />
+                    <ColumnDefinition Width="200" />
+                    <ColumnDefinition Width="150" />
+                    <ColumnDefinition Width="150" />
+                    <ColumnDefinition Width="50" />
+                </Grid.ColumnDefinitions>
+
+                <Label Content="{Binding ProductName}" 
+                   FontSize="30"
+                   Grid.Column="0"
+                   VerticalAlignment="Center"
+                   Margin="10,0" />
+
+                <Label Content="{Binding ProductPrice, Converter={StaticResource PriceConverter}}"
+                    FontSize="30"
+                    Grid.Column="1"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"
+                    Margin="10,0" />
+
+                <Label Content="{Binding Quantity, Converter={StaticResource QuantityConverter}}" 
+                    FontSize="30"
+                    Grid.Column="2"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"
+                    Margin="10,0" />
+
+                <Label x:Name="TotalPriceProduct"
+                    FontSize="30"
+                    Content="{Binding TotalPrice, Converter={StaticResource PriceConverter}}" 
+                   Visibility="Visible"
+                   Grid.Column="3" />
+            </Grid>
+        </DataTemplate>
+
+
+    </Page.Resources>
+
+
+
+
     <Grid x:Name="OrdersModuleBackground">
         <Grid x:Name="DefaultBackground" 
             Background="white" Visibility="Visible">
@@ -19,7 +64,171 @@
                  Width="613" 
                  Source="{StaticResource ComedoresU}"/>
         </Grid>
-        
+
+        <Grid x:Name="OrdersTable">
+            <Rectangle Fill="#2C9B00"
+                HorizontalAlignment="Left" 
+                Height="100" 
+                Width="1442"
+                Margin="301,53,0,0" 
+                Stroke="Black" 
+                VerticalAlignment="Top"/>
+
+            <Image Source="\Media\ComedoresUVCircular.png"
+                HorizontalAlignment="Left" 
+                Height="200" 
+                Width="200"
+                Margin="408,5,0,0" 
+                VerticalAlignment="Top" />
+
+
+            <Border Style="{StaticResource RoundedRectangle}"
+                x:Name="OrdersBackground"
+                Visibility="Hidden"
+                HorizontalAlignment="Left" 
+                Height="622" 
+                Width="1281"
+                Margin="385,234,0,0"
+                VerticalAlignment="Top" >
+
+                <Grid x:Name="OrdersTableackground">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Grid.Row="0" 
+                       Text="Pedidos Recientes" 
+                       FontSize="20" 
+                       FontWeight="Bold" 
+                       Margin="10" 
+                       HorizontalAlignment="Center"/>
+
+                    <DataGrid x:Name="OrdersDataGrid"
+                        Grid.Row="1"
+                        AutoGenerateColumns="False"
+                        CanUserAddRows="False"
+                        IsReadOnly="True"
+                        HeadersVisibility="Column"
+                        GridLinesVisibility="None"
+                        AlternatingRowBackground="#F2F2F2"
+                        RowHeight="50"
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Stretch"
+                        FontSize="20"
+                        Margin="10">
+
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="No. De pedido" Binding="{Binding SaleId}" Width="200" />
+                            <DataGridTextColumn Header="Cliente" Binding="{Binding CustomerName}" Width="450" />
+                            <DataGridTextColumn Header="Hora y fecha de pedido" Binding="{Binding SaleDate, StringFormat={}{0:dd/MM/yyyy HH:mm}}" Width="300" />
+                            <DataGridTextColumn Header="Estado" Binding="{Binding SaleStatus}" Width="200" />
+                            <DataGridTemplateColumn Header="">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Image Source="/Media/InfoIcon.png" 
+                                               Width="50" 
+                                               Height="50" 
+                                               Cursor="Hand"  
+                                               MouseLeftButtonDown="OrdenInfo_Click"/>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </Border>
+
+            <Border Style="{StaticResource RoundedRectangle}"
+                x:Name="OrdersDetails"
+                Visibility="Hidden"
+                HorizontalAlignment="Left" 
+                Height="622" 
+                Width="1281"
+                Margin="385,234,0,0"
+                VerticalAlignment="Top" >
+
+                <Grid Margin="6,8,5,5">
+                    <Border Background="#1E5AA6" 
+                        Width="1204" 
+                        Height="75" 
+                        CornerRadius="10,10,0,0"
+                        HorizontalAlignment="Center" 
+                        VerticalAlignment="Top" 
+                        Margin="0,11,0,0" >
+                        <Label Content="Resumen de orden"
+                        FontSize="60"
+                        FontWeight="Bold"
+                        Foreground="White" Margin="16,-15,-16,5"/>
+                    </Border>
+                    <ListBox ItemTemplate="{StaticResource OrderDetailsTemplate}"
+                        Background="Gray" Margin="31,84,31,162"
+                        ItemsSource="{Binding Products}"
+                        x:Name="ShoppingCartDetails">
+
+                    </ListBox>
+
+                    <Label x:Name="lblCustomerName"
+                        Foreground="White"
+                        Content="Nombre del cliente" 
+                        FontSize="30"
+                        FontWeight="Bold"
+                        Margin="662,25,69,538" />
+
+                    <TextBox x:Name="TxtCustumerPrefferences"
+                             FontSize="30"
+                             IsEnabled="False"
+                             Margin="37,473,31,81"/>
+
+
+                    <Label 
+                        Content="Anotaciones del cliente" 
+                        FontWeight="Bold"
+                        FontSize="20"
+                        Margin="33,440,925,126" />
+
+
+                    <Button Style="{StaticResource RoundedGreenButton}"
+                        Background="#005BAA"
+                        x:Name="btnCloseShoppingCart"
+                        Content="Regresar"
+                        FontSize="30"
+                        Width="300"
+                        Height="50" HorizontalAlignment="Left" Margin="93,534,0,0" VerticalAlignment="Top" 
+                        Click="BackToList_Click"/>
+
+                    <Button Style="{StaticResource RoundedGreenButton}"
+                        x:Name="btnEndOrder"
+                        Content="Entregar venta"
+                        FontSize="30"
+                        Width="300"
+                        Height="50" 
+                        HorizontalAlignment="Left" 
+                        Margin="472,535,0,0" 
+                        VerticalAlignment="Top" 
+                        Click="EndOrder_Click" />
+
+                    <Button Style="{StaticResource RoundedGreenButton}"
+                        Background="Red"
+                        x:Name="EmptyCart"
+                        Content="Cancelar Venta"
+                        FontSize="30"
+                        Width="300"
+                        Height="50" 
+                        HorizontalAlignment="Left" 
+                        Margin="858,539,0,0" 
+                        VerticalAlignment="Top" Click="CancelOrder_Click"/>
+
+                    <Label x:Name="Total"
+                        Content="Total:" 
+                        FontWeight="Bold"
+                        FontSize="20"
+                        Margin="912,439,40,134" />
+                </Grid>
+            </Border>
+        </Grid>
+
+
         <local:NavigationBar Grid.Column="0" HorizontalAlignment="Left" Width="300"/>
     </Grid>
 </Page>
