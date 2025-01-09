@@ -72,23 +72,23 @@ C:\Users\nando\Desktop\Trabajos UV\Desarrollo de software\Proyecto\Codigo\Proyec
 C:\Users\nando\Desktop\Trabajos UV\Desarrollo de software\Proyecto\Codigo\Proyecto-Komalli-Codigo-Fuente\Komalli\Komalli\obj\Debug\Komalli.csproj.Up2Date
 C:\Users\nando\Desktop\Trabajos UV\Desarrollo de software\Proyecto\Codigo\Proyecto-Komalli-Codigo-Fuente\Komalli\Komalli\obj\Debug\Komalli.exe
 C:\Users\nando\Desktop\Trabajos UV\Desarrollo de software\Proyecto\Codigo\Proyecto-Komalli-Codigo-Fuente\Komalli\Komalli\obj\Debug\Komalli.pdb
-C:\UV_Proyectos\7mo_Semestre\RepositorioDDS\Proyecto-Komalli-Codigo-Fuente\Komalli\Komalli\bin\Debug\EntityFramework.xml
-C:\UV_Proyectos\7mo_Semestre\RepositorioDDS\Proyecto-Komalli-Codigo-Fuente\Komalli\Komalli\obj\Debug\GUIs\LogIn.g.cs
-C:\UV_Proyectos\7mo_Semestre\RepositorioDDS\Proyecto-Komalli-Codigo-Fuente\Komalli\Komalli\obj\Debug\GUIs\NavigationBar.g.cs
-C:\UV_Proyectos\7mo_Semestre\RepositorioDDS\Proyecto-Komalli-Codigo-Fuente\Komalli\Komalli\obj\Debug\GUIs\ProductModule.g.cs
-C:\UV_Proyectos\7mo_Semestre\RepositorioDDS\Proyecto-Komalli-Codigo-Fuente\Komalli\Komalli\obj\Debug\GUIs\StaffModule.g.cs
 C:\UV_Proyectos\7mo_Semestre\RepositorioDDS\Proyecto-Komalli-Codigo-Fuente\Komalli\Komalli\bin\Debug\Komalli.exe.config
 C:\UV_Proyectos\7mo_Semestre\RepositorioDDS\Proyecto-Komalli-Codigo-Fuente\Komalli\Komalli\bin\Debug\Komalli.exe
 C:\UV_Proyectos\7mo_Semestre\RepositorioDDS\Proyecto-Komalli-Codigo-Fuente\Komalli\Komalli\bin\Debug\Komalli.pdb
 C:\UV_Proyectos\7mo_Semestre\RepositorioDDS\Proyecto-Komalli-Codigo-Fuente\Komalli\Komalli\bin\Debug\EntityFramework.dll
 C:\UV_Proyectos\7mo_Semestre\RepositorioDDS\Proyecto-Komalli-Codigo-Fuente\Komalli\Komalli\bin\Debug\EntityFramework.SqlServer.dll
+C:\UV_Proyectos\7mo_Semestre\RepositorioDDS\Proyecto-Komalli-Codigo-Fuente\Komalli\Komalli\bin\Debug\EntityFramework.xml
 C:\UV_Proyectos\7mo_Semestre\RepositorioDDS\Proyecto-Komalli-Codigo-Fuente\Komalli\Komalli\bin\Debug\EntityFramework.SqlServer.xml
 C:\UV_Proyectos\7mo_Semestre\RepositorioDDS\Proyecto-Komalli-Codigo-Fuente\Komalli\Komalli\obj\Debug\Komalli.csproj.AssemblyReference.cache
 C:\UV_Proyectos\7mo_Semestre\RepositorioDDS\Proyecto-Komalli-Codigo-Fuente\Komalli\Komalli\obj\Debug\GUIs\CashierLanding.g.cs
 C:\UV_Proyectos\7mo_Semestre\RepositorioDDS\Proyecto-Komalli-Codigo-Fuente\Komalli\Komalli\obj\Debug\GUIs\CookLanding.g.cs
+C:\UV_Proyectos\7mo_Semestre\RepositorioDDS\Proyecto-Komalli-Codigo-Fuente\Komalli\Komalli\obj\Debug\GUIs\LogIn.g.cs
 C:\UV_Proyectos\7mo_Semestre\RepositorioDDS\Proyecto-Komalli-Codigo-Fuente\Komalli\Komalli\obj\Debug\GUIs\ManagerLanding.g.cs
+C:\UV_Proyectos\7mo_Semestre\RepositorioDDS\Proyecto-Komalli-Codigo-Fuente\Komalli\Komalli\obj\Debug\GUIs\NavigationBar.g.cs
 C:\UV_Proyectos\7mo_Semestre\RepositorioDDS\Proyecto-Komalli-Codigo-Fuente\Komalli\Komalli\obj\Debug\GUIs\OrdersCashier.g.cs
 C:\UV_Proyectos\7mo_Semestre\RepositorioDDS\Proyecto-Komalli-Codigo-Fuente\Komalli\Komalli\obj\Debug\GUIs\OrdersModuleCook.g.cs
+C:\UV_Proyectos\7mo_Semestre\RepositorioDDS\Proyecto-Komalli-Codigo-Fuente\Komalli\Komalli\obj\Debug\GUIs\ProductModule.g.cs
+C:\UV_Proyectos\7mo_Semestre\RepositorioDDS\Proyecto-Komalli-Codigo-Fuente\Komalli\Komalli\obj\Debug\GUIs\StaffModule.g.cs
 C:\UV_Proyectos\7mo_Semestre\RepositorioDDS\Proyecto-Komalli-Codigo-Fuente\Komalli\Komalli\obj\Debug\MainWindow.g.cs
 C:\UV_Proyectos\7mo_Semestre\RepositorioDDS\Proyecto-Komalli-Codigo-Fuente\Komalli\Komalli\obj\Debug\App.g.cs
 C:\UV_Proyectos\7mo_Semestre\RepositorioDDS\Proyecto-Komalli-Codigo-Fuente\Komalli\Komalli\obj\Debug\Komalli_Content.g.cs
