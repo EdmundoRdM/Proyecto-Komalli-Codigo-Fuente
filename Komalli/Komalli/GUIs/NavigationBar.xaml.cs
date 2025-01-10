@@ -40,7 +40,6 @@ namespace Komalli.GUIs
             ButtonsNavegationBar.Add("ExtraordinaryMovementsModule", btnExtraordinaryMovements);
             ButtonsNavegationBar.Add("GenerateOrderModule", btnGenerateOrder);
             ButtonsNavegationBar.Add("OrderModule", btnOrder);
-            ButtonsNavegationBar.Add("SpoilageModule", btnSpoilage);
             
         }
 
@@ -59,13 +58,11 @@ namespace Komalli.GUIs
                     case 1:
                         btnGenerateOrder.Visibility = Visibility.Hidden;
                         btnOrder.Visibility = Visibility.Hidden;
-                        btnSpoilage.Visibility = Visibility.Hidden;
                         break;
                     case 2:
                         btnReports.Visibility = Visibility.Hidden;
                         btnProducts.Visibility = Visibility.Hidden;
                         btnStaff.Visibility = Visibility.Hidden;
-                        btnSpoilage.Visibility = Visibility.Hidden;
                         break;
                     case 3:
                         btnReports.Visibility = Visibility.Hidden;
