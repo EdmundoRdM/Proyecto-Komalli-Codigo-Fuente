@@ -89,10 +89,24 @@ namespace Komalli.GUIs
                
                 ProductPOCO newProduct = new ProductPOCO();
                 newProduct.ProductName = txtProductName.Text;
-                newProduct.ProductAvailableQuantity = int.Parse(txtProductAvailableQuantity.Text);
+                if (int.TryParse(txtProductAvailableQuantity.Text, out int parsedValue))
+                {
+                    newProduct.ProductAvailableQuantity = parsedValue;
+                }
+                else
+                {
+                    MessageBox.Show("Por favor, ingrese un número válido para la cantidad disponible.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
                 newProduct.ProductStatus = true;
                 newProduct.ProductDescription = txtProductDescription.Text;
-                newProduct.ProductPrice = decimal.Parse(txtProductPrice.Text);
+                if (decimal.TryParse(txtProductPrice.Text, out decimal parsedValueDecimal))
+                {
+                    newProduct.ProductPrice = parsedValueDecimal;
+                }
+                else
+                {
+                    MessageBox.Show("Por favor, ingrese un precio válido.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
                 newProduct.ProductTypeId = (int)cbProductType.SelectedValue;
                 newProduct.ProductSellingDate = DateTime.Now;
                 if (chBFromKitchen.IsChecked == true)
@@ -101,7 +115,7 @@ namespace Komalli.GUIs
                 } else newProduct.ProductFromKitchen = false;
                 ProductDAO productDAO = new ProductDAO();
 
-                if (true)
+                if (IsValidDataStructure())
                 {
                     if (idProductSelected == 0)
                     {
@@ -178,15 +192,11 @@ namespace Komalli.GUIs
         private bool IsValidDataStructure()
         {
             bool result = false;
-            string name = txtProductName.Text;
-            string description = txtProductDescription.Text;
-            string price = txtProductPrice.Text;
-            string available = txtProductAvailableQuantity.Text;
+            string productAvailableQuantity = txtProductAvailableQuantity.Text;
+            string productPrice = txtProductPrice.Text;
 
-            if (Utilities.IsValidSpanishLettersAndSpaces(name) &&
-                Utilities.IsValidSpanishLettersAndSpaces(description) &&
-                Utilities.IsValidInteger(available) &&
-                Utilities.IsValidDecimal(price))
+            if (Utilities.IsValidDecimal(productPrice) &&
+                Utilities.IsValidInteger(productAvailableQuantity)) 
             {
                 result = true;
             }
