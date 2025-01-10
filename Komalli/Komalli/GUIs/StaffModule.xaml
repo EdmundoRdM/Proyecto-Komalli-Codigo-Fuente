@@ -102,7 +102,6 @@
         <Style TargetType="DataGridCell">
             <Setter Property="FontWeight" Value="SemiBold"/>
             <Setter Property="Foreground" Value="Black"/>
-            <!-- Cambia esto si prefieres otro color de texto -->
             <Setter Property="HorizontalContentAlignment" Value="Center"/>
             <Setter Property="VerticalContentAlignment" Value="Center"/>
             <Setter Property="FontSize" Value="20"/>

@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\Escuela\Semestre 7\Desarrollo de red\Proyecto-Komalli-Codigo-Fuente\Komalli\Komalli\obj\Debug\
+C:\Users\nando\Desktop\Trabajos UV\Desarrollo de software\Proyecto\Codigo\Proyecto-Komalli-Codigo-Fuente\Komalli\Komalli\obj\Debug\
 Komalli
 none
 false
 DEBUG;TRACE
-D:\Escuela\Semestre 7\Desarrollo de red\Proyecto-Komalli-Codigo-Fuente\Komalli\Komalli\App.xaml
-11-1594620653
+C:\Users\nando\Desktop\Trabajos UV\Desarrollo de software\Proyecto\Codigo\Proyecto-Komalli-Codigo-Fuente\Komalli\Komalli\App.xaml
+13-599414072
 4-1286725502
-461814031365
-20-1117087887
-GUIs\CashierLanding.xaml;GUIs\CookLanding.xaml;GUIs\LogIn.xaml;GUIs\ManagerLanding.xaml;GUIs\NavigationBar.xaml;GUIs\OrdersCashier.xaml;GUIs\OrdersModuleCook.xaml;GUIs\ProductModule.xaml;GUIs\ReportsModule.xaml;GUIs\StaffModule.xaml;MainWindow.xaml;
+50-802904560
+20-860833969
+GUIs\CashierLanding.xaml;GUIs\CookLanding.xaml;GUIs\ExtraordinaryMovementsModule.xaml;GUIs\KioskModule.xaml;GUIs\LogIn.xaml;GUIs\ManagerLanding.xaml;GUIs\NavigationBar.xaml;GUIs\OrdersCashier.xaml;GUIs\OrdersModuleCook.xaml;GUIs\ProductModule.xaml;GUIs\ReportsModule.xaml;GUIs\StaffModule.xaml;MainWindow.xaml;
 
 False
 

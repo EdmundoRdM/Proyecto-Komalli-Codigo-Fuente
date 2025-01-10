@@ -61,7 +61,7 @@ namespace Komalli.GUIs
 
         private async Task HandleLoginAsync(string username, string password)
         {
-            lblLoading.Visibility = Visibility.Visible; // Muestra el indicador de carga
+            lblLoading.Visibility = Visibility.Visible;
             try
             {
                 await Task.Run(() => VerifyLogin(username, password));
@@ -72,7 +72,7 @@ namespace Komalli.GUIs
             }
             finally
             {
-                lblLoading.Visibility = Visibility.Collapsed; // Oculta el indicador de carga
+                lblLoading.Visibility = Visibility.Collapsed;
             }
         }
 
@@ -152,8 +152,6 @@ namespace Komalli.GUIs
             int rol = staffPOCO.Role;
             switch (role)
             {               
-                //Aqui va la navegacion al landin que corresponda. LEs dejo ejemplos. leugo borran los comentarios paro.
-
                 case 1:
                     MessageBox.Show("Bienvenido Gerente. "  , "Inicio de Sesión", MessageBoxButton.OK, MessageBoxImage.Information);
                     Utilities.ChangePage(new ManagerLanding());
@@ -162,7 +160,6 @@ namespace Komalli.GUIs
                 case 2:
                     MessageBox.Show("Bienvenido Cajero." , "Inicio de Sesión", MessageBoxButton.OK, MessageBoxImage.Information);
                     Utilities.ChangePage(new CashierLanding());
-                    //NavigationService.Navigate(new Uri("CajeroPage.xaml", UriKind.Relative));
                     break;
 
                 case 3: 
@@ -172,7 +169,7 @@ namespace Komalli.GUIs
 
                 case 4: 
                     MessageBox.Show("Bienvenido Usuario Anónimo. ", "Inicio de Sesión", MessageBoxButton.OK, MessageBoxImage.Information);
-                    //NavigationService.Navigate(new Uri("AnonimoPage.xaml", UriKind.Relative));
+                    Utilities.ChangePage(new KioskModule());
                     break;
 
                 default:

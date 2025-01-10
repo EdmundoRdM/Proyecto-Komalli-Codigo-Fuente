@@ -25,7 +25,8 @@ namespace Komalli.Util
         }
         public static bool IsValidSpanishLettersAndSpaces(string input)
         {
-            string pattern = @"^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]*$";
+            input = input.Trim();
+            string pattern = @"^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$";
             Regex regex = new Regex(pattern);
             Match match = regex.Match(input);
             if (match.Success)
@@ -33,7 +34,6 @@ namespace Komalli.Util
                 int letterCount = Regex.Matches(input, @"[a-zA-ZáéíóúÁÉÍÓÚñÑ]").Count;
                 return letterCount >= 3;
             }
-
             return false;
         }
 
@@ -60,13 +60,8 @@ namespace Komalli.Util
 
         public static bool IsValidDecimal(string input)
         {
-            if (string.IsNullOrWhiteSpace(input))
-            {
-                return false;
-            }
-            string pattern = @"^\d{1,}[.,]\d{1,}$";
-            Regex regex = new Regex(pattern);
-            Match match = regex.Match(input);
+            string pattern = @"^\d+(\.\d{1,2})?$";
+            Match match = Regex.Match(input, pattern);
             return match.Success;
         }
 
