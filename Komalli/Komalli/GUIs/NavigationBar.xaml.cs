@@ -121,10 +121,7 @@ namespace Komalli.GUIs
 
         private void BtnExtraordinaryMovementsModule_Click(object sender, RoutedEventArgs e)
         {
-            if (RemoveTempSaleIfExists())
-            {
-                //Utilities.ChangePage(new ExtraordinaryMovementsModule());
-            }
+            Utilities.ChangePage(new ExtraordinaryMovementsModule());
 
         }
 
@@ -132,7 +129,6 @@ namespace Komalli.GUIs
         {
             Utilities.ChangePage(new LogIn());
         }
-
 
         private void BtnGenerateOrderModule_Click(object sender, RoutedEventArgs e)
         {

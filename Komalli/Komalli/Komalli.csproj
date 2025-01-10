@@ -70,6 +70,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="DataBaseManagement\DataAccessObject\MovementDAO.cs" />
     <Compile Include="DataBaseManagement\DataAccessObject\ProductDAO.cs" />
     <Compile Include="DataBaseManagement\DataAccessObject\SaleDAO.cs" />
     <Compile Include="DataBaseManagement\DataAccessObject\ProductTypeDAO.cs" />
@@ -125,6 +126,7 @@
     <Compile Include="DataBaseManagement\DataModel\Staff.cs">
       <DependentUpon>KomalliDBModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DataBaseManagement\POCOs\MovementPOCO.cs" />
     <Compile Include="DataBaseManagement\POCOs\OrderPOCO.cs" />
     <Compile Include="DataBaseManagement\POCOs\ProductPOCO.cs" />
     <Compile Include="DataBaseManagement\POCOs\ProductTypePOCO.cs" />
@@ -136,6 +138,9 @@
     </Compile>
     <Compile Include="GUIs\CookLanding.xaml.cs">
       <DependentUpon>CookLanding.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUIs\ExtraordinaryMovementsModule.xaml.cs">
+      <DependentUpon>ExtraordinaryMovementsModule.xaml</DependentUpon>
     </Compile>
     <Compile Include="GUIs\ManagerLanding.xaml.cs">
       <DependentUpon>ManagerLanding.xaml</DependentUpon>
@@ -167,6 +172,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="GUIs\CookLanding.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GUIs\ExtraordinaryMovementsModule.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

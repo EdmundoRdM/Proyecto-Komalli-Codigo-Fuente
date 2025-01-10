@@ -152,8 +152,6 @@ namespace Komalli.GUIs
             int rol = staffPOCO.Role;
             switch (role)
             {               
-                //Aqui va la navegacion al landin que corresponda. LEs dejo ejemplos. leugo borran los comentarios paro.
-
                 case 1:
                     MessageBox.Show("Bienvenido Gerente. "  , "Inicio de Sesión", MessageBoxButton.OK, MessageBoxImage.Information);
                     Utilities.ChangePage(new ManagerLanding());
@@ -162,7 +160,6 @@ namespace Komalli.GUIs
                 case 2:
                     MessageBox.Show("Bienvenido Cajero." , "Inicio de Sesión", MessageBoxButton.OK, MessageBoxImage.Information);
                     Utilities.ChangePage(new CashierLanding());
-                    //NavigationService.Navigate(new Uri("CajeroPage.xaml", UriKind.Relative));
                     break;
 
                 case 3: 
@@ -172,7 +169,6 @@ namespace Komalli.GUIs
 
                 case 4: 
                     MessageBox.Show("Bienvenido Usuario Anónimo. ", "Inicio de Sesión", MessageBoxButton.OK, MessageBoxImage.Information);
-                    //NavigationService.Navigate(new Uri("AnonimoPage.xaml", UriKind.Relative));
                     break;
 
                 default:
