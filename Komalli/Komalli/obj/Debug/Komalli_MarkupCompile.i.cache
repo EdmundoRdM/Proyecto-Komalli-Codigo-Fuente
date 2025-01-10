@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\nando\Desktop\Trabajos UV\Desarrollo de software\Proyecto\Codigo\Proyecto-Komalli-Codigo-Fuente\Komalli\Komalli\App.xaml
-12-18767073
+13-599414072
 4-1286725502
-50953104874
+511118873561
 20-860833969
-GUIs\CashierLanding.xaml;GUIs\CookLanding.xaml;GUIs\ExtraordinaryMovementsModule.xaml;GUIs\LogIn.xaml;GUIs\ManagerLanding.xaml;GUIs\NavigationBar.xaml;GUIs\OrdersCashier.xaml;GUIs\OrdersModuleCook.xaml;GUIs\ProductModule.xaml;GUIs\ReportsModule.xaml;GUIs\StaffModule.xaml;MainWindow.xaml;
+GUIs\CashierLanding.xaml;GUIs\CookLanding.xaml;GUIs\ExtraordinaryMovementsModule.xaml;GUIs\KioskModule.xaml;GUIs\LogIn.xaml;GUIs\ManagerLanding.xaml;GUIs\NavigationBar.xaml;GUIs\OrdersCashier.xaml;GUIs\OrdersModuleCook.xaml;GUIs\ProductModule.xaml;GUIs\ReportsModule.xaml;GUIs\StaffModule.xaml;MainWindow.xaml;
 
-False
+True
 

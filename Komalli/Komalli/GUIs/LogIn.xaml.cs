@@ -61,7 +61,7 @@ namespace Komalli.GUIs
 
         private async Task HandleLoginAsync(string username, string password)
         {
-            lblLoading.Visibility = Visibility.Visible; // Muestra el indicador de carga
+            lblLoading.Visibility = Visibility.Visible;
             try
             {
                 await Task.Run(() => VerifyLogin(username, password));
@@ -72,7 +72,7 @@ namespace Komalli.GUIs
             }
             finally
             {
-                lblLoading.Visibility = Visibility.Collapsed; // Oculta el indicador de carga
+                lblLoading.Visibility = Visibility.Collapsed;
             }
         }
 
@@ -169,6 +169,7 @@ namespace Komalli.GUIs
 
                 case 4: 
                     MessageBox.Show("Bienvenido Usuario Anónimo. ", "Inicio de Sesión", MessageBoxButton.OK, MessageBoxImage.Information);
+                    Utilities.ChangePage(new KioskModule());
                     break;
 
                 default:

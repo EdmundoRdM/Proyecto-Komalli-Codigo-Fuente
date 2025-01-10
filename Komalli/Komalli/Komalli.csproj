@@ -142,6 +142,9 @@
     <Compile Include="GUIs\ExtraordinaryMovementsModule.xaml.cs">
       <DependentUpon>ExtraordinaryMovementsModule.xaml</DependentUpon>
     </Compile>
+    <Compile Include="GUIs\KioskModule.xaml.cs">
+      <DependentUpon>KioskModule.xaml</DependentUpon>
+    </Compile>
     <Compile Include="GUIs\ManagerLanding.xaml.cs">
       <DependentUpon>ManagerLanding.xaml</DependentUpon>
     </Compile>
@@ -176,6 +179,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="GUIs\ExtraordinaryMovementsModule.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GUIs\KioskModule.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
