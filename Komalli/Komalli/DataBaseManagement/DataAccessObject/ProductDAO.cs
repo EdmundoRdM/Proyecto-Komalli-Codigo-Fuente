@@ -241,6 +241,27 @@ namespace Komalli.DataBaseManagement.DataAccessObject
             }
         }
 
+        public bool DisableProduct(int productId)
+        {
+            using (var context = new KomalliDBEntities())
+            {
+                try
+                {
+                    var product = context.Product.FirstOrDefault(p => p.ProductId == productId);
+                    if (product == null)
+                        throw new Exception("Producto no encontrado.");
+                    product.Status = false;                   
+
+                    context.SaveChanges();
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Error al modificar el producto.", ex);
+                }
+            }
+        }
+
         public List<ProductPOCO> GetProductsBySaleId(int saleId)
         {
             using (var context = new KomalliDBEntities())
@@ -273,6 +294,36 @@ namespace Komalli.DataBaseManagement.DataAccessObject
                     throw new Exception("Error al obtener los productos asociados a la venta.", ex);
                 }
             }
+        }
+
+        public List<ProductPOCO> SearchProductsByName(string searchTerm)
+        {
+            using (var context = new KomalliDBEntities())
+            {
+                try
+                {
+                    return context.Product
+                        .Where(p => p.Status == true && p.Name.ToLower().Contains(searchTerm.ToLower()))
+                    .Select(p => new ProductPOCO
+                    {
+                            ProductId = p.ProductId,
+                            ProductPrice = p.Price,
+                            ProductAvailableQuantity = p.AvailableQuantity,
+                            ProductDescription = p.Description,
+                            ProductName = p.Name,
+                            ProductTypeId = p.Type,
+                            ProductType = p.ProductType.TypeName,
+                            ProductStatus = p.Status,
+                            ProductSellingDate = p.SellingDate ?? DateTime.MinValue,
+                            ProductFromKitchen = p.FromKitchen
+                        }).ToList();
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Error al obtener todos los productos.", ex);
+                }
+            }
+            
         }
 
 
