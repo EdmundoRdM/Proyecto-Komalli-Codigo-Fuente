@@ -93,45 +93,6 @@
         </Grid>
 
         <Grid>
-            <Rectangle 
-        HorizontalAlignment="Left" 
-        Margin="367,255,0,594"  
-        Width="867" 
-        Fill="#BEBEBE"
-        RadiusX="20" 
-        RadiusY="20"
-        Height="55"/>
-
-            <TextBox x:Name="txtProductSearch"
-            HorizontalAlignment="Left" 
-            Margin="397,264,0,0"
-            TextWrapping="Wrap"
-            VerticalAlignment="Top"
-            FontSize="30"
-            Width="813"
-            Height="46"
-            Background="#BEBEBE"
-            Foreground="#FF262222">
-            </TextBox>
-
-            <Label Content="Buscar producto por nombre:" 
-            HorizontalAlignment="Left" 
-            Margin="379,215,0,0" 
-            VerticalAlignment="Top"
-            FontSize="25"
-            Foreground="#9b9b9b"
-            FontFamily="Inter"
-            FontWeight="Bold"/>
-
-            <Image
-            HorizontalAlignment="Left"
-            Height="75" 
-            Margin="1248,243,0,0" 
-            VerticalAlignment="Top"
-            Width="75" 
-            Cursor="Hand" 
-            Source="{StaticResource SearchIcon}"
-            MouseLeftButtonUp="BtnSearchProduct_Click"/>
 
             <Image
             HorizontalAlignment="Left"
@@ -210,7 +171,7 @@
                                 Width="40" 
                                 Cursor="Hand"
                                 Click="BtnUpdateProduct_Click"
-                                CommandParameter="{Binding IdStaff}"
+                                Tag="{Binding}"
                                 Background="Transparent"
                                 BorderBrush="Transparent"
                                 Margin="5,0,5,0">
@@ -232,7 +193,7 @@
                                 Width="40" 
                                 Cursor="Hand"
                                 Click="BtnDeleteProduct_Click"
-                                CommandParameter="{Binding IdStaff}"
+                                Tag="{Binding}"
                                 Background="Transparent"
                                 BorderBrush="Transparent"
                                 Margin="5,0,5,0">

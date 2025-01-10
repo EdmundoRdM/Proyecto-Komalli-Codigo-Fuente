@@ -28,21 +28,18 @@ namespace Komalli.GUIs
     {
         int idProductSelected = 0;
         public ICollectionView ProductsCollectionView { get; }
+               
+       
         public ProductModule()
         {
             InitializeComponent();
             loadProducts();
         }
 
-        private void BtnSearchProduct_Click(object sender, MouseButtonEventArgs e)
-        {
-
-        }
 
         private void BtnReloadProduct_Click(object sender, MouseButtonEventArgs e)
         {
             loadProducts();
-            txtProductSearch.Text = "";
         }
 
         private void BtnRegisterProduct_Click(object sender, MouseButtonEventArgs e)
@@ -54,17 +51,34 @@ namespace Komalli.GUIs
 
         private void BtnUpdateProduct_Click(object sender, RoutedEventArgs e)
         {
-
+            var button = sender as Button;
+            var selectedProduct = button.Tag as ProductPOCO;
+            loadProductTypes();
+            idProductSelected = selectedProduct.ProductId;
+            txtProductName.Text = selectedProduct.ProductName;
+            txtProductDescription.Text = selectedProduct.ProductDescription;
+            txtProductPrice.Text = selectedProduct.ProductPrice.ToString();
+            txtProductAvailableQuantity.Text = selectedProduct.ProductAvailableQuantity.ToString();
+            cbProductType.SelectedValue = selectedProduct.ProductTypeId;
+            chBFromKitchen.IsChecked = selectedProduct.ProductFromKitchen;
+            TitleForm.Content = "Actualizar producto";
+            RegisterProductForm.Visibility = Visibility.Visible;
         }
 
         private void BtnDeleteProduct_Click(object sender, RoutedEventArgs e)
         {
-
+            var button = sender as Button;
+            var selectedProduct = button?.Tag as ProductPOCO;
+            ProductDAO productsDAO = new ProductDAO();
+           productsDAO.DisableProduct(selectedProduct.ProductId);
+            loadProducts();
         }
 
         private void BtnCancel_Click(object sender, RoutedEventArgs e)
         {
-
+            loadProducts();
+            RegisterProductForm.Visibility = Visibility.Collapsed;
+            TitleForm.Content = "Productos";
         }
 
         private void BtnSaveProduct_Click(object sender, RoutedEventArgs e)
@@ -79,6 +93,7 @@ namespace Komalli.GUIs
                 newProduct.ProductDescription = txtProductDescription.Text;
                 newProduct.ProductPrice = decimal.Parse(txtProductPrice.Text);
                 newProduct.ProductTypeId = (int)cbProductType.SelectedValue;
+                newProduct.ProductSellingDate = DateTime.Now;
                 if (chBFromKitchen.IsChecked == true)
                 {
                     newProduct.ProductFromKitchen = true;
@@ -143,7 +158,7 @@ namespace Komalli.GUIs
             try
             {
                 ProductDAO productDAO = new ProductDAO();
-                var productList = productDAO.GetAllProducts();
+                List<ProductPOCO> productList = productDAO.GetAllProducts();
                 ProductListView.ItemsSource = productList;
             }
             catch (SqlException)
