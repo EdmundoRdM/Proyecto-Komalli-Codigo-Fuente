@@ -44,6 +44,7 @@ namespace Komalli.GUIs
 
         private void BtnRegisterProduct_Click(object sender, MouseButtonEventArgs e)
         {
+            ClearFields();
             RegisterProductForm.Visibility = Visibility.Visible;
             TitleForm.Content = "Registrar producto";
             loadProductTypes();
