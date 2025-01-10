@@ -36,7 +36,7 @@ namespace Komalli.DataBaseManagement.DataAccessObject
             }
             catch (Exception ex)
             {
-                throw new Exception("Error al registrar el empleado.", ex);
+                throw new Exception("Error al registrar el producto.", ex);
                 return false;
             }
         }

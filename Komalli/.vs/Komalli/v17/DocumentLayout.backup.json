@@ -1,29 +1,53 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\nando\\Desktop\\Trabajos UV\\Desarrollo de software\\Proyecto\\Codigo\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\",
+  "WorkspaceRootPath": "D:\\Escuela\\Semestre 7\\Desarrollo de red\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|c:\\users\\nando\\desktop\\trabajos uv\\desarrollo de software\\proyecto\\codigo\\proyecto-komalli-codigo-fuente\\komalli\\komalli\\guis\\login.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|solutionrelative:komalli\\guis\\login.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|d:\\escuela\\semestre 7\\desarrollo de red\\proyecto-komalli-codigo-fuente\\komalli\\komalli\\guis\\productmodule.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|solutionrelative:komalli\\guis\\productmodule.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|C:\\Users\\nando\\Desktop\\Trabajos UV\\Desarrollo de software\\Proyecto\\Codigo\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\komalli\\guis\\cashierlanding.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|solutionrelative:komalli\\guis\\cashierlanding.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|d:\\escuela\\semestre 7\\desarrollo de red\\proyecto-komalli-codigo-fuente\\komalli\\komalli\\guis\\productmodule.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|solutionrelative:komalli\\guis\\productmodule.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|C:\\Users\\nando\\Desktop\\Trabajos UV\\Desarrollo de software\\Proyecto\\Codigo\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\komalli\\databasemanagement\\dataaccessobject\\saledao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|solutionrelative:komalli\\databasemanagement\\dataaccessobject\\saledao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|d:\\escuela\\semestre 7\\desarrollo de red\\proyecto-komalli-codigo-fuente\\komalli\\komalli\\databasemanagement\\dataaccessobject\\productdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|solutionrelative:komalli\\databasemanagement\\dataaccessobject\\productdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|C:\\Users\\nando\\Desktop\\Trabajos UV\\Desarrollo de software\\Proyecto\\Codigo\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\komalli\\databasemanagement\\pocos\\salepoco.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|d:\\escuela\\semestre 7\\desarrollo de red\\proyecto-komalli-codigo-fuente\\komalli\\komalli\\databasemanagement\\dataaccessobject\\producttypedao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|solutionrelative:komalli\\databasemanagement\\dataaccessobject\\producttypedao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|d:\\escuela\\semestre 7\\desarrollo de red\\proyecto-komalli-codigo-fuente\\komalli\\komalli\\databasemanagement\\pocos\\productpoco.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|solutionrelative:komalli\\databasemanagement\\pocos\\productpoco.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|d:\\escuela\\semestre 7\\desarrollo de red\\proyecto-komalli-codigo-fuente\\komalli\\komalli\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|solutionrelative:komalli\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|D:\\Escuela\\Semestre 7\\Desarrollo de red\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\komalli\\databasemanagement\\pocos\\salepoco.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|solutionrelative:komalli\\databasemanagement\\pocos\\salepoco.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:1:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|c:\\users\\nando\\desktop\\trabajos uv\\desarrollo de software\\proyecto\\codigo\\proyecto-komalli-codigo-fuente\\komalli\\komalli\\guis\\cashierlanding.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|d:\\escuela\\semestre 7\\desarrollo de red\\proyecto-komalli-codigo-fuente\\komalli\\komalli\\guis\\login.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|solutionrelative:komalli\\guis\\login.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|D:\\Escuela\\Semestre 7\\Desarrollo de red\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\komalli\\guis\\cashierlanding.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|solutionrelative:komalli\\guis\\cashierlanding.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|D:\\Escuela\\Semestre 7\\Desarrollo de red\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\komalli\\databasemanagement\\dataaccessobject\\saledao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|solutionrelative:komalli\\databasemanagement\\dataaccessobject\\saledao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:1:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|D:\\Escuela\\Semestre 7\\Desarrollo de red\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\komalli\\guis\\cashierlanding.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:1:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|solutionrelative:komalli\\guis\\cashierlanding.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:2:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|c:\\users\\nando\\desktop\\trabajos uv\\desarrollo de software\\proyecto\\codigo\\proyecto-komalli-codigo-fuente\\komalli\\komalli\\guis\\cashierlanding.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:2:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|D:\\Escuela\\Semestre 7\\Desarrollo de red\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\komalli\\guis\\cashierlanding.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:2:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|solutionrelative:komalli\\guis\\cashierlanding.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
@@ -34,7 +58,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 410,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -49,25 +73,106 @@
               "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "App.config",
+              "DocumentMoniker": "D:\\Escuela\\Semestre 7\\Desarrollo de red\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\App.config",
+              "RelativeDocumentMoniker": "Komalli\\App.config",
+              "ToolTip": "D:\\Escuela\\Semestre 7\\Desarrollo de red\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\App.config",
+              "RelativeToolTip": "Komalli\\App.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2025-01-10T20:02:18.29Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ProductModule.xaml.cs",
+              "DocumentMoniker": "D:\\Escuela\\Semestre 7\\Desarrollo de red\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\GUIs\\ProductModule.xaml.cs",
+              "RelativeDocumentMoniker": "Komalli\\GUIs\\ProductModule.xaml.cs",
+              "ToolTip": "D:\\Escuela\\Semestre 7\\Desarrollo de red\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\GUIs\\ProductModule.xaml.cs",
+              "RelativeToolTip": "Komalli\\GUIs\\ProductModule.xaml.cs",
+              "ViewState": "AgIAAFAAAAAAAAAAAAAUwFQAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-10T19:54:13.604Z",
+              "EditorCaption": ""
+            },
+            {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "ProductModule.xaml",
+              "DocumentMoniker": "D:\\Escuela\\Semestre 7\\Desarrollo de red\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\GUIs\\ProductModule.xaml",
+              "RelativeDocumentMoniker": "Komalli\\GUIs\\ProductModule.xaml",
+              "ToolTip": "D:\\Escuela\\Semestre 7\\Desarrollo de red\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\GUIs\\ProductModule.xaml",
+              "RelativeToolTip": "Komalli\\GUIs\\ProductModule.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-01-10T19:53:26.491Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ProductDAO.cs",
+              "DocumentMoniker": "D:\\Escuela\\Semestre 7\\Desarrollo de red\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\DataBaseManagement\\DataAccessObject\\ProductDAO.cs",
+              "RelativeDocumentMoniker": "Komalli\\DataBaseManagement\\DataAccessObject\\ProductDAO.cs",
+              "ToolTip": "D:\\Escuela\\Semestre 7\\Desarrollo de red\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\DataBaseManagement\\DataAccessObject\\ProductDAO.cs",
+              "RelativeToolTip": "Komalli\\DataBaseManagement\\DataAccessObject\\ProductDAO.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAiwCYAAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-10T19:51:15.259Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ProductTypeDAO.cs",
+              "DocumentMoniker": "D:\\Escuela\\Semestre 7\\Desarrollo de red\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\DataBaseManagement\\DataAccessObject\\ProductTypeDAO.cs",
+              "RelativeDocumentMoniker": "Komalli\\DataBaseManagement\\DataAccessObject\\ProductTypeDAO.cs",
+              "ToolTip": "D:\\Escuela\\Semestre 7\\Desarrollo de red\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\DataBaseManagement\\DataAccessObject\\ProductTypeDAO.cs",
+              "RelativeToolTip": "Komalli\\DataBaseManagement\\DataAccessObject\\ProductTypeDAO.cs",
+              "ViewState": "AgIAAAMAAAAANDMzMzMLwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-10T19:51:13.657Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ProductPOCO.cs",
+              "DocumentMoniker": "D:\\Escuela\\Semestre 7\\Desarrollo de red\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\DataBaseManagement\\POCOs\\ProductPOCO.cs",
+              "RelativeDocumentMoniker": "Komalli\\DataBaseManagement\\POCOs\\ProductPOCO.cs",
+              "ToolTip": "D:\\Escuela\\Semestre 7\\Desarrollo de red\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\DataBaseManagement\\POCOs\\ProductPOCO.cs",
+              "RelativeToolTip": "Komalli\\DataBaseManagement\\POCOs\\ProductPOCO.cs",
+              "ViewState": "AgIAAAcAAAAANjMzMzMLwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-10T19:50:32.642Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "LogIn.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\nando\\Desktop\\Trabajos UV\\Desarrollo de software\\Proyecto\\Codigo\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\GUIs\\LogIn.xaml.cs",
+              "DocumentMoniker": "D:\\Escuela\\Semestre 7\\Desarrollo de red\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\GUIs\\LogIn.xaml.cs",
               "RelativeDocumentMoniker": "Komalli\\GUIs\\LogIn.xaml.cs",
-              "ToolTip": "C:\\Users\\nando\\Desktop\\Trabajos UV\\Desarrollo de software\\Proyecto\\Codigo\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\GUIs\\LogIn.xaml.cs",
+              "ToolTip": "D:\\Escuela\\Semestre 7\\Desarrollo de red\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\GUIs\\LogIn.xaml.cs",
               "RelativeToolTip": "Komalli\\GUIs\\LogIn.xaml.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAkwJgAAAAZAAAAAAAAAA==",
+              "ViewState": "AgIAAD0AAAAAzMzMzMwawJgAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-26T00:26:09.368Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 8,
               "Title": "CashierLanding.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\nando\\Desktop\\Trabajos UV\\Desarrollo de software\\Proyecto\\Codigo\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\GUIs\\CashierLanding.xaml.cs",
+              "DocumentMoniker": "D:\\Escuela\\Semestre 7\\Desarrollo de red\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\GUIs\\CashierLanding.xaml.cs",
               "RelativeDocumentMoniker": "Komalli\\GUIs\\CashierLanding.xaml.cs",
-              "ToolTip": "C:\\Users\\nando\\Desktop\\Trabajos UV\\Desarrollo de software\\Proyecto\\Codigo\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\GUIs\\CashierLanding.xaml.cs",
+              "ToolTip": "D:\\Escuela\\Semestre 7\\Desarrollo de red\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\GUIs\\CashierLanding.xaml.cs",
               "RelativeToolTip": "Komalli\\GUIs\\CashierLanding.xaml.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -75,34 +180,35 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 10,
               "Title": "CashierLanding.xaml",
-              "DocumentMoniker": "C:\\Users\\nando\\Desktop\\Trabajos UV\\Desarrollo de software\\Proyecto\\Codigo\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\GUIs\\CashierLanding.xaml",
+              "DocumentMoniker": "D:\\Escuela\\Semestre 7\\Desarrollo de red\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\GUIs\\CashierLanding.xaml",
               "RelativeDocumentMoniker": "Komalli\\GUIs\\CashierLanding.xaml",
-              "ToolTip": "C:\\Users\\nando\\Desktop\\Trabajos UV\\Desarrollo de software\\Proyecto\\Codigo\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\GUIs\\CashierLanding.xaml",
+              "ToolTip": "D:\\Escuela\\Semestre 7\\Desarrollo de red\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\GUIs\\CashierLanding.xaml",
               "RelativeToolTip": "Komalli\\GUIs\\CashierLanding.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2024-11-25T20:50:48.349Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "SalePOCO.cs",
-              "DocumentMoniker": "C:\\Users\\nando\\Desktop\\Trabajos UV\\Desarrollo de software\\Proyecto\\Codigo\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\DataBaseManagement\\POCOs\\SalePOCO.cs",
+              "DocumentMoniker": "D:\\Escuela\\Semestre 7\\Desarrollo de red\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\DataBaseManagement\\POCOs\\SalePOCO.cs",
               "RelativeDocumentMoniker": "Komalli\\DataBaseManagement\\POCOs\\SalePOCO.cs",
-              "ToolTip": "C:\\Users\\nando\\Desktop\\Trabajos UV\\Desarrollo de software\\Proyecto\\Codigo\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\DataBaseManagement\\POCOs\\SalePOCO.cs",
+              "ToolTip": "D:\\Escuela\\Semestre 7\\Desarrollo de red\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\DataBaseManagement\\POCOs\\SalePOCO.cs",
               "RelativeToolTip": "Komalli\\DataBaseManagement\\POCOs\\SalePOCO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-25T21:01:48.542Z"
+              "WhenOpened": "2024-11-25T21:01:48.542Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 9,
               "Title": "SaleDAO.cs",
-              "DocumentMoniker": "C:\\Users\\nando\\Desktop\\Trabajos UV\\Desarrollo de software\\Proyecto\\Codigo\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\DataBaseManagement\\DataAccessObject\\SaleDAO.cs",
+              "DocumentMoniker": "D:\\Escuela\\Semestre 7\\Desarrollo de red\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\DataBaseManagement\\DataAccessObject\\SaleDAO.cs",
               "RelativeDocumentMoniker": "Komalli\\DataBaseManagement\\DataAccessObject\\SaleDAO.cs",
-              "ToolTip": "C:\\Users\\nando\\Desktop\\Trabajos UV\\Desarrollo de software\\Proyecto\\Codigo\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\DataBaseManagement\\DataAccessObject\\SaleDAO.cs",
+              "ToolTip": "D:\\Escuela\\Semestre 7\\Desarrollo de red\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\DataBaseManagement\\DataAccessObject\\SaleDAO.cs",
               "RelativeToolTip": "Komalli\\DataBaseManagement\\DataAccessObject\\SaleDAO.cs",
               "ViewState": "AgIAAIEAAAAAAAAAAAA0wNYAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -110,11 +216,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 11,
               "Title": "ReportGenerator.cs",
-              "DocumentMoniker": "C:\\Users\\nando\\Desktop\\Trabajos UV\\Desarrollo de software\\Proyecto\\Codigo\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\Util\\ReportGenerator.cs",
+              "DocumentMoniker": "D:\\Escuela\\Semestre 7\\Desarrollo de red\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\Util\\ReportGenerator.cs",
               "RelativeDocumentMoniker": "Komalli\\Util\\ReportGenerator.cs",
-              "ToolTip": "C:\\Users\\nando\\Desktop\\Trabajos UV\\Desarrollo de software\\Proyecto\\Codigo\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\Util\\ReportGenerator.cs",
+              "ToolTip": "D:\\Escuela\\Semestre 7\\Desarrollo de red\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\Util\\ReportGenerator.cs",
               "RelativeToolTip": "Komalli\\Util\\ReportGenerator.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABUBAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",

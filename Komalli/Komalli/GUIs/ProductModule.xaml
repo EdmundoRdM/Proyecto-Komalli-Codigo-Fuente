@@ -356,6 +356,20 @@
                 Foreground="Black"
                 FontSize="30"/>
 
+
+
+                <CheckBox x:Name="chBFromKitchen"
+                Margin="1330,269,397,0" 
+                VerticalAlignment="Top" 
+                Height="16"
+                Background="#BEBEBE"
+                Foreground="Black" 
+                >
+                    <CheckBox.RenderTransform>
+                        <ScaleTransform ScaleX="3" ScaleY="3" />
+                    </CheckBox.RenderTransform>
+                </CheckBox>
+
                 <Button x:Name="btnCancel" 
                 HorizontalAlignment="Left" 
                 Margin="553,793,0,0" 
@@ -450,6 +464,15 @@
                 <Label Content="Cantidad disponible:" 
                 HorizontalAlignment="Left" 
                 Margin="1039,624,0,0" 
+                VerticalAlignment="Top"
+                FontSize="40"
+                Foreground="#292929"
+                FontFamily="Inter"
+                FontWeight="UltraBold"/>
+
+                <Label Content="Es de cocina" 
+                HorizontalAlignment="Left" 
+                Margin="1390,265,0,0" 
                 VerticalAlignment="Top"
                 FontSize="40"
                 Foreground="#292929"

@@ -48,7 +48,7 @@ namespace Komalli.GUIs
         private void BtnRegisterProduct_Click(object sender, MouseButtonEventArgs e)
         {
             RegisterProductForm.Visibility = Visibility.Visible;
-            TitleForm.Content = "Registrar personal";
+            TitleForm.Content = "Registrar producto";
             loadProductTypes();
         }
 
@@ -71,15 +71,21 @@ namespace Komalli.GUIs
         {
             if (IsNotEmpty())
             {
+               
                 ProductPOCO newProduct = new ProductPOCO();
                 newProduct.ProductName = txtProductName.Text;
                 newProduct.ProductAvailableQuantity = int.Parse(txtProductAvailableQuantity.Text);
+                newProduct.ProductStatus = true;
                 newProduct.ProductDescription = txtProductDescription.Text;
                 newProduct.ProductPrice = decimal.Parse(txtProductPrice.Text);
                 newProduct.ProductTypeId = (int)cbProductType.SelectedValue;
+                if (chBFromKitchen.IsChecked == true)
+                {
+                    newProduct.ProductFromKitchen = true;
+                } else newProduct.ProductFromKitchen = false;
                 ProductDAO productDAO = new ProductDAO();
 
-                if (IsValidDataStructure())
+                if (true)
                 {
                     if (idProductSelected == 0)
                     {
