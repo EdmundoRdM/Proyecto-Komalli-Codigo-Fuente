@@ -106,7 +106,7 @@ namespace Komalli.GUIs
 
         private void BtnReportsModule_Click(object sender, RoutedEventArgs e)
         {
-
+            Utilities.ChangePage(new ReportsModule());
         }
 
         private void BtnProductsModule_Click(object sender, RoutedEventArgs e)

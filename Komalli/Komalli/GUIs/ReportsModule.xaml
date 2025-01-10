@@ -1,0 +1,100 @@
+﻿<Page x:Class="Komalli.GUIs.ReportsModule"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Komalli.GUIs"
+      mc:Ignorable="d" 
+      d:DesignHeight="922.16" d:DesignWidth="1742.8"
+      Title="ReportsModule">
+
+    <Grid x:Name="StaffModuleBackground" >
+
+        <Grid Background="white">
+            <Rectangle 
+                HorizontalAlignment="Left" 
+                Margin="295,50,0,738"  
+                Width="1448" 
+                Fill="#2C9B00"
+                RadiusX="20" 
+                RadiusY="20"/>
+
+            <Label Content="Reportes" 
+               HorizontalAlignment="Left" 
+               Margin="762,40,0,0" 
+               VerticalAlignment="Top" 
+               FontFamily="Titan One"
+               FontWeight="Bold"
+               Foreground="#FFFFFDFD"
+               FontSize="120"/>
+
+            <Image
+                 HorizontalAlignment="Left"
+                 Height="184" 
+                 Margin="328,29,0,0" 
+                 VerticalAlignment="Top"
+                 Width="228" 
+                 Source="{StaticResource ComedoresU}"/>
+
+
+        </Grid>
+
+        <local:NavigationBar Grid.Column="0" HorizontalAlignment="Left" Width="300"/>
+
+        <Grid>
+            <RadioButton x:Name= "RBDailReport" 
+                         Content = "Generar reporte diario de ventas" 
+                         HorizontalAlignment="Left" 
+                         Margin="589,341,0,0" 
+                         VerticalAlignment="Top"
+                         FontWeight="Bold">
+                <RadioButton.RenderTransform>
+                    <ScaleTransform ScaleX="4.5" ScaleY="4.5"/>
+                </RadioButton.RenderTransform>
+            </RadioButton>
+
+            <RadioButton x:Name= "RBInvetoryReport" 
+                         Content = "Generar reporte de inventario" 
+                         HorizontalAlignment="Left" 
+                         Margin="589,506,0,0" 
+                         VerticalAlignment="Top" 
+                         FontWeight="Bold">
+                <RadioButton.RenderTransform>
+                    <ScaleTransform ScaleX="4.5" ScaleY="4.5"/>
+                </RadioButton.RenderTransform>
+            </RadioButton>
+
+            <Button x:Name="btnGenerateReport" 
+                 HorizontalAlignment="Left" 
+                 Margin="810,701,0,0" 
+                 VerticalAlignment="Top" 
+                 Height="100" 
+                 Width="401" 
+                 Foreground="#FFF8F8F8" 
+                 Cursor="Hand"
+                 FontFamily="Inter" 
+                 FontSize="50"
+                 BorderThickness="0"
+                 BorderBrush="#FF31318C" 
+                 Click = "BtnGenerateReport_Click"
+                 FontWeight="SemiBold">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#005BAA"/>
+                        <GradientStop Color="#004f94" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+                <Button.Effect>
+                    <DropShadowEffect Color="Black" ShadowDepth="5" BlurRadius="10" Direction="270"/>
+                </Button.Effect>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Generar reporte" 
+                        Foreground="White" 
+                        FontFamily="Inter"
+                        />
+                </StackPanel>
+            </Button>
+
+        </Grid>
+    </Grid>
+</Page>

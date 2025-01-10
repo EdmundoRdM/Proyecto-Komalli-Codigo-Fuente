@@ -320,7 +320,29 @@ namespace Komalli.DataBaseManagement.DataAccessObject
             }
         }
 
-
+        public static List<ProductPOCO> GetProductsForReport()
+        {
+            using (var context = new KomalliDBEntities())
+            {
+                try
+                {
+                    return context.Product
+                        .Where(p => p.Status == true)
+                        .Select(p => new ProductPOCO
+                        {
+                            ProductId = p.ProductId,
+                            ProductPrice = p.Price,
+                            ProductAvailableQuantity = p.AvailableQuantity,
+                            ProductName = p.Name,
+                            ProductTypeId = p.Type,
+                        }).ToList();
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Error al obtener todos los productos.", ex);
+                }
+            }
+        }
 
     }
 }
