@@ -254,6 +254,37 @@ namespace Komalli.DataBaseManagement.DataAccessObject
             }
         }
 
+        public static List<SalePOCO> GetTodaySalesForReport()
+        {
+            try
+            {
+                using (var context = new KomalliDBEntities())
+                {
+                    var today = DateTime.Today;
+                    var tomorrow = today.AddDays(1);
+
+                    var todaySales = (from s in context.Sale
+                                      join ss in context.SaleStatus on s.SaleStatus equals ss.StatusId
+                                      where s.SaleDate >= today
+                                            && s.SaleDate < tomorrow
+                                      select new SalePOCO
+                                      {
+                                          SaleId = s.SaleId,
+                                          SaleDate = s.SaleDate,
+                                          TotalSale = s.TotalSale,
+                                          StaffID = s.StaffID,
+                                          SaleStatus = s.SaleStatus,
+                                      }).ToList();
+
+                    return todaySales;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al obtener las ventas del día actual para el reporte.", ex);
+            }
+        }
+
     }
 
 
