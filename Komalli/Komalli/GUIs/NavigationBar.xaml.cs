@@ -170,7 +170,8 @@ namespace Komalli.GUIs
 
         private void BtnSpoilageModule_Click(object sender, RoutedEventArgs e)
         {
-
+            //Utilities.ChangePage(new StaffModule());
+            Utilities.ChangePage(new SpoilageLanding());
         }
 
         private bool RemoveTempSaleIfExists()

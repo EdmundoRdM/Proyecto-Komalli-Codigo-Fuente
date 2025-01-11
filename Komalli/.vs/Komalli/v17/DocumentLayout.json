@@ -1,26 +1,22 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\UV_Proyectos\\7mo_Semestre\\RepositorioDDS\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\",
+  "WorkspaceRootPath": "C:\\UV_Proyectos\\7mo_Semestre\\ProyetoDDS\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|c:\\uv_proyectos\\7mo_semestre\\repositoriodds\\proyecto-komalli-codigo-fuente\\komalli\\komalli\\guis\\cashierlanding.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|solutionrelative:komalli\\guis\\cashierlanding.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|c:\\uv_proyectos\\7mo_semestre\\proyetodds\\proyecto-komalli-codigo-fuente\\komalli\\komalli\\guis\\spoilagelanding.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|solutionrelative:komalli\\guis\\spoilagelanding.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|C:\\UV_Proyectos\\7mo_Semestre\\RepositorioDDS\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\komalli\\guis\\cashierlanding.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|solutionrelative:komalli\\guis\\cashierlanding.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|c:\\uv_proyectos\\7mo_semestre\\proyetodds\\proyecto-komalli-codigo-fuente\\komalli\\komalli\\databasemanagement\\pocos\\spoilagepoco.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|solutionrelative:komalli\\databasemanagement\\pocos\\spoilagepoco.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|C:\\UV_Proyectos\\7mo_Semestre\\RepositorioDDS\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\komalli\\guis\\login.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|solutionrelative:komalli\\guis\\login.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|c:\\uv_proyectos\\7mo_semestre\\proyetodds\\proyecto-komalli-codigo-fuente\\komalli\\komalli\\databasemanagement\\dataaccessobject\\spoilagedao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|solutionrelative:komalli\\databasemanagement\\dataaccessobject\\spoilagedao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|C:\\UV_Proyectos\\7mo_Semestre\\RepositorioDDS\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\komalli\\databasemanagement\\dataaccessobject\\saledao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|solutionrelative:komalli\\databasemanagement\\dataaccessobject\\saledao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|C:\\UV_Proyectos\\7mo_Semestre\\RepositorioDDS\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\komalli\\databasemanagement\\pocos\\salepoco.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|solutionrelative:komalli\\databasemanagement\\pocos\\salepoco.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|c:\\uv_proyectos\\7mo_semestre\\proyetodds\\proyecto-komalli-codigo-fuente\\komalli\\komalli\\guis\\spoilagelanding.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{61292CB3-1748-481A-A174-51EB7ACA3CE7}|Komalli\\Komalli.csproj|solutionrelative:komalli\\guis\\spoilagelanding.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,63 +38,54 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "LogIn.xaml.cs",
-              "DocumentMoniker": "C:\\UV_Proyectos\\7mo_Semestre\\RepositorioDDS\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\GUIs\\LogIn.xaml.cs",
-              "RelativeDocumentMoniker": "Komalli\\GUIs\\LogIn.xaml.cs",
-              "ToolTip": "C:\\UV_Proyectos\\7mo_Semestre\\RepositorioDDS\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\GUIs\\LogIn.xaml.cs",
-              "RelativeToolTip": "Komalli\\GUIs\\LogIn.xaml.cs",
-              "ViewState": "AgIAAHEAAAAAAAAAAAAUwJgAAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-26T00:26:09.368Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "CashierLanding.xaml.cs",
-              "DocumentMoniker": "C:\\UV_Proyectos\\7mo_Semestre\\RepositorioDDS\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\GUIs\\CashierLanding.xaml.cs",
-              "RelativeDocumentMoniker": "Komalli\\GUIs\\CashierLanding.xaml.cs",
-              "ToolTip": "C:\\UV_Proyectos\\7mo_Semestre\\RepositorioDDS\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\GUIs\\CashierLanding.xaml.cs",
-              "RelativeToolTip": "Komalli\\GUIs\\CashierLanding.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAeAAAAAAAAAA==",
+              "Title": "SpoilagePOCO.cs",
+              "DocumentMoniker": "C:\\UV_Proyectos\\7mo_Semestre\\ProyetoDDS\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\DataBaseManagement\\POCOs\\SpoilagePOCO.cs",
+              "RelativeDocumentMoniker": "Komalli\\DataBaseManagement\\POCOs\\SpoilagePOCO.cs",
+              "ToolTip": "C:\\UV_Proyectos\\7mo_Semestre\\ProyetoDDS\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\DataBaseManagement\\POCOs\\SpoilagePOCO.cs",
+              "RelativeToolTip": "Komalli\\DataBaseManagement\\POCOs\\SpoilagePOCO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-25T22:02:56.712Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "CashierLanding.xaml",
-              "DocumentMoniker": "C:\\UV_Proyectos\\7mo_Semestre\\RepositorioDDS\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\GUIs\\CashierLanding.xaml",
-              "RelativeDocumentMoniker": "Komalli\\GUIs\\CashierLanding.xaml",
-              "ToolTip": "C:\\UV_Proyectos\\7mo_Semestre\\RepositorioDDS\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\GUIs\\CashierLanding.xaml",
-              "RelativeToolTip": "Komalli\\GUIs\\CashierLanding.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-11-25T20:50:48.349Z",
+              "WhenOpened": "2025-01-10T23:44:29.755Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "SalePOCO.cs",
-              "DocumentMoniker": "C:\\UV_Proyectos\\7mo_Semestre\\RepositorioDDS\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\DataBaseManagement\\POCOs\\SalePOCO.cs",
-              "RelativeDocumentMoniker": "Komalli\\DataBaseManagement\\POCOs\\SalePOCO.cs",
-              "ToolTip": "C:\\UV_Proyectos\\7mo_Semestre\\RepositorioDDS\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\DataBaseManagement\\POCOs\\SalePOCO.cs",
-              "RelativeToolTip": "Komalli\\DataBaseManagement\\POCOs\\SalePOCO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAnAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "SpoilageDAO.cs",
+              "DocumentMoniker": "C:\\UV_Proyectos\\7mo_Semestre\\ProyetoDDS\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\DataBaseManagement\\DataAccessObject\\SpoilageDAO.cs",
+              "RelativeDocumentMoniker": "Komalli\\DataBaseManagement\\DataAccessObject\\SpoilageDAO.cs",
+              "ToolTip": "C:\\UV_Proyectos\\7mo_Semestre\\ProyetoDDS\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\DataBaseManagement\\DataAccessObject\\SpoilageDAO.cs",
+              "RelativeToolTip": "Komalli\\DataBaseManagement\\DataAccessObject\\SpoilageDAO.cs",
+              "ViewState": "AgIAACwAAAAAAAAAAAAkwEoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-25T21:01:48.542Z"
+              "WhenOpened": "2025-01-10T23:41:06.222Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SpoilageLanding.xaml.cs",
+              "DocumentMoniker": "C:\\UV_Proyectos\\7mo_Semestre\\ProyetoDDS\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\GUIs\\SpoilageLanding.xaml.cs",
+              "RelativeDocumentMoniker": "Komalli\\GUIs\\SpoilageLanding.xaml.cs",
+              "ToolTip": "C:\\UV_Proyectos\\7mo_Semestre\\ProyetoDDS\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\GUIs\\SpoilageLanding.xaml.cs",
+              "RelativeToolTip": "Komalli\\GUIs\\SpoilageLanding.xaml.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAkwCoAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-10T23:13:12.388Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "SaleDAO.cs",
-              "DocumentMoniker": "C:\\UV_Proyectos\\7mo_Semestre\\RepositorioDDS\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\DataBaseManagement\\DataAccessObject\\SaleDAO.cs",
-              "RelativeDocumentMoniker": "Komalli\\DataBaseManagement\\DataAccessObject\\SaleDAO.cs",
-              "ToolTip": "C:\\UV_Proyectos\\7mo_Semestre\\RepositorioDDS\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\DataBaseManagement\\DataAccessObject\\SaleDAO.cs",
-              "RelativeToolTip": "Komalli\\DataBaseManagement\\DataAccessObject\\SaleDAO.cs",
-              "ViewState": "AgIAAIEAAAAAAAAAAAA0wNYAAAAkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-25T19:51:27.106Z"
+              "Title": "SpoilageLanding.xaml",
+              "DocumentMoniker": "C:\\UV_Proyectos\\7mo_Semestre\\ProyetoDDS\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\GUIs\\SpoilageLanding.xaml",
+              "RelativeDocumentMoniker": "Komalli\\GUIs\\SpoilageLanding.xaml",
+              "ToolTip": "C:\\UV_Proyectos\\7mo_Semestre\\ProyetoDDS\\Proyecto-Komalli-Codigo-Fuente\\Komalli\\Komalli\\GUIs\\SpoilageLanding.xaml",
+              "RelativeToolTip": "Komalli\\GUIs\\SpoilageLanding.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-01-10T23:13:00.567Z",
+              "EditorCaption": ""
             }
           ]
         },

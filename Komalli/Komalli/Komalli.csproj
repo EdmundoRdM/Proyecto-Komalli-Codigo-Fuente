@@ -68,6 +68,7 @@
     <Compile Include="DataBaseManagement\DataAccessObject\SaleDAO.cs" />
     <Compile Include="DataBaseManagement\DataAccessObject\ProductTypeDAO.cs" />
     <Compile Include="DataBaseManagement\DataAccessObject\ShoppingCart.cs" />
+    <Compile Include="DataBaseManagement\DataAccessObject\SpoilageDAO.cs" />
     <Compile Include="DataBaseManagement\DataModel\Bill.cs">
       <DependentUpon>KomalliDBModel.tt</DependentUpon>
     </Compile>
@@ -124,6 +125,7 @@
     <Compile Include="DataBaseManagement\POCOs\ProductTypePOCO.cs" />
     <Compile Include="DataBaseManagement\POCOs\RolePOCO.cs" />
     <Compile Include="DataBaseManagement\POCOs\SalePOCO.cs" />
+    <Compile Include="DataBaseManagement\POCOs\SpoilagePOCO.cs" />
     <Compile Include="DataBaseManagement\POCOs\StaffWhitRole.cs" />
     <Compile Include="GUIs\CashierLanding.xaml.cs">
       <DependentUpon>CashierLanding.xaml</DependentUpon>
@@ -145,6 +147,9 @@
     </Compile>
     <Compile Include="GUIs\ProductModule.xaml.cs">
       <DependentUpon>ProductModule.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUIs\SpoilageLanding.xaml.cs">
+      <DependentUpon>SpoilageLanding.xaml</DependentUpon>
     </Compile>
     <Compile Include="GUIs\StaffModule.xaml.cs">
       <DependentUpon>StaffModule.xaml</DependentUpon>
@@ -181,6 +186,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="GUIs\ProductModule.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GUIs\SpoilageLanding.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
